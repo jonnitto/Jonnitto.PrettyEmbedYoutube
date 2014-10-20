@@ -8,13 +8,20 @@
     icon: 'icon-youtube'
     inspector:
       groups:
-        'video':
-          label: Video
-          position: 20
         'settings':
           label: Settings
-          position: 40
+          position: 20
+        'image':
+          label: Image
+          position: 30
   properties:
+    'customPreviewImage':
+      type: TYPO3\Media\Domain\Model\ImageVariant
+      ui:
+        label: 'Custom Preview Image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: image
     'videoID':
       type: string
       defaultValue: ''
@@ -22,14 +29,7 @@
         label: 'Youtube video ID'
         reloadIfChanged: TRUE
         inspector:
-          group: video
-    'customPreviewImage':
-      type: TYPO3\Media\Domain\Model\ImageVariant
-      ui:
-        label: 'Custom Preview Image'
-        reloadIfChanged: true
-        inspector:
-          group: video
+          group: settings
     'showInfo':
       type: boolean
       defaultValue: 1
