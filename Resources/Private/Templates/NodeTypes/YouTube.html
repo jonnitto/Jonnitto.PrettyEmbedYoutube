@@ -1,0 +1,47 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+<f:if condition="{node.context.workspace.name} != 'live'">
+	<f:then>
+		<f:if condition="{videoID}">
+			<f:then>
+				<f:if condition="{customPreviewImage}">
+					<f:then>
+						<img width="100%" src="{media:uri.image(asset: customPreviewImage, maximumWidth: 1280)}" />
+					</f:then>
+					<f:else>
+						<img width="100%" src="//img.youtube.com/vi/{videoID}/maxresdefault.jpg" />
+					</f:else>
+				</f:if>
+			</f:then>
+			<f:else>
+				<p style="background:#d9534f;color:#fff;border:1px solid #d43f3a;padding: 10% 12px;text-align:center;cursor:pointer;font-size:20px;">Please set a YouTube ID</p>
+			</f:else>
+		</f:if>
+	</f:then>
+	<f:else>
+		<f:if condition="{videoID}">
+			<f:if condition="{customPreviewImage}">
+				<f:then>
+					<div class="pretty-embed" data-pe-videoid="{videoID}"
+					data-pe-custom-preview-image="{media:uri.image(asset: customPreviewImage, maximumWidth: 1280)}"
+					data-pe-show-info="{f:if(condition: showInfo, then: 'true', else: 'false')}"
+					data-pe-show-controls="{f:if(condition: showControls, then: 'true', else: 'false')}"
+					data-pe-loop="{f:if(condition: loop, then: 'true', else: 'false')}"
+					data-pe-closed-captions="{f:if(condition: closedCaptions, then: 'true', else: 'false')}"
+					data-pe-show-related="{f:if(condition: showRelated, then: 'true', else: 'false')}"
+					data-pe-allow-fullscreen="{f:if(condition: allowFullScreen, then: 'true', else: 'false')}"></div>
+				</f:then>
+				<f:else>
+					<div class="pretty-embed" data-pe-videoid="{videoID}"
+					data-pe-show-info="{f:if(condition: showInfo, then: 'true', else: 'false')}"
+					data-pe-show-controls="{f:if(condition: showControls, then: 'true', else: 'false')}"
+					data-pe-loop="{f:if(condition: loop, then: 'true', else: 'false')}"
+					data-pe-closed-captions="{f:if(condition: closedCaptions, then: 'true', else: 'false')}"
+					data-pe-show-related="{f:if(condition: showRelated, then: 'true', else: 'false')}"
+					data-pe-allow-fullscreen="{f:if(condition: allowFullScreen, then: 'true', else: 'false')}"></div>
+				</f:else>
+			</f:if>
+		</f:if>
+	</f:else>
+</f:if>
+

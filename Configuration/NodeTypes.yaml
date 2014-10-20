@@ -1,0 +1,71 @@
+##
+# A "Youtube" content element
+#
+'Jonnitto.Plugin.PrettyEmbedYoutube:YouTube':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: YouTube
+    icon: 'icon-youtube'
+    inspector:
+      groups:
+        'video':
+          label: Video
+          position: 20
+        'settings':
+          label: Settings
+          position: 40
+  properties:
+    'videoID':
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Youtube video ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: video
+    'customPreviewImage':
+      type: TYPO3\Media\Domain\Model\ImageVariant
+      ui:
+        label: 'Custom Preview Image'
+        reloadIfChanged: true
+        inspector:
+          group: video
+    'showInfo':
+      type: boolean
+      defaultValue: 1
+      ui:
+        label: 'Display video information (top bar)'
+        inspector:
+          group: settings
+    'showControls':
+      type: boolean
+      defaultValue: 1
+      ui:
+        label: 'Display YouTube player controls'
+        inspector:
+          group: settings
+    'loop':
+      type: boolean
+      ui:
+        label: 'Play video as a loop'
+        inspector:
+          group: settings
+    'closedCaptions':
+      type: boolean
+      ui:
+        label: 'Displays closed captions (if available)'
+        inspector:
+          group: settings
+    'showRelated':
+      type: boolean
+      ui:
+        label: 'Display related videos on video end'
+        inspector:
+          group: settings
+    'allowFullScreen':
+      type: boolean
+      defaultValue: 1
+      ui:
+        label: 'Allow fullscreen mode'
+        inspector:
+          group: settings
