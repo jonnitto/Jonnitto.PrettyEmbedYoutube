@@ -1,13 +1,13 @@
-Jonnitto.Plugin.PrettyEmbedYoutube
-==================================
+Jonnitto.PrettyEmbedYoutube
+===========================
 
-Prettier embeds for your YouTubes in TYPO3 Neos - with nice options like high-res preview images, advanced customization of embed options, and optional FitVids support.
+Prettier embeds for your YouTubes in TYPO3 Neos - with nice options like high-res preview images, advanced customization of embed options and FitVids support.
 
 License
 -------
 The MIT License (MIT)
 
-Copyright (c) 2014 Jon Uhlmann - me@jonnitto.ch
+Copyright (c) 2015 Jon Uhlmann - me@jonnitto.ch
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

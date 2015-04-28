@@ -2,4 +2,4 @@ TYPO3:
   Neos:
     typoScript:
       autoInclude:
-        'Jonnitto.Plugin.PrettyEmbedYoutube': TRUE
+        'Jonnitto.PrettyEmbedYoutube': TRUE

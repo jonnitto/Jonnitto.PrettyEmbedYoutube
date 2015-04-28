@@ -1,6 +1,7 @@
 {
-    "name": "jonnitto/plugin-prettyembedyoutube",
+    "name": "jonnitto/prettyembedyoutube",
     "type": "typo3-flow-plugin",
+    "version": "0.1.1",
     "license": "MIT",
     "description": "Prettier embeds for your YouTubes in TYPO3 Neos - with nice options like high-res preview images, advanced customization of embed options and FitVids support.",
     "authors": [
@@ -14,7 +15,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Jonnitto\\Plugin\\PrettyEmbedYoutube": "Classes"
+            "Jonnitto\\PrettyEmbedYoutube": "Classes"
         }
     }
 }

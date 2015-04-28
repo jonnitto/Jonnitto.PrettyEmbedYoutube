@@ -1,20 +1,14 @@
+prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(TYPO3.Neos:Content)
 
-prototype(Jonnitto.Plugin.PrettyEmbedYoutube:YouTube) < prototype(TYPO3.Neos:Content)
-
-
-page.body.javascripts {
-	prettyembed = TYPO3.TypoScript:Tag {
-		tagName = 'script'
-		attributes.src = TYPO3.TypoScript:ResourceUri {
-			path = 'resource://Jonnitto.Plugin.PrettyEmbedYoutube/Public/JavaScript/prettyembed.js'
+prototype(TYPO3.Neos:Page) {
+	body.javascripts {
+		prettyembedall = TYPO3.TypoScript:Tag {
+			tagName = 'script'
+			attributes.src = TYPO3.TypoScript:ResourceUri {
+				path = 'resource://Jonnitto.PrettyEmbedYoutube/Public/prettyembed.all.js'
+			}
+			@position = 'end'
+			@if.hasVideo = ${q(node).find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is()} 
 		}
-		@position = 'after site'
 	}
-	waitforimages < page.body.javascripts.prettyembed
-	waitforimages.attributes.src.path = 'resource://Jonnitto.Plugin.PrettyEmbedYoutube/Public/JavaScript/waitforimages.js'
-	waitforimages.@position = 'before prettyembed'
-
-	fitvids < page.body.javascripts.waitforimages
-	fitvids.attributes.src.path = 'resource://Jonnitto.Plugin.PrettyEmbedYoutube/Public/JavaScript/fitvids.js'
-
 }

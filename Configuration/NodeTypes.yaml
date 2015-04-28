@@ -1,11 +1,13 @@
 ##
 # A "Youtube" content element
 #
-'Jonnitto.Plugin.PrettyEmbedYoutube:YouTube':
-  superTypes: ['TYPO3.Neos:Content']
+'Jonnitto.PrettyEmbedYoutube:YouTube':
+  superTypes:
+    'TYPO3.Neos.Content': 'TYPO3.Neos:Content'
   ui:
     label: YouTube
     icon: 'icon-youtube'
+    inlineEditable: false
     inspector:
       groups:
         'settings':
@@ -19,7 +21,7 @@
       type: TYPO3\Media\Domain\Model\ImageVariant
       ui:
         label: 'Custom Preview Image'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: image
     'videoID':
@@ -27,7 +29,8 @@
       defaultValue: ''
       ui:
         label: 'Youtube video ID'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
+        inlineEditable: false
         inspector:
           group: settings
     'showInfo':
