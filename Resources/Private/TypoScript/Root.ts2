@@ -1,4 +1,25 @@
 prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(TYPO3.Neos:Content)
+prototype(Jonnitto.PrettyEmbedYoutube:YouTube) {
+	isLive = ${node.context.workspace.name == 'live' ? true : false}
+	isLiveORVideo = ${this.isLive || q(node).property('videoID')}
+	attributes {
+		class = 'pretty-embed'
+		data-pe-videoid = ${q(node).property('videoID')}
+		data-pe-show-info = ${q(node).property('showInfo') ? 'true' : 'false'}
+		data-pe-show-controls = ${q(node).property('showControls') ? 'true' : 'false'}
+		data-pe-loop = ${q(node).property('loop') ? 'true' : 'false'}
+		data-pe-closed-captions = ${q(node).property('closedCaptions') ? 'true' : 'false'}
+		data-pe-show-related = ${q(node).property('showRelated') ? 'true' : 'false'}
+		data-pe-allow-fullscreen = ${q(node).property('allowFullScreen') ? 'true' : 'false'}
+	}
+
+	// Wrapping for Backend Edit
+	wrapStart = ${this.isLive ? '' : '<div>'}
+	wrapEnd   = ${this.isLive ? '' : '</div>'}
+	@process.wrapperForBackend = ${this.wrapStart + value + this.wrapEnd}
+	@process.wrapperForBackend.@position = 'start 1'
+}
+
 
 prototype(TYPO3.Neos:Page) {
 	body.javascripts {
@@ -8,7 +29,7 @@ prototype(TYPO3.Neos:Page) {
 				path = 'resource://Jonnitto.PrettyEmbedYoutube/Public/prettyembed.all.js'
 			}
 			@position = 'end'
-			@if.hasVideo = ${q(node).find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is()} 
+			@if.hasVideo = ${q(node).find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() || node.context.workspace.name != 'live'} 
 		}
 	}
 }
