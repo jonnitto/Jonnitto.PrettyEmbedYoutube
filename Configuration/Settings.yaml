@@ -5,14 +5,13 @@ TYPO3:
         'Jonnitto.PrettyEmbedYoutube': TRUE
 
 Jonnitto:
-	PrettyEmbedYoutube:
-		includeJavascript:
-			Live: true
-			Backend: true
-		imgResultion: 'maxresdefault'
-		embed:
-			class: 'pretty-embed'
-			src: '//www.youtube.com/embed'
-		lightbox:
-			class: 'popup-youtube'
-			link: '//www.youtube.com/watch?v='
+  PrettyEmbedYoutube:
+    includeCss: true
+    includeJavascript: true
+    imgResultion: 'maxresdefault'
+    embed:
+      class: 'embed-youtube'
+      src: 'https://www.youtube.com/embed/'
+    lightbox:
+      class: 'popup-youtube'
+      href: 'https://www.youtube.com/watch?v='

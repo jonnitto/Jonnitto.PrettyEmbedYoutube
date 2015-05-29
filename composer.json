@@ -1,7 +1,7 @@
 {
     "name": "jonnitto/prettyembedyoutube",
     "type": "typo3-flow-plugin",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "license": "MIT",
     "description": "Prettier embeds for your YouTubes in TYPO3 Neos - with nice options like high-res preview images, advanced customization of embed options and FitVids support. Now with lightbox support.",
     "authors": [
