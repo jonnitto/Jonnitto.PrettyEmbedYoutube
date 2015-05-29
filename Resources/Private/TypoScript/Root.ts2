@@ -1,17 +1,49 @@
 prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(TYPO3.Neos:Content)
 prototype(Jonnitto.PrettyEmbedYoutube:YouTube) {
-	isLive = ${node.context.workspace.name == 'live' ? true : false}
-	isLiveORVideo = ${this.isLive || q(node).property('videoID')}
-	attributes {
-		class = 'pretty-embed'
-		data-pe-videoid = ${q(node).property('videoID')}
-		data-pe-show-info = ${q(node).property('showInfo') ? 'true' : 'false'}
-		data-pe-show-controls = ${q(node).property('showControls') ? 'true' : 'false'}
-		data-pe-loop = ${q(node).property('loop') ? 'true' : 'false'}
-		data-pe-closed-captions = ${q(node).property('closedCaptions') ? 'true' : 'false'}
-		data-pe-show-related = ${q(node).property('showRelated') ? 'true' : 'false'}
-		data-pe-allow-fullscreen = ${q(node).property('allowFullScreen') ? 'true' : 'false'}
+	isLive                    = ${node.context.workspace.name == 'live' ? true : false}
+	isLiveORVideo             = ${this.isLive || q(node).property('videoID')}
+	configuration             = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube')}
+	@override.configuration   = ${this.configuration}
+	imgResultion              = ${this.configuration.lightbox.imgResultion}
+	videoID                   = ${q(node).property('videoID')}
+	@override.videoID         = ${this.videoID}
+	@override.lightbox        = ${q(node).property('lightbox')}
+
+	@override.youtube = TYPO3.TypoScript:Array {
+		videoID = ${videoID}
+		showinfo = ${q(node).property('showInfo') ? '' : '&showinfo=0'}
+		showControls = ${q(node).property('showControls') ? '' : '&controls=0'}
+		loop = ${q(node).property('loop') ? '&loop=1' : ''}
+		closedCaptions = ${q(node).property('closedCaptions') ? '&cc_load_policy=1' : ''}
+		showRelated = ${q(node).property('showRelated') ? '&rel=1' : '&rel=0'}
 	}
+
+	imgWrapper = TYPO3.TypoScript:Tag {
+		tagName = ${lightbox && this.isLive ? 'a' : 'div'}
+		attributes {
+			class = ${lightbox ? configuration.lightbox.class : configuration.embed.class}
+			data-embed = ${configuration.embed.src + youtube}
+			data-embed.@if.isEmbeded = ${lightbox ? false : true}
+			data-allowFullScreen = ${q(node).property('allowFullScreen') ? 'true' : 'false'}
+			href = ${configuration.lightbox.href + youtube + '&autoplay=1'}
+			href.@if.isLightboox = ${lightbox}
+		}
+		content = TYPO3.TypoScript:Tag {
+			tagName = 'img'
+			attributes {
+				src = TYPO3.TypoScript:Array {
+					customPreviewImage = TYPO3.Neos:ImageUri {
+						asset = ${q(node).property('customPreviewImage')}
+						maximumWidth = 1920
+						@if.hasPicture = ${q(node).property('customPreviewImage') ? true : false}
+					}
+					youtubeImage = ${'//img.youtube.com/vi' + videoID + '/' + configuration.imgResultion + '.jpg'}
+					youtubeImage.@if.hasNoPicture = ${q(node).property('customPreviewImage') ? false : true}
+				}
+			}
+		}
+	}
+
 
 	// Wrapping for Backend Edit
 	wrapStart = ${this.isLive ? '' : '<div>'}
@@ -29,7 +61,9 @@ prototype(TYPO3.Neos:Page) {
 				path = 'resource://Jonnitto.PrettyEmbedYoutube/Public/prettyembed.all.js'
 			}
 			@position = 'end'
-			@if.hasVideo = ${q(node).find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() || node.context.workspace.name != 'live'} 
+			@if.hasVideoOrIsInBackend   = ${q(node).find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() || node.context.workspace.name != 'live'} 
+			@if.shouldIncludedInBackend = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeJavascript.Backend') && node.context.workspace.name != 'live'}
+			@if.shouldIncludedInLive    = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeJavascript.Live') && node.context.workspace.name == 'live'}
 		}
 	}
 }

@@ -1,20 +1,8 @@
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
-{namespace media=TYPO3\Media\ViewHelpers}
 <f:if condition="{isLiveORVideo}">
 	<f:then>
-		<f:render section="Video" arguments="{_all}" />
+		{imgWrapper -> f:format.raw()}
 	</f:then>
 	<f:else>
 		<p style="background:#d9534f;color:#fff;border:1px solid #d43f3a;padding: 10% 12px;text-align:center;cursor:pointer;font-size:20px;">Please set a YouTube ID</p>
 	</f:else>
 </f:if>
-<f:section name="Video">
-	<f:if condition="{customPreviewImage}">
-		<f:then>
-			<div data-pe-custom-preview-image="{media:uri.image(asset: customPreviewImage, maximumWidth: 1920)}" {attributes -> f:format.raw()}></div>
-		</f:then>
-		<f:else>
-			<div{attributes -> f:format.raw()}></div>
-		</f:else>
-	</f:if>
-</f:section>

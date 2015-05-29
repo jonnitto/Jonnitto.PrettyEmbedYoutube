@@ -32,6 +32,13 @@
         inlineEditable: false
         inspector:
           group: settings
+    'lightbox':
+      type: boolean
+      defaultValue: 0
+      ui:
+        label: 'Open Video in a lightbox'
+        inspector:
+          group: settings
     'showInfo':
       type: boolean
       defaultValue: 1
