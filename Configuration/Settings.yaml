@@ -11,7 +11,9 @@ Jonnitto:
     imgResultion: 'maxresdefault'
     embed:
       class: 'embed-youtube'
-      src: 'https://www.youtube.com/embed/'
+      video: 'https://www.youtube.com/embed/'
+      playlist: 'https://www.youtube.com/embed/videoseries?list='
     lightbox:
       class: 'popup-youtube'
-      href: 'https://www.youtube.com/watch?v='
+      video: 'https://www.youtube.com/watch?v='
+      playlist: 'https://www.youtube.com/playlist?list='

@@ -17,18 +17,33 @@
           position: 30
   properties:
     'customPreviewImage':
-      type: TYPO3\Media\Domain\Model\ImageVariant
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Custom Preview Image'
-        reloadIfChanged: true
+        reloadPageIfChanged: true
         inspector:
           group: image
+    'type':
+      type: string
+      defaultValue: video
+      ui:
+        label: 'Type of ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: settings
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              video:
+                label: 'Video'
+              playlist:
+                label: 'Playlist'
     'videoID':
       type: string
       defaultValue: ''
       ui:
-        label: 'Youtube video ID'
-        reloadIfChanged: true
+        label: 'Youtube ID'
+        reloadPageIfChanged: true
         inlineEditable: false
         inspector:
           group: settings
