@@ -3,7 +3,7 @@
 #
 'Jonnitto.PrettyEmbedYoutube:YouTube':
   superTypes:
-    'TYPO3.Neos.Content': 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': TRUE
   ui:
     label: YouTube
     icon: 'icon-youtube'
