@@ -1,7 +1,7 @@
 Jonnitto.PrettyEmbedYoutube
 ===========================
 
-Prettier embeds for your YouTube and playlists in TYPO3 Neos - with nice options like high-res preview images and advanced customization of embed options. Embed function with pure Vanilla JS.
+Prettier embeds for your YouTube and playlists in Neos - with nice options like high-res preview images and advanced customization of embed options. Embed function with pure Vanilla JS.
 
 License
 -------
