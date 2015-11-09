@@ -3,7 +3,7 @@
 	<f:then>
 		<f:if condition="{isPlaylistANDnoImage}">
 			<f:then>
-				<f:render section="Alert" arguments="{text:'You need to define an custom preview image.'}"/>
+				<f:render section="Alert" arguments="{textID:'isPlaylistANDnoImage'}"/>
 			</f:then>
 			<f:else>
 				{imgWrapper -> f:format.raw()}
@@ -11,12 +11,12 @@
 		</f:if>
 	</f:then>
 	<f:else>
-		<f:render section="Alert" arguments="{text:'Please set a YouTube ID'}"/>
+		<f:render section="Alert" arguments="{textID:'noVideoID'}"/>
 	</f:else>
 </f:if>
 
 <f:section name="Alert">
 		<f:if condition="{neos:rendering.inBackend()}">
-			<p style="background:#d9534f;color:#fff;border:1px solid #d43f3a;padding: 10% 12px;text-align:center;cursor:pointer;font-size:20px;">{text}</p>
+			<p style="background:#d9534f;color:#fff;border:1px solid #d43f3a;padding: 10% 12px;text-align:center;cursor:pointer;font-size:20px;"><f:translate package="Jonnitto.PrettyEmbedYoutube" id="{textID}" /></p>
 		</f:if>
 </f:section>
