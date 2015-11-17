@@ -39,6 +39,8 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(TYPO3.Neos:Content) {
 				}
 			}
 		}
+
+		@process.containerwrapper = ${(configuration.wrapper ? '<div class="' + configuration.wrapper + '">' : '') + value + (configuration.wrapper ? '</div>' : '')}
 	}
 }
 

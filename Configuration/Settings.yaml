@@ -6,9 +6,10 @@ TYPO3:
 
 Jonnitto:
   PrettyEmbedYoutube:
-    includeCss: true
-    includeJavascript: true
-    imgResultion: 'maxresdefault'
+    includeCss: TRUE
+    includeJavascript: TRUE
+    imgResultion: maxresdefault
+    wrapper: FALSE # CSS Class for a wrapper (e.g. 'container')
     embed:
       class: 'embed-youtube'
       video: 'https://www.youtube.com/embed/'
