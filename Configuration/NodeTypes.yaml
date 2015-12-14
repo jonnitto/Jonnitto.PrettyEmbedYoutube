@@ -16,14 +16,15 @@
           label: Image
           position: 30
   properties:
-    'customPreviewImage':
+    customPreviewImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Custom Preview Image'
-        reloadPageIfChanged: true
+        reloadPageIfChanged: TRUE
         inspector:
           group: image
-    'type':
+          position: 10
+    type:
       type: string
       defaultValue: video
       ui:
@@ -31,6 +32,7 @@
         reloadPageIfChanged: TRUE
         inspector:
           group: settings
+          position: 10
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
@@ -38,58 +40,66 @@
                 label: 'Video'
               playlist:
                 label: 'Playlist'
-    'videoID':
+    videoID:
       type: string
       defaultValue: ''
       ui:
         label: 'Youtube ID'
-        reloadPageIfChanged: true
-        inlineEditable: false
+        reloadPageIfChanged: TRUE
+        inlineEditable: FALSE
         inspector:
           group: settings
-    'lightbox':
+          position: 20
+    lightbox:
       type: boolean
-      defaultValue: 0
+      defaultValue: FALSE
       ui:
         label: 'Open Video in a lightbox'
         inspector:
           group: settings
-    'showInfo':
+          position: 30
+    showInfo:
       type: boolean
-      defaultValue: 1
+      defaultValue: TRUE
       ui:
         label: 'Display video information (top bar)'
         inspector:
           group: settings
-    'showControls':
+          position: 40
+    showControls:
       type: boolean
-      defaultValue: 1
+      defaultValue: TRUE
       ui:
         label: 'Display YouTube player controls'
         inspector:
           group: settings
-    'loop':
+          position: 50
+    loop:
       type: boolean
       ui:
         label: 'Play video as a loop'
         inspector:
           group: settings
-    'closedCaptions':
+          position: 60
+    closedCaptions:
       type: boolean
       ui:
         label: 'Displays closed captions (if available)'
         inspector:
           group: settings
-    'showRelated':
+          position: 70
+    showRelated:
       type: boolean
       ui:
         label: 'Display related videos on video end'
         inspector:
           group: settings
-    'allowFullScreen':
+          position: 80
+    allowFullScreen:
       type: boolean
-      defaultValue: 1
+      defaultValue: TRUE
       ui:
         label: 'Allow fullscreen mode'
         inspector:
           group: settings
+          position: 90

@@ -51,9 +51,12 @@
 			var width = w ? ' width="' + w + '"' : '';
 			var height = h ? ' height="' + h + '"' : '';
 			var fullscreen = fs ? ' allowfullscreen' : '';
-			link.className += ' play';
-			link.innerHTML = '<iframe' + width + height + fullscreen + '" src="' + embed + '" frameborder="0"></iframe>';
-			link.style.paddingTop = getRatio(h,w);
+			var div = document.createElement('div');
+			div.className = 'embed-youtube play';
+			div.style.paddingTop = getRatio(h,w);
+			div.innerHTML = '<iframe' + width + height + fullscreen + ' src="' + embed + '" frameborder="0"></iframe>';
+			link.parentNode.insertBefore(div, link);
+			link.parentNode.removeChild(link);
 		}
 	};
 	links = getClass('embed-youtube');
@@ -63,7 +66,7 @@
 			initVideo(links[i]);
 		} else {
 			/* jshint -W083 */
-			addEvent(links[i],'click', function(event) {
+			addEvent(links[i], 'click', function(event) {
 				event.preventDefault();
 				initVideo(this);
 			});
