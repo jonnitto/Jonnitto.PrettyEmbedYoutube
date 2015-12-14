@@ -1,5 +1,9 @@
 TYPO3:
   Neos:
+    userInterface:
+      translation:
+        autoInclude:
+          'Jonnitto.PrettyEmbedYoutube': ['Main', 'NodeTypes/YouTube']
     typoScript:
       autoInclude:
         'Jonnitto.PrettyEmbedYoutube': TRUE
