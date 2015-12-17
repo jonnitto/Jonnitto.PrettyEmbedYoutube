@@ -1,6 +1,7 @@
 $prettyEmbedYoutube-playbutton-width: 72px !default;
 $prettyEmbedYoutube-playbutton-image: 'data:image/png;base64,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';
 
+
 .embed-youtube,
 .popup-youtube {
 	position: relative;
@@ -12,31 +13,30 @@ $prettyEmbedYoutube-playbutton-image: 'data:image/png;base64,iVBORw0KGgoAAAANSUh
 		width: 100%;
 		height: auto;
 	}
-}
 
-a.embed,
-a.popup {
-	&-youtube {
-		&::after {
-			display: block;
-			content: '';
-			position: absolute;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			opacity: 0.8;
-			transform: scale(0.8);
-			background-repeat: no-repeat;
-			background-position: center;
-			background-image: url($prettyEmbedYoutube-playbutton-image);
-			background-size: $prettyEmbedYoutube-playbutton-width $prettyEmbedYoutube-playbutton-width;
-			transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
-		}
+	&::after {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.8;
+		transform: scale(0.8);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url($prettyEmbedYoutube-playbutton-image);
+		background-size: $prettyEmbedYoutube-playbutton-width $prettyEmbedYoutube-playbutton-width;
+		transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+	}
 
-		&:hover::after {
-			opacity: 1;
-			transform: scale(1);
-		}
+	&:hover::after {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	&.play::after {
+		display: none;
 	}
 }
 
