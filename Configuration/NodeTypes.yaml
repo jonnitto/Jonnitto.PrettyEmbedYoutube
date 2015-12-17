@@ -9,10 +9,10 @@
     icon: 'icon-youtube'
     inspector:
       groups:
-        'settings':
+        settings:
           label: i18n
           position: 20
-        'image':
+        image:
           label: i18n
           position: 30
   properties:

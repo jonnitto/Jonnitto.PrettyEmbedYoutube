@@ -63,7 +63,10 @@
 
 	for (var i = links.length - 1; i >= 0; i--) {
 		if (mobile) {
-			initVideo(links[i]);
+			var element = links[i];
+			addEvent(window, 'load', function() {
+				initVideo(element);
+			});
 		} else {
 			/* jshint -W083 */
 			addEvent(links[i], 'click', function(event) {
