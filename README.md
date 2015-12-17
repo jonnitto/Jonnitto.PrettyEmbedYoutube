@@ -3,6 +3,11 @@ Jonnitto.PrettyEmbedYoutube
 
 Prettier embeds for your YouTube and playlists in Neos - with nice options like high-res preview images and advanced customization of embed options. Embed function with pure Vanilla JS.
 
+Contibutors
+----------
+Thanks goes out to the following contibutors:
+* https://github.com/SoulCover
+
 License
 -------
 The MIT License (MIT)
