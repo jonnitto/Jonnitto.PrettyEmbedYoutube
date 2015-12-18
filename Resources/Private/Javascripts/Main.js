@@ -62,18 +62,18 @@
 	links = getClass('embed-youtube');
 
 	for (var i = links.length - 1; i >= 0; i--) {
+		// jshint -W083
 		if (mobile) {
 			var element = links[i];
 			addEvent(window, 'load', function() {
 				initVideo(element);
 			});
 		} else {
-			/* jshint -W083 */
 			addEvent(links[i], 'click', function(event) {
 				event.preventDefault();
 				initVideo(this);
 			});
-			/* jshint +W083 */
 		}
+		// jshint +W083
 	}
 })();
