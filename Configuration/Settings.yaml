@@ -3,10 +3,11 @@ TYPO3:
     typoScript:
       autoInclude:
         'Jonnitto.PrettyEmbedYoutube': TRUE
+
     userInterface:
       translation:
         autoInclude:
-          'Jonnitto.PrettyEmbedYoutube': ['Main', 'NodeTypes/YouTube']
+          'Jonnitto.PrettyEmbedYoutube': ['NodeTypes/*']
 
 Jonnitto:
   PrettyEmbedYoutube:

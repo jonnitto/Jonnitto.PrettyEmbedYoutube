@@ -44,11 +44,11 @@
 			</trans-unit>
 			<trans-unit id="properties.showControls" xml:space="preserve">
 				<source>Display YouTube player controls</source>
-				<target>Zeige Steuerelemente des YouTube-Players</target>
+				<target>Zeige Steuerelemente des Players</target>
 			</trans-unit>
 			<trans-unit id="properties.loop" xml:space="preserve">
 				<source>Play video in a loop</source>
-				<target>Spiele Video in einer Schleife</target>
+				<target>Spiele das Video in einer Schleife</target>
 			</trans-unit>
 			<trans-unit id="properties.closedCaptions" xml:space="preserve">
 				<source>Display closed captions (if available)</source>
