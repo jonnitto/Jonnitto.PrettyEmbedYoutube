@@ -6,7 +6,11 @@
 				<f:render section="Alert" arguments="{textID:'isPlaylistANDnoImage'}"/>
 			</f:then>
 			<f:else>
-				{imgWrapper -> f:format.raw()}
+				<f:if condition="{wrapper}"><div class="{wrapper}"></f:if>
+					<{tagName}{attributes -> f:format.raw()}>
+						{content -> f:format.raw()}
+					</{tagName}>
+				<f:if condition="{wrapper}"></div></f:if>
 			</f:else>
 		</f:if>
 	</f:then>

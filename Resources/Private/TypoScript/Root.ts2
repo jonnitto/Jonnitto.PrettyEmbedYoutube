@@ -4,43 +4,49 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(TYPO3.Neos:Content) {
 
 	isPlaylistANDnoImage = ${type == 'playlist' && !q(node).property('customPreviewImage')}
 
-	imgWrapper = TYPO3.TypoScript:Tag {
-		@if.hasVideoId = ${q(node).property('videoID') ? true : false}
-		tagName = ${node.context.live ? 'a' : 'div'}
-		attributes {
-			class = ${q(node).property('lightbox') ? configuration.lightbox.class : configuration.embed.class}
-			data-fs = ${q(node).property('allowFullScreen') ? 'true' : 'false'}
-			data-embed = TYPO3.TypoScript:Array {
-				src            = ${configuration.embed[type]}
-				videoID        = ${q(node).property('videoID')}
-				var            = ${type == 'video' ? '?' : '&'}
-				autoplay       = 'autoplay=1'
-				showinfo       = ${q(node).property('showInfo') ? '' : '&showinfo=0'}
-				showControls   = ${q(node).property('showControls') ? '' : '&controls=0'}
-				loop           = ${q(node).property('loop') ? '&loop=1' : ''}
-				closedCaptions = ${q(node).property('closedCaptions') ? '&cc_load_policy=1' : ''}
-				showRelated    = ${q(node).property('showRelated') ? '&rel=1' : '&rel=0'}
-			}
-			href = ${configuration.lightbox[type] + q(node).property('videoID')}
-			target = '_blank'
-		}
+	@override.maximumWidth = ${this.maximumWidth ? this.maximumWidth : configuration.maximumWidth}
 
-		content = TYPO3.TypoScript:Tag {
-			tagName = 'img'
-			attributes {
-				src = TYPO3.TypoScript:Array {
-					youtubeImage = ${'//img.youtube.com/vi/' + q(node).property('videoID') + '/' + configuration.imgResultion + '.jpg'}
-					youtubeImage.@if.hasNoPicture = ${q(node).property('customPreviewImage') ? false : true}
-					customPreviewImage = TYPO3.Neos:ImageUri {
-						asset = ${q(node).property('customPreviewImage')}
-						maximumWidth = 1920
-						@if.hasPicture = ${q(node).property('customPreviewImage') ? true : false}
-					}
+	wrapper = ${configuration.wrapper ? configuration.wrapper : false}
+
+	tagName = ${node.context.live ? 'a' : 'div'}
+	attributes {
+		class = TYPO3.TypoScript:RawArray {
+			lightbox = ${q(node).property('lightbox') ? configuration.lightbox.class : configuration.embed.class}
+		}
+		data-fs = ${q(node).property('allowFullScreen') ? 'true' : 'false'}
+		data-embed = TYPO3.TypoScript:Array {
+			src            = ${configuration.embed[type]}
+			videoID        = ${q(node).property('videoID')}
+			var            = ${type == 'video' ? '?' : '&'}
+			autoplay       = 'autoplay=1'
+			showinfo       = ${q(node).property('showInfo') ? '' : '&showinfo=0'}
+			showControls   = ${q(node).property('showControls') ? '' : '&controls=0'}
+			loop           = ${q(node).property('loop') ? '&loop=1' : ''}
+			closedCaptions = ${q(node).property('closedCaptions') ? '&cc_load_policy=1' : ''}
+			showRelated    = ${q(node).property('showRelated') ? '&rel=1' : '&rel=0'}
+		}
+		href = ${configuration.lightbox[type] + q(node).property('videoID')}
+		target = '_blank'
+	}
+
+	content = TYPO3.TypoScript:Tag {
+		tagName = 'img'
+		attributes {
+			src = TYPO3.TypoScript:Array {
+				youtubeImage = ${'//img.youtube.com/vi/' + q(node).property('videoID') + '/' + configuration.imgResultion + '.jpg'}
+				youtubeImage.@if.hasNoPicture = ${q(node).property('customPreviewImage') ? false : true}
+				customPreviewImage = TYPO3.Neos:ImageUri {
+					asset = ${q(node).property('customPreviewImage')}
+					maximumWidth = ${maximumWidth}
+					@if.hasPicture = ${q(node).property('customPreviewImage') ? true : false}
 				}
 			}
+			data-src-retina = TYPO3.Neos:ImageUri {
+				asset = ${q(node).property('customPreviewImage')}
+				maximumWidth = ${maximumWidth * 2}
+				@if.hasPicture = ${q(node).property('customPreviewImage') ? true : false}
+			}
 		}
-
-		@process.containerwrapper = ${(configuration.wrapper ? '<div class="' + configuration.wrapper + '">' : '') + value + (configuration.wrapper ? '</div>' : '')}
 	}
 }
 

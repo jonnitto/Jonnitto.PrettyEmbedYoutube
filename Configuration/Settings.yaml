@@ -13,6 +13,7 @@ Jonnitto:
     includeCss: TRUE
     includeJavascript: TRUE
     imgResultion: maxresdefault
+    maximumWidth: 1920
     wrapper: FALSE # CSS Class for a wrapper (e.g. 'container')
     embed:
       class: 'embed-youtube'
