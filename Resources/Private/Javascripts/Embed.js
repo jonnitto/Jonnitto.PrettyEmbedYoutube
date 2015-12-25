@@ -28,10 +28,8 @@
 
 	Gator(window).on('load', prettyEmbedYoutubeInit);
 
-	if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-		Gator(document).on('click', 'a.embed-youtube', function(event) {
-			event.preventDefault();
-			initVideo(this);
-		});
-	}
+	Gator(document).on('click', 'a.embed-youtube', function(event) {
+		event.preventDefault();
+		initVideo(this);
+	});
 })();
