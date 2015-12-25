@@ -58,7 +58,7 @@ prototype(TYPO3.Neos:Page) {
 			href = TYPO3.TypoScript:ResourceUri {
 				path = 'resource://Jonnitto.PrettyEmbedYoutube/Public/Main.css'
 			}
-			@if.hasVideoOrIsBackendAndActive = ${(q(node).find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() || node.context.inBackend) && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeCss')}
+			@if.hasVideoOrIsBackendAndActive = ${(q(node).children('[instanceof TYPO3.Neos:ContentCollection]').find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() || node.context.inBackend) && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeCss')}
 		}
 	}
 	body.javascripts {
@@ -68,7 +68,7 @@ prototype(TYPO3.Neos:Page) {
 				path = 'resource://Jonnitto.PrettyEmbedYoutube/Public/Main.js'
 			}
 			@position = 'end'
-			@if.hasVideoAndIsLiveAndActive = ${q(node).find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() && node.context.live && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeJavascript')}
+			@if.hasVideoAndIsLiveAndActive = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() && node.context.live && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeJavascript')}
 		}
 	}
 }
