@@ -1,4 +1,7 @@
 (function() {
+	var removeClass = function(element, cssClass) {
+		element.className = element.className.replace(new RegExp('(?:^|\\s)' + cssClass + '(?!\\S)') ,'');
+	};
 	var base = 'jonnitto-prettyembed-popup';
 	var html = '<div class="' + base + '-holder">' +
 								'<iframe class="' + base + '-iframe" src="%src%" frameborder="0"%fs%></iframe>' +
@@ -12,10 +15,6 @@
 
 	document.body.appendChild(popup);
 	$popup = document.getElementById('popup-youtube');
-
-	var removeClass = function(element, cssClass) {
-		element.className = element.className.replace(new RegExp('(?:^|\\s)' + cssClass + '(?!\\S)') ,'');
-	};
 
 	var closeModal = function() {
 		removeClass(document.body, 'jonnitto-prettyembed-popup-visible');

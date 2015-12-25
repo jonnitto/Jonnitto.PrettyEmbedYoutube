@@ -2,9 +2,9 @@
 	var initVideo = function(link) {
 		var fullscreen = (link.getAttribute('data-fs') == 'true') ? ' allowfullscreen' : '';
 		var embed = link.getAttribute('data-embed') || false;
-		var w = link.clientWidth;
-		var h = link.clientHeight;
-		console.log(embed, w, h);
+		var image = link.getElementsByTagName('img')[0];
+		var w = image.width;
+		var h = image.height;
 		if (embed && w && h) {
 			var width = ' width="' + w + '"';
 			var height = ' height="' + h + '"';
