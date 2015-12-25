@@ -1,7 +1,7 @@
 Jonnitto.PrettyEmbedYoutube
 ===========================
 
-Prettier embeds for your YouTube and playlists in Neos - with nice options like high-res preview images and advanced customization of embed options. Embed and lightbox functions use [Gator](https://github.com/ccampbell/gator) for event delegation.
+Prettier embeds for your YouTube and playlists in [Neos](https://www.neos.io) - with nice options like high-res preview images and advanced customization of embed options. Embed and lightbox functions use [Gator](https://github.com/ccampbell/gator) for event delegation.
 
 Contibutors
 ----------
