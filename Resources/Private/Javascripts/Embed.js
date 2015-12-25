@@ -17,14 +17,18 @@
 		}
 	};
 
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-		Gator(window).on('load', function() {
+	window.prettyEmbedYoutubeInit = function() {
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 			var links = document.querySelectorAll('.embed-youtube');
 			for (var i = links.length - 1; i >= 0; i--) {
 				initVideo(links[i]);
 			}
-		});
-	} else {
+		}
+	};
+
+	Gator(window).on('load', prettyEmbedYoutubeInit);
+
+	if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 		Gator(document).on('click', 'a.embed-youtube', function(event) {
 			event.preventDefault();
 			initVideo(this);
