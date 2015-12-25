@@ -9,7 +9,7 @@
 			var width = ' width="' + w + '"';
 			var height = ' height="' + h + '"';
 			var div = document.createElement('div');
-			div.className = 'embed-youtube play';
+			div.className = link.className + ' play';
 			div.style.paddingTop = (parseInt(h) / parseInt(w) * 100) + '%';
 			div.innerHTML = '<iframe' + width + height + fullscreen + ' src="' + embed + '" frameborder="0"></iframe>';
 			link.parentNode.insertBefore(div, link);
@@ -25,7 +25,7 @@
 			}
 		});
 	} else {
-		Gator(document).on('load', 'a.embed-youtube', function(event) {
+		Gator(document).on('click', 'a.embed-youtube', function(event) {
 			event.preventDefault();
 			initVideo(this);
 		});
