@@ -7,7 +7,9 @@
     "authors": [
         {
             "name": "Jon Uhlmann",
-            "email": "me@jonnitto.ch"
+            "email": "me@jonnitto.ch",
+            "homepage": "https://twitter.com/jonnitto",
+            "role": "Developer"
         }
 	],
     "require": {

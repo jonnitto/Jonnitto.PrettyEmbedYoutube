@@ -20,7 +20,7 @@
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: i18n
-        reloadPageIfChanged: TRUE
+        reloadIfChanged: TRUE
         inspector:
           group: image
           position: 10
@@ -29,11 +29,11 @@
       defaultValue: video
       ui:
         label: i18n
-        reloadPageIfChanged: TRUE
+        reloadIfChanged: TRUE
         inspector:
           group: settings
           position: 10
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               video:
@@ -45,7 +45,7 @@
       defaultValue: ''
       ui:
         label: i18n
-        reloadPageIfChanged: TRUE
+        reloadIfChanged: TRUE
         inlineEditable: FALSE
         inspector:
           group: settings
