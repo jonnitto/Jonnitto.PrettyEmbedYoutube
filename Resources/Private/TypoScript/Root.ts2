@@ -11,9 +11,9 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(TYPO3.Neos:Content) {
 	tagName = ${node.context.live ? 'a' : 'div'}
 	attributes {
 		class = TYPO3.TypoScript:RawArray {
-			lightbox = ${q(node).property('lightbox') ? configuration.lightbox.class : configuration.embed.class}
 			@process.nodeType >
 			nodeType = 'jonnitto-prettyembedyoutube-youtube'
+			lightbox = ${q(node).property('lightbox') ? configuration.lightbox.class : configuration.embed.class}
 		}
 		data-fs = ${q(node).property('allowFullScreen') ? 'true' : 'false'}
 		data-embed = TYPO3.TypoScript:Array {
