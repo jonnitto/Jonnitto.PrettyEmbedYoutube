@@ -3,7 +3,7 @@
     "type": "typo3-flow-plugin",
     "version": "2.1.1",
     "license": "MIT",
-    "description": "Prettier embeds for your YouTube and playlists in [Neos](https://www.neos.io) - with nice options like high-res preview images and advanced customization of embed options. Embed and lightbox functions use Gator for event delegation.",
+    "description": "Prettier embeds for your YouTube videos and playlists in Neos CMS - with nice options like high-res preview images and advanced customization of embed options. Embed and lightbox functions use Gator for event delegation.",
     "authors": [
         {
             "name": "Jon Uhlmann",
