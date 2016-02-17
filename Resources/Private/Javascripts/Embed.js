@@ -1,4 +1,20 @@
 (function() {
+	window.replaceTag = function(element, tagName) {
+		if (typeof element === 'object' && typeof tagName === 'string') {
+			var originalElement = element;
+			var originalTag = originalElement.tagName;
+			var startRX = new RegExp('^<' + originalTag, 'i');
+			var endRX = new RegExp(originalTag + '>$', 'i');
+			var startSubst = '<' + tagName;
+			var endSubst = tagName + '>';
+			var wrapper = document.createElement('div');
+			wrapper.innerHTML = originalElement.outerHTML.replace(startRX, startSubst).replace(endRX, endSubst);
+			var newElement = wrapper.firstChild;
+			element.parentNode.replaceChild(newElement, element);
+			return newElement;
+		}
+	};
+
 	var initVideo = function(link) {
 		var fullscreen = (link.getAttribute('data-fs') == 'true') ? ' allowfullscreen' : '';
 		var embed = link.getAttribute('data-embed') || false;
@@ -7,21 +23,13 @@
 		var w = image.width;
 		var h = image.height;
 		if (embed && w && h) {
+			var element = replaceTag(link, 'div');
 			var width = ' width="' + w + '"';
 			var height = ' height="' + h + '"';
-			var div = document.createElement('div');
-			div.setAttribute('data-img', imageSrc);
-			div.setAttribute('data-embed', embed);
-			div.setAttribute('href', link.getAttribute('href'));
-			div.setAttribute('target', link.getAttribute('target'));
-			if (fullscreen) {
-				div.setAttribute('data-fs', 'true');
-			}
-			div.className = link.className + ' play';
-			div.style.paddingTop = (parseInt(h) / parseInt(w) * 100) + '%';
-			div.innerHTML = '<iframe' + width + height + fullscreen + ' src="' + embed + '" frameborder="0"></iframe>';
-			link.parentNode.insertBefore(div, link);
-			link.parentNode.removeChild(link);
+			element.setAttribute('data-img', imageSrc);
+			element.className = element.className + ' play';
+			element.style.paddingTop = (parseInt(h) / parseInt(w) * 100) + '%';
+			element.innerHTML = '<iframe' + width + height + fullscreen + ' src="' + embed + '" frameborder="0"></iframe>';
 		}
 	};
 
