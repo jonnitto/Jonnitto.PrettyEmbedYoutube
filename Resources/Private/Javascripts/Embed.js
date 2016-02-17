@@ -1,5 +1,5 @@
 (function() {
-	window.replaceTag = function(element, tagName) {
+	var replaceTag = function(element, tagName) {
 		if (typeof element === 'object' && typeof tagName === 'string') {
 			var originalElement = element;
 			var originalTag = originalElement.tagName;
@@ -30,6 +30,23 @@
 			element.className = element.className + ' play';
 			element.style.paddingTop = (parseInt(h) / parseInt(w) * 100) + '%';
 			element.innerHTML = '<iframe' + width + height + fullscreen + ' src="' + embed + '" frameborder="0"></iframe>';
+		}
+	};
+
+	window.prettyEmbedYoutubeRestore = function(element) {
+		var img = element.getAttribute('data-img') || false;
+		if (img) {
+			var classesArray = element.className.split(' ');
+			var classes = [];
+			for (var i = 0; i < classesArray.length; i++) {
+				if (classesArray[i] !== 'play') {
+					classes[classes.length] = classesArray[i];
+				}
+			}
+			element.className = classes.join(' ');
+			element.removeAttribute('style');
+			element.innerHTML = '<img src="' + img + '" />';
+			replaceTag(element, 'a');
 		}
 	};
 
