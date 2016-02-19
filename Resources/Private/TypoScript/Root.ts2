@@ -68,17 +68,15 @@ prototype(Neos:Page) {
 			href = TypoScript:ResourceUri {
 				path = 'resource://Jonnitto.PrettyEmbedYoutube/Public/Main.css'
 			}
-			@if.hasVideoOrIsBackendAndActive = ${(q(node).children('[instanceof TYPO3.Neos:ContentCollection]').find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() || node.context.inBackend) && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeCss')}
 		}
+		@if.hasVideoOrIsBackendAndActive = ${(q(node).children('[instanceof TYPO3.Neos:ContentCollection]').find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() || node.context.inBackend) && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeCss')}
 	}
-	body.javascripts {
-		prettyEmbedYoutube = TypoScript:Tag {
-			tagName = 'script'
-			attributes.src = TypoScript:ResourceUri {
-				path = 'resource://Jonnitto.PrettyEmbedYoutube/Public/Main.js'
-			}
-			@position = 'end'
-			@if.hasVideoAndIsLiveAndActive = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() && node.context.live && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeJavascript')}
+	body.javascripts.prettyEmbedYoutube = TypoScript:Tag {
+		tagName = 'script'
+		attributes.src = TypoScript:ResourceUri {
+			path = 'resource://Jonnitto.PrettyEmbedYoutube/Public/Main.js'
 		}
+		@position = 'end'
+		@if.hasVideoAndIsLiveAndActive = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() && node.context.live && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeJavascript')}
 	}
 }
