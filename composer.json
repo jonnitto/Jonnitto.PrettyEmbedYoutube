@@ -11,7 +11,7 @@
             "homepage": "https://twitter.com/jonnitto",
             "role": "Developer"
         }
-	],
+    ],
     "require": {
         "typo3/neos": "2.*"
     },
@@ -19,5 +19,8 @@
         "psr-0": {
             "Jonnitto\\PrettyEmbedYoutube": "Classes"
         }
+    },
+    "extra": {
+        "marketplace-account": "<me@jonnitto.ch>"
     }
 }
