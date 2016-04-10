@@ -3,7 +3,6 @@ TYPO3:
     typoScript:
       autoInclude:
         'Jonnitto.PrettyEmbedYoutube': TRUE
-
     userInterface:
       translation:
         autoInclude:

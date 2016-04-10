@@ -6,7 +6,7 @@
     'TYPO3.Neos:Content': TRUE
   ui:
     label: i18n
-    icon: 'icon-youtube'
+    icon: icon-youtube
     inspector:
       groups:
         settings:
