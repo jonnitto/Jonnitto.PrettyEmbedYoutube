@@ -19,12 +19,12 @@ prototype(Youtube:ImageSrcRetina) < prototype(Youtube:ImageUri) {
 }
 
 prototype(Youtube:YouTube) < prototype(Neos:Content) {
-	@override.configuration = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube')}
-	@override.type = ${q(node).property('type') ? q(node).property('type') : 'video'}
+	@context.configuration = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube')}
+	@context.type = ${q(node).property('type') ? q(node).property('type') : 'video'}
 
 	isPlaylistANDnoImage = ${type == 'playlist' && !q(node).property('customPreviewImage')}
 
-	@override.maximumWidth = ${this.maximumWidth ? this.maximumWidth : configuration.maximumWidth}
+	@context.maximumWidth = ${this.maximumWidth ? this.maximumWidth : configuration.maximumWidth}
 
 	wrapper = ${configuration.wrapper ? configuration.wrapper : false}
 
