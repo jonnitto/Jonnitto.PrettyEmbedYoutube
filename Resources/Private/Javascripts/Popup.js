@@ -1,4 +1,5 @@
 (function() {
+	var $popup = false;
 	var removeClass = function(element, cssClass) {
 		element.className = element.className.replace(new RegExp('(?:^|\\s)' + cssClass + '(?!\\S)') ,'');
 	};
@@ -9,12 +10,9 @@
 	var popup = document.createElement('div');
 	popup.className = base;
 	popup.innerHTML = '<div class="' + base + '-inner">' +
-											'<button type="button" class="jonnitto-prettyembed-popup-close">&times;</button>' +
-											'<div id="popup-youtube" class="' + base + '-content"></div>' +
-										'</div>';
-
-	document.body.appendChild(popup);
-	$popup = document.getElementById('popup-youtube');
+							'<button type="button" class="jonnitto-prettyembed-popup-close">&times;</button>' +
+							'<div id="popup-youtube" class="' + base + '-content"></div>' +
+						'</div>';
 
 	var closeModal = function() {
 		removeClass(document.body, 'jonnitto-prettyembed-popup-visible');
@@ -24,6 +22,11 @@
 	};
 
 	var openModal = function(event) {
+		if (!$popup) {
+			document.body.appendChild(popup);
+			$popup = document.getElementById('popup-youtube');
+		}
+
 		var fullscreen = (this.getAttribute('data-fs') == 'true') ? ' allowfullscreen' : '';
 		var embed = this.getAttribute('data-embed') || false;
 		if (embed) {
