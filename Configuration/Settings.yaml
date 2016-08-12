@@ -2,7 +2,7 @@ TYPO3:
   Neos:
     typoScript:
       autoInclude:
-        'Jonnitto.PrettyEmbedYoutube': TRUE
+        'Jonnitto.PrettyEmbedYoutube': true
     userInterface:
       translation:
         autoInclude:
@@ -10,11 +10,11 @@ TYPO3:
 
 Jonnitto:
   PrettyEmbedYoutube:
-    includeCss: TRUE
-    includeJavascript: TRUE
+    includeCss: true
+    includeJavascript: true
     imgResultion: maxresdefault
     maximumWidth: 1920
-    wrapper: FALSE # CSS Class for a wrapper (e.g. 'container')
+    wrapper: false # CSS Class for a wrapper (e.g. 'container')
     embed:
       class: 'embed-youtube'
       video: 'https://www.youtube.com/embed/'

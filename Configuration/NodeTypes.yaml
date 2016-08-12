@@ -3,7 +3,7 @@
 #
 'Jonnitto.PrettyEmbedYoutube:YouTube':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos:Content': true
   ui:
     label: i18n
     icon: icon-youtube
@@ -20,7 +20,7 @@
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: i18n
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: image
           position: 10
@@ -29,7 +29,7 @@
       defaultValue: video
       ui:
         label: i18n
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: settings
           position: 10
@@ -45,14 +45,14 @@
       defaultValue: ''
       ui:
         label: i18n
-        reloadIfChanged: TRUE
-        inlineEditable: FALSE
+        reloadIfChanged: true
+        inlineEditable: false
         inspector:
           group: settings
           position: 20
     lightbox:
       type: boolean
-      defaultValue: FALSE
+      defaultValue: false
       ui:
         label: i18n
         inspector:
@@ -60,7 +60,7 @@
           position: 30
     showInfo:
       type: boolean
-      defaultValue: TRUE
+      defaultValue: true
       ui:
         label: i18n
         inspector:
@@ -68,7 +68,7 @@
           position: 40
     showControls:
       type: boolean
-      defaultValue: TRUE
+      defaultValue: true
       ui:
         label: i18n
         inspector:
@@ -97,7 +97,7 @@
           position: 80
     allowFullScreen:
       type: boolean
-      defaultValue: TRUE
+      defaultValue: true
       ui:
         label: i18n
         inspector:
