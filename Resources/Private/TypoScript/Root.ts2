@@ -10,7 +10,7 @@ prototype(YT:ImageUri) < prototype(ImageUri) {
 prototype(YT:ImageSrc) < prototype(Fusion:Array) {
 	youtubeImage = ${'//img.youtube.com/vi/' + q(node).property('videoID') + '/' + configuration.imgResultion + '.jpg'}
 	youtubeImage.@if.hasNoPicture = ${q(node).property('customPreviewImage') ? false : true}
-	customPreviewImage = Youtube:ImageUri
+	customPreviewImage = YT:ImageUri
 }
 
 prototype(YT:ImageSrcRetina) < prototype(YT:ImageUri) {
