@@ -2,7 +2,7 @@
 	var html = document.documentElement;
 	var $popup = false;
 	var base = 'jonnitto-prettyembed-popup';
-	var html = '<div class="' + base + '-holder">' +
+	var markup = '<div class="' + base + '-holder">' +
 								'<iframe class="' + base + '-iframe" src="%src%" frameborder="0"%fs%></iframe>' +
 							'</div>';
 	var popup = document.createElement('div');
@@ -34,7 +34,7 @@
 
 		if (embed) {
 			event.preventDefault();
-			$popup.innerHTML = html.replace('%src%', embed).replace('%fs%', fullscreen);
+			$popup.innerHTML = markup.replace('%src%', embed).replace('%fs%', fullscreen);
 			setTimeout(function() {
 				document.body.className += ' jonnitto-prettyembed-popup-visible';
 			}, 100);
