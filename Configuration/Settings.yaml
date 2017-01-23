@@ -1,12 +1,3 @@
-TYPO3:
-  Neos:
-    typoScript:
-      autoInclude:
-        'Jonnitto.PrettyEmbedYoutube': true
-    userInterface:
-      translation:
-        autoInclude:
-          'Jonnitto.PrettyEmbedYoutube': ['NodeTypes/*']
 
 Jonnitto:
   PrettyEmbedYoutube:
@@ -14,12 +5,22 @@ Jonnitto:
     includeJavascript: true
     imgResultion: maxresdefault
     maximumWidth: 1920
-    wrapper: false # CSS Class for a wrapper (e.g. 'container')
+    wrapper: false
     embed:
-      class: 'embed-youtube'
+      class: embed-youtube
       video: 'https://www.youtube.com/embed/'
       playlist: 'https://www.youtube.com/embed/videoseries?list='
     lightbox:
-      class: 'popup-youtube'
+      class: popup-youtube
       video: 'https://www.youtube.com/watch?v='
       playlist: 'https://www.youtube.com/playlist?list='
+Neos:
+  Neos:
+    typoScript:
+      autoInclude:
+        Jonnitto.PrettyEmbedYoutube: true
+    userInterface:
+      translation:
+        autoInclude:
+          Jonnitto.PrettyEmbedYoutube:
+            - 'NodeTypes/*'
