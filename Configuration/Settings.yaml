@@ -16,11 +16,11 @@ Jonnitto:
       playlist: 'https://www.youtube.com/playlist?list='
 Neos:
   Neos:
-    typoScript:
-      autoInclude:
-        Jonnitto.PrettyEmbedYoutube: true
     userInterface:
       translation:
         autoInclude:
           Jonnitto.PrettyEmbedYoutube:
             - 'NodeTypes/*'
+    fusion:
+      autoInclude:
+        Jonnitto.PrettyEmbedYoutube: true
