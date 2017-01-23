@@ -1,5 +1,2 @@
-namespace: Fusion = Neos.Fusion
-namespace: YT = Jonnitto.PrettyEmbedYoutube
-
-include: Prototypes/**/*.ts2
-include: NodeTypes/**/*.ts2
+include: Prototypes/**/*
+include: NodeTypes/**/*

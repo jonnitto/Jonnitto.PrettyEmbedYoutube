@@ -1,7 +1,6 @@
 ##
 # A "Youtube" content element
 #
-
 'Jonnitto.PrettyEmbedYoutube:YouTube':
   superTypes:
     'Neos.Neos:Content': true

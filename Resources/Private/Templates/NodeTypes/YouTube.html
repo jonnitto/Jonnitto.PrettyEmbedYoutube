@@ -1,26 +1,26 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 <f:if condition="{videoID}">
-	<f:then>
-		<f:if condition="{isPlaylistANDnoImage}">
-			<f:then>
-				<f:render section="Alert" arguments="{textID:'isPlaylistANDnoImage'}"/>
-			</f:then>
-			<f:else>
-				<f:if condition="{wrapper}"><div class="{wrapper}"></f:if>
-					<{tagName}{attributes -> f:format.raw()}>
-						{content -> f:format.raw()}
-					</{tagName}>
-				<f:if condition="{wrapper}"></div></f:if>
-			</f:else>
-		</f:if>
-	</f:then>
-	<f:else>
-		<f:render section="Alert" arguments="{textID:'noVideoID'}"/>
-	</f:else>
+    <f:then>
+        <f:if condition="{isPlaylistANDnoImage}">
+            <f:then>
+                <f:render section="Alert" arguments="{textID:'isPlaylistANDnoImage'}"/>
+            </f:then>
+            <f:else>
+                <f:if condition="{wrapper}"><div class="{wrapper}"></f:if>
+                    <{tagName}{attributes -> f:format.raw()}>
+                        {content -> f:format.raw()}
+                    </{tagName}>
+                <f:if condition="{wrapper}"></div></f:if>
+            </f:else>
+        </f:if>
+    </f:then>
+    <f:else>
+        <f:render section="Alert" arguments="{textID:'noVideoID'}"/>
+    </f:else>
 </f:if>
 
 <f:section name="Alert">
-		<f:if condition="{neos:rendering.inBackend()}">
-			<p style="background:#d9534f;color:#fff;border:1px solid #d43f3a;padding: 10% 12px;text-align:center;cursor:pointer;font-size:20px;"><f:translate package="Jonnitto.PrettyEmbedYoutube" id="{textID}" /></p>
-		</f:if>
+        <f:if condition="{neos:rendering.inBackend()}">
+            <p style="background:#d9534f;color:#fff;border:1px solid #d43f3a;padding: 10% 12px;text-align:center;cursor:pointer;font-size:20px;"><f:translate package="Jonnitto.PrettyEmbedYoutube" id="{textID}" /></p>
+        </f:if>
 </f:section>

@@ -1,7 +1,0 @@
-prototype(YT:ImageSrc) < prototype(Fusion:Array) {
-	@context.videoID = YT:VideoID
-
-	youtubeImage = ${'//img.youtube.com/vi/' + videoID + '/' + configuration.imgResultion + '.jpg'}
-	youtubeImage.@if.hasNoPicture = ${q(node).property('customPreviewImage') ? false : true}
-	customPreviewImage = YT:ImageUri
-}

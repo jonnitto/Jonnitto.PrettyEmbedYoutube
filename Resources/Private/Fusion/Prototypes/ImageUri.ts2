@@ -1,5 +1,0 @@
-prototype(YT:ImageUri) < prototype(ImageUri) {
-	asset = ${q(node).property('customPreviewImage')}
-	maximumWidth = ${maximumWidth}
-	@if.hasPicture = ${q(node).property('customPreviewImage') ? true : false}
-}

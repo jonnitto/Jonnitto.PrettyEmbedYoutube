@@ -1,11 +1,10 @@
-
 Jonnitto:
   PrettyEmbedYoutube:
     includeCss: true
     includeJavascript: true
     imgResultion: maxresdefault
     maximumWidth: 1920
-    wrapper: false
+    wrapper: false # CSS Class for a wrapper (e.g. 'container')
     embed:
       class: embed-youtube
       video: 'https://www.youtube.com/embed/'
@@ -14,13 +13,14 @@ Jonnitto:
       class: popup-youtube
       video: 'https://www.youtube.com/watch?v='
       playlist: 'https://www.youtube.com/playlist?list='
+
 Neos:
   Neos:
+    fusion:
+      autoInclude:
+        Jonnitto.PrettyEmbedYoutube: true
     userInterface:
       translation:
         autoInclude:
           Jonnitto.PrettyEmbedYoutube:
             - 'NodeTypes/*'
-    fusion:
-      autoInclude:
-        Jonnitto.PrettyEmbedYoutube: true
