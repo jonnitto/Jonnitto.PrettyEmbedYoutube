@@ -1,5 +1,0 @@
-namespace: Fusion = TYPO3.TypoScript
-namespace: YT = Jonnitto.PrettyEmbedYoutube
-
-include: Prototypes/**/*.ts2
-include: NodeTypes/**/*.ts2

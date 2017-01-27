@@ -9,6 +9,14 @@ charset = utf-8
 trim_trailing-whitespace = true
 indent_style = tab
 
+[*.php]
+indent_style = space
+indent_size = 4
+
+[*.fusion]
+indent_style = space
+indent_size = 4
+
 [*.{json,jscsrc}]
 indent_style = space
 indent_size = 4

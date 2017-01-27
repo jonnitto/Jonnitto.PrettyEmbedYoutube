@@ -1,0 +1,3 @@
+prototype(Jonnitto.PrettyEmbedYoutube:ImageSrcRetina) < prototype(Jonnitto.PrettyEmbedYoutube:ImageUri) {
+    maximumWidth = ${maximumWidth * 2}
+}

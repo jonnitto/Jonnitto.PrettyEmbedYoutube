@@ -1,3 +1,0 @@
-prototype(YT:ImageSrcRetina) < prototype(YT:ImageUri) {
-	maximumWidth = ${maximumWidth * 2}
-}

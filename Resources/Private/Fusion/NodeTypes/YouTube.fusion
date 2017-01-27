@@ -1,0 +1,44 @@
+prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Content) {
+    configuration = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube')}
+
+    @context {
+        configuration = ${this.configuration}
+        type = ${q(node).property('type') || 'video'}
+        maximumWidth = ${this.maximumWidth || this.configuration.maximumWidth}
+        videoID = Jonnitto.PrettyEmbedYoutube:VideoID
+    }
+
+    isPlaylistANDnoImage = ${type == 'playlist' && q(node).property('customPreviewImage') == null}
+    wrapper = ${this.configuration.wrapper || false}
+    tagName = ${node.context.live ? 'a' : 'div'}
+
+    attributes {
+        class = Neos.Fusion:RawArray {
+            @process.nodeType >
+            nodeType = 'jonnitto-prettyembedyoutube-youtube'
+            lightbox = ${q(node).property('lightbox') ? configuration.lightbox.class : configuration.embed.class}
+        }
+        data-fs = ${q(node).property('allowFullScreen') ? 'true' : 'false'}
+        data-embed = Neos.Fusion:Array {
+            src            = ${configuration.embed[type]}
+            videoID        = ${videoID}
+            var            = ${type == 'video' ? '?' : '&'}
+            autoplay       = 'autoplay=1'
+            showinfo       = ${q(node).property('showInfo') ? '' : '&showinfo=0'}
+            showControls   = ${q(node).property('showControls') ? '' : '&controls=0'}
+            loop           = ${q(node).property('loop') ? '&loop=1' : ''}
+            closedCaptions = ${q(node).property('closedCaptions') ? '&cc_load_policy=1' : ''}
+            showRelated    = ${q(node).property('showRelated') ? '&rel=1' : '&rel=0'}
+        }
+        href = ${configuration.lightbox[type] + videoID}
+        target = '_blank'
+    }
+
+    content = Neos.Fusion:Tag {
+        tagName = 'img'
+        attributes {
+            src = Jonnitto.PrettyEmbedYoutube:ImageSrc
+            data-src-retina = Jonnitto.PrettyEmbedYoutube:ImageSrcRetina
+        }
+    }
+}

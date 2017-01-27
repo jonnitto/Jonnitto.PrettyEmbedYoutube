@@ -10,7 +10,7 @@ Prettier embeds for your YouTube videos and playlists in [Neos CMS](https://www.
 Contibutors
 ----------
 Thanks goes out to the following contibutors:
-* https://github.com/SoulCover
+* https://github.com/ComiR
 
 License
 -------
