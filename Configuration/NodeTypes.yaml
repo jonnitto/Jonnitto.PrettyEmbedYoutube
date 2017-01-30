@@ -18,7 +18,7 @@
           position: 30
   properties:
     customPreviewImage:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: i18n
         reloadIfChanged: true
