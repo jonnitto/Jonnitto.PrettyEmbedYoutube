@@ -16,7 +16,7 @@ License
 -------
 The MIT License (MIT)
 
-Copyright (c) 2016 Jon Uhlmann - me@jonnitto.ch
+Copyright (c) 2017 Jon Uhlmann - me@jonnitto.ch
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
