@@ -6,7 +6,7 @@
 				<source>You need to define a custom preview image.</source>
 			</trans-unit>
 			<trans-unit id="noVideoID" xml:space="preserve">
-				<source>Please set a YouTube ID</source>
+				<source>Please add a YouTube ID or url in the inspector</source>
 			</trans-unit>
 		</body>
 	</file>

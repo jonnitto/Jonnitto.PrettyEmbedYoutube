@@ -16,10 +16,10 @@ Jonnitto:
     maximumWidth: 1920
     wrapper: false # CSS Class for a wrapper (e.g. 'container')
     embed:
-      class: 'embed-youtube'
+      class: embed-youtube
       video: 'https://www.youtube.com/embed/'
       playlist: 'https://www.youtube.com/embed/videoseries?list='
     lightbox:
-      class: 'popup-youtube'
+      class: popup-youtube
       video: 'https://www.youtube.com/watch?v='
       playlist: 'https://www.youtube.com/playlist?list='

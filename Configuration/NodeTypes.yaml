@@ -1,12 +1,10 @@
-##
-# A "Youtube" content element
-#
 'Jonnitto.PrettyEmbedYoutube:YouTube':
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
     label: i18n
     icon: icon-youtube
+    position: 900
     inspector:
       groups:
         settings:
