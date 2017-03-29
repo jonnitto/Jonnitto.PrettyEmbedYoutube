@@ -67,7 +67,9 @@
 		}
 	};
 
-	Gator(window).on('load', prettyEmbedYoutubeInit);
+	Gator(window).on('load', function() {
+		prettyEmbedYoutubeInit();
+	});
 
 	// Attach the events to the html tag (because of the Google Tag Manager)
 	Gator(document.documentElement).on('click', 'a.embed-youtube', openVideo);
