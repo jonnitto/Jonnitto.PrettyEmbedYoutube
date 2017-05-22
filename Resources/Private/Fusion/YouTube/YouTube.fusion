@@ -1,4 +1,5 @@
 prototype(YT:YouTube) < prototype(Content) {
+	templatePath = 'resource://Jonnitto.PrettyEmbedYoutube/Private/Fusion/YouTube/YouTube.html'
 	configuration = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube')}
 
 	@context {
