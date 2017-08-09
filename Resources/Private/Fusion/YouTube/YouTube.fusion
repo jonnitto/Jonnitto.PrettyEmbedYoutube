@@ -38,7 +38,7 @@ prototype(YT:YouTube) < prototype(Content) {
 	content = Fusion:Tag {
 		tagName = 'img'
 		attributes {
-			class = ${q(node).property('customPreviewImage') ? 'embed-youtube-costum-preview' : 'embed-youtube-youtube-preview'
+			class = ${q(node).property('customPreviewImage') ? 'embed-youtube-costum-preview' : 'embed-youtube-youtube-preview'}
 			src = YT:ImageSrc
 			data-src-retina = YT:ImageSrcRetina
 		}
