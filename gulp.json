@@ -1,0 +1,30 @@
+{
+    "info": {
+        "description": "Jonnitto.PrettyEmbedYoutube",
+        "author": "Jon Uhlmann",
+        "homepage": "https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube"
+    },
+    "root": {
+        "base": "./Resources",
+        "src": "Private",
+        "dest": "Public"
+    },
+    "browserSync": {
+        "enable": false
+    },
+    "tasks": {
+        "scssLint": false,
+        "jsLint": false,
+        "fonts": false,
+        "images": false,
+        "static": false,
+        "svgSprite": false,
+        "js": {
+            "file": "{Main.js,Backend.js}",
+            "dest": ""
+        },
+        "css": {
+            "dest": ""
+        }
+    }
+}

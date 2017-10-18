@@ -3,13 +3,7 @@
     "type": "neos-plugin",
     "license": "MIT",
     "description": "Prettier embeds for your YouTube videos and playlists in Neos CMS - with nice options like high-res preview images and advanced customization of embed options. Embed and lightbox functions use Gator for event delegation.",
-    "keywords": [
-        "flow",
-        "neos",
-        "video",
-        "youtube",
-        "contentelement"
-    ],
+    "keywords": ["flow", "neos", "video", "youtube", "contentelement"],
     "authors": [
         {
             "name": "Jon Uhlmann",
@@ -19,7 +13,8 @@
         }
     ],
     "require": {
-        "neos/neos": "~3.0 || dev-master"
+        "neos/neos": "~3.0 || dev-master",
+        "carbon/image": "^1.0"
     },
     "autoload": {
         "psr-4": {

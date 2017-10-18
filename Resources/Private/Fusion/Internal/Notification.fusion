@@ -1,0 +1,9 @@
+prototype(YT:Notification) < prototype(Fusion:Tag) {
+    key = null
+
+    tagName = 'p'
+    attributes.style = 'background:#d9534f;color:#fff;border:1px solid #d43f3a;padding:10% 12px;text-align:center;cursor:pointer;font-size:20px;'
+    content = ${Translation.translate(this.key, null, [], null, 'Jonnitto.PrettyEmbedYoutube')}
+
+    @if.render = ${this.content && node.context.inBackend ? true : false}
+}

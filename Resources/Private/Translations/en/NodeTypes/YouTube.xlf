@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" datatype="plaintext">
-		<body>
-			<trans-unit id="ui.label" xml:space="preserve">
-				<source>YouTube</source>
-			</trans-unit>
-			<trans-unit id="groups.settings" xml:space="preserve">
-				<source>Settings</source>
-			</trans-unit>
-			<trans-unit id="groups.image" xml:space="preserve">
-				<source>Image</source>
-			</trans-unit>
-			<trans-unit id="properties.customPreviewImage" xml:space="preserve">
-				<source>Custom Preview Image</source>
-			</trans-unit>
-			<trans-unit id="properties.type" xml:space="preserve">
-				<source>Type of ID</source>
-			</trans-unit>
-			<trans-unit id="properties.type.selectBoxEditor.values.video" xml:space="preserve">
-				<source>Video</source>
-			</trans-unit>
-			<trans-unit id="properties.type.selectBoxEditor.values.playlist" xml:space="preserve">
-				<source>Playlist</source>
-			</trans-unit>
-			<trans-unit id="properties.videoID" xml:space="preserve">
-				<source>YouTube ID</source>
-			</trans-unit>
-			<trans-unit id="properties.lightbox" xml:space="preserve">
-				<source>Open Video in a lightbox</source>
-			</trans-unit>
-			<trans-unit id="properties.showInfo" xml:space="preserve">
-				<source>Display video information (top bar)</source>
-			</trans-unit>
-			<trans-unit id="properties.showControls" xml:space="preserve">
-				<source>Display YouTube player controls</source>
-			</trans-unit>
-			<trans-unit id="properties.loop" xml:space="preserve">
-				<source>Play video in a loop</source>
-			</trans-unit>
-			<trans-unit id="properties.closedCaptions" xml:space="preserve">
-				<source>Display closed captions (if available)</source>
-			</trans-unit>
-			<trans-unit id="properties.showRelated" xml:space="preserve">
-				<source>Display related videos on video end</source>
-			</trans-unit>
-			<trans-unit id="properties.allowFullScreen" xml:space="preserve">
-				<source>Allow fullscreen mode</source>
-			</trans-unit>
-		</body>
-	</file>
+    <file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>YouTube</source>
+            </trans-unit>
+            <trans-unit id="groups.settings" xml:space="preserve">
+                <source>Settings</source>
+            </trans-unit>
+            <trans-unit id="groups.image" xml:space="preserve">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="properties.customPreviewImage" xml:space="preserve">
+                <source>Custom Preview Image</source>
+            </trans-unit>
+            <trans-unit id="properties.type" xml:space="preserve">
+                <source>Type of ID</source>
+            </trans-unit>
+            <trans-unit id="properties.type.selectBoxEditor.values.video" xml:space="preserve">
+                <source>Video</source>
+            </trans-unit>
+            <trans-unit id="properties.type.selectBoxEditor.values.playlist" xml:space="preserve">
+                <source>Playlist</source>
+            </trans-unit>
+            <trans-unit id="properties.videoID" xml:space="preserve">
+                <source>YouTube ID</source>
+            </trans-unit>
+            <trans-unit id="properties.lightbox" xml:space="preserve">
+                <source>Open Video in a lightbox</source>
+            </trans-unit>
+            <trans-unit id="properties.showInfo" xml:space="preserve">
+                <source>Display video information (top bar)</source>
+            </trans-unit>
+            <trans-unit id="properties.showControls" xml:space="preserve">
+                <source>Display YouTube player controls</source>
+            </trans-unit>
+            <trans-unit id="properties.loop" xml:space="preserve">
+                <source>Play video in a loop</source>
+            </trans-unit>
+            <trans-unit id="properties.closedCaptions" xml:space="preserve">
+                <source>Display closed captions (if available)</source>
+            </trans-unit>
+            <trans-unit id="properties.showRelated" xml:space="preserve">
+                <source>Display related videos on video end</source>
+            </trans-unit>
+            <trans-unit id="properties.allowFullScreen" xml:space="preserve">
+                <source>Allow fullscreen mode</source>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

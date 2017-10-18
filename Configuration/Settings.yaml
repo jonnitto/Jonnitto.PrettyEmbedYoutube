@@ -4,7 +4,7 @@ Jonnitto:
     includeCss: true
     includeJavascript: true
     imgResultion: maxresdefault
-    maximumWidth: 1920
+    maximumWidth: 1280
     wrapper: false
     embed:
       class: embed-youtube

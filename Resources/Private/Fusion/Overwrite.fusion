@@ -1,0 +1,23 @@
+prototype(Page) {
+    head.prettyEmbedYoutube = Fusion:Tag {
+        tagName = 'link'
+        attributes {
+            rel = 'stylesheet'
+            href = Fusion:ResourceUri {
+                path = 'resource://Jonnitto.PrettyEmbedYoutube/Public/Main.css'
+            }
+        }
+        @if.hasVideoOrIsBackendAndActive = ${(q(node).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() || node.context.inBackend) && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeCss')}
+    }
+    body.javascripts.prettyEmbedYoutube = Fusion:Tag {
+        tagName = 'script'
+        attributes {
+            async = true
+            src = Fusion:ResourceUri {
+                path = ${'resource://Jonnitto.PrettyEmbedYoutube/Public/' + (node.context.live ? 'Main' : 'Backend') + '.js'}
+            }
+        }
+        @position = 'end'
+        @if.hasVideoAndIsLiveAndActive = ${(q(node).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() || node.context.inBackend) && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeJavascript')}
+    }
+}

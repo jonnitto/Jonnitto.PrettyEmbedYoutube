@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" datatype="plaintext" target-language="de">
-		<body>
-			<trans-unit id="ui.label" xml:space="preserve">
-				<source>YouTube</source>
-				<target>YouTube</target>
-			</trans-unit>
-			<trans-unit id="groups.settings" xml:space="preserve">
-				<source>Settings</source>
-				<target>Einstellungen</target>
-			</trans-unit>
-			<trans-unit id="groups.image" xml:space="preserve">
-				<source>Image</source>
-				<target>Bild</target>
-			</trans-unit>
-			<trans-unit id="properties.customPreviewImage" xml:space="preserve">
-				<source>Custom Preview Image</source>
-				<target>Eigenes Vorschaubild</target>
-			</trans-unit>
-			<trans-unit id="properties.type" xml:space="preserve">
-				<source>Type of ID</source>
-				<target>Art der ID</target>
-			</trans-unit>
-			<trans-unit id="properties.type.selectBoxEditor.values.video" xml:space="preserve">
-				<source>Video</source>
-				<target>Video</target>
-			</trans-unit>
-			<trans-unit id="properties.type.selectBoxEditor.values.playlist" xml:space="preserve">
-				<source>Playlist</source>
-				<target>Playlist</target>
-			</trans-unit>
-			<trans-unit id="properties.videoID" xml:space="preserve">
-				<source>YouTube ID</source>
-				<target>YouTube ID</target>
-			</trans-unit>
-			<trans-unit id="properties.lightbox" xml:space="preserve">
-				<source>Open Video in a lightbox</source>
-				<target>Öffne Video in einer Lightbox</target>
-			</trans-unit>
-			<trans-unit id="properties.showInfo" xml:space="preserve">
-				<source>Display video information (top bar)</source>
-				<target>Zeige Videoinformation (Balken oben)</target>
-			</trans-unit>
-			<trans-unit id="properties.showControls" xml:space="preserve">
-				<source>Display YouTube player controls</source>
-				<target>Zeige Steuerelemente des Players</target>
-			</trans-unit>
-			<trans-unit id="properties.loop" xml:space="preserve">
-				<source>Play video in a loop</source>
-				<target>Spiele das Video in einer Schleife</target>
-			</trans-unit>
-			<trans-unit id="properties.closedCaptions" xml:space="preserve">
-				<source>Display closed captions (if available)</source>
-				<target>Zeige Untertitel (sofern verfügbar)</target>
-			</trans-unit>
-			<trans-unit id="properties.showRelated" xml:space="preserve">
-				<source>Display related videos on video end</source>
-				<target>Zeige ähnliche Videos am Videoende</target>
-			</trans-unit>
-			<trans-unit id="properties.allowFullScreen" xml:space="preserve">
-				<source>Allow fullscreen mode</source>
-				<target>Erlaube Vollbildmodus</target>
-			</trans-unit>
-		</body>
-	</file>
+    <file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>YouTube</source>
+                <target>YouTube</target>
+            </trans-unit>
+            <trans-unit id="groups.settings" xml:space="preserve">
+                <source>Settings</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="groups.image" xml:space="preserve">
+                <source>Image</source>
+                <target>Bild</target>
+            </trans-unit>
+            <trans-unit id="properties.customPreviewImage" xml:space="preserve">
+                <source>Custom Preview Image</source>
+                <target>Eigenes Vorschaubild</target>
+            </trans-unit>
+            <trans-unit id="properties.type" xml:space="preserve">
+                <source>Type of ID</source>
+                <target>Art der ID</target>
+            </trans-unit>
+            <trans-unit id="properties.type.selectBoxEditor.values.video" xml:space="preserve">
+                <source>Video</source>
+                <target>Video</target>
+            </trans-unit>
+            <trans-unit id="properties.type.selectBoxEditor.values.playlist" xml:space="preserve">
+                <source>Playlist</source>
+                <target>Playlist</target>
+            </trans-unit>
+            <trans-unit id="properties.videoID" xml:space="preserve">
+                <source>YouTube ID</source>
+                <target>YouTube ID</target>
+            </trans-unit>
+            <trans-unit id="properties.lightbox" xml:space="preserve">
+                <source>Open Video in a lightbox</source>
+                <target>Öffne Video in einer Lightbox</target>
+            </trans-unit>
+            <trans-unit id="properties.showInfo" xml:space="preserve">
+                <source>Display video information (top bar)</source>
+                <target>Zeige Videoinformation (Balken oben)</target>
+            </trans-unit>
+            <trans-unit id="properties.showControls" xml:space="preserve">
+                <source>Display YouTube player controls</source>
+                <target>Zeige Steuerelemente des Players</target>
+            </trans-unit>
+            <trans-unit id="properties.loop" xml:space="preserve">
+                <source>Play video in a loop</source>
+                <target>Spiele das Video in einer Schleife</target>
+            </trans-unit>
+            <trans-unit id="properties.closedCaptions" xml:space="preserve">
+                <source>Display closed captions (if available)</source>
+                <target>Zeige Untertitel (sofern verfügbar)</target>
+            </trans-unit>
+            <trans-unit id="properties.showRelated" xml:space="preserve">
+                <source>Display related videos on video end</source>
+                <target>Zeige ähnliche Videos am Videoende</target>
+            </trans-unit>
+            <trans-unit id="properties.allowFullScreen" xml:space="preserve">
+                <source>Allow fullscreen mode</source>
+                <target>Erlaube Vollbildmodus</target>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>
