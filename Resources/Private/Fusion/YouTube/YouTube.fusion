@@ -1,4 +1,4 @@
-prototype(YT:YouTube) < prototype(Fusion:Tag) {
+prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Fusion:Tag) {
     configuration = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube')}
     customPreviewImage = ${q(node).property('customPreviewImage')}
     type = ${q(node).property('type') ? q(node).property('type') : 'video'}
@@ -11,7 +11,7 @@ prototype(YT:YouTube) < prototype(Fusion:Tag) {
     showRelated = ${q(node).property('showRelated')}
 
     videoID = ${q(node).property('videoID')}
-    videoID.@process.getIDFromUrl = YT:GetIDFromUrl
+    videoID.@process.getIDFromUrl = Jonnitto.PrettyEmbedYoutube:GetIDFromUrl
 
     @context {
         configuration = ${this.configuration}
@@ -28,16 +28,16 @@ prototype(YT:YouTube) < prototype(Fusion:Tag) {
     }
 
     @process {
-        hasNoVideoID = YT:Notification {
+        hasNoVideoID = Jonnitto.PrettyEmbedYoutube:Notification {
             key = 'noVideoID'
             @if.output = ${videoID ? false : true}
         }
-        isPlaylistANDnoImage = YT:Notification {
+        isPlaylistANDnoImage = Jonnitto.PrettyEmbedYoutube:Notification {
             key = 'isPlaylistANDnoImage'
             @if.output = ${videoID && type == 'playlist' && !customPreviewImage ? true : false}
         }
 
-        wrapper = Fusion:Tag {
+        wrapper = Neos.Fusion:Tag {
             @if.render = ${configuration.wrapper}
             attributes.class = ${configuration.wrapper}
             content = ${value}
@@ -47,12 +47,12 @@ prototype(YT:YouTube) < prototype(Fusion:Tag) {
     tagName = ${node.context.live ? 'a' : 'div'}
 
     attributes {
-        class = Fusion:RawArray {
+        class = Neos.Fusion:RawArray {
             nodeType = 'jonnitto-prettyembedyoutube'
             lightbox = ${lightbox ? configuration.lightbox.class : configuration.embed.class}
         }
         data-fs = ${allowFullScreen ? 'true' : 'false'}
-        data-embed = Fusion:Array {
+        data-embed = Neos.Fusion:Array {
             src            = ${configuration.embed[type]}
             videoID        = ${videoID}
             var            = ${type == 'video' ? '?' : '&'}
@@ -67,7 +67,7 @@ prototype(YT:YouTube) < prototype(Fusion:Tag) {
         target = '_blank'
     }
 
-    content = Fusion:Case {
+    content = Neos.Fusion:Case {
         hasCustomPreviewImage {
             condition = ${customPreviewImage ? true : false}
             renderer = Carbon.Image:Tag {
@@ -78,7 +78,7 @@ prototype(YT:YouTube) < prototype(Fusion:Tag) {
         }
         default {
             condition = true
-            renderer = Fusion:Tag {
+            renderer = Neos.Fusion:Tag {
                 tagName = 'img'
                 attributes {
                     class = 'embed-youtube-youtube-preview'

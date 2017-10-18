@@ -1,4 +1,4 @@
-prototype(YT:Notification) < prototype(Fusion:Tag) {
+prototype(Jonnitto.PrettyEmbedYoutube:Notification) < prototype(Neos.Fusion:Tag) {
     key = null
 
     tagName = 'p'
