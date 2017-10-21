@@ -10,7 +10,7 @@ Prettier embeds for your YouTube videos and playlists in [Neos CMS](https://www.
 | Version | Neos   |
 |---------|--------|
 | 2.*     | 2.*    |
-| 3.*     | 3.*    |
+| 4.*     | 3.*    |
 
 Installation
 ------------
