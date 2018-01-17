@@ -7,7 +7,10 @@ prototype(Neos.Neos:Page) {
                 path = 'resource://Jonnitto.PrettyEmbedYoutube/Public/Main.css'
             }
         }
-        @if.hasVideoOrIsBackendAndActive = ${(q(node).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() || node.context.inBackend) && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeCss')}
+        @if.render = Carbon.Condition:Case {
+            enabled = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeCss')}
+            content.nodeType = 'Jonnitto.PrettyEmbedYoutube:YouTube'
+        }
     }
     body.javascripts.prettyEmbedYoutube = Neos.Fusion:Tag {
         tagName = 'script'
@@ -18,6 +21,9 @@ prototype(Neos.Neos:Page) {
             }
         }
         @position = 'end'
-        @if.hasVideoAndIsLiveAndActive = ${(q(node).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof Jonnitto.PrettyEmbedYoutube:YouTube]').is() || node.context.inBackend) && Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeJavascript')}
+        @if.render = Carbon.Condition:Case {
+            enabled = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.includeJavascript')}
+            content.nodeType = 'Jonnitto.PrettyEmbedYoutube:YouTube'
+        }
     }
 }
