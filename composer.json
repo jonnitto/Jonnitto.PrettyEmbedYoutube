@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "neos/neos": "~3.0 || ~4.0 || dev-master",
+        "neos/neos": "~3.0 || ~4.0",
         "carbon/condition": "^1.0",
         "carbon/notification": "^1.0",
         "carbon/image": "^1.0"
