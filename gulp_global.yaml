@@ -1,0 +1,32 @@
+info:
+  author: 'Jon Uhlmann'
+  homepage: 'https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube'
+  package: 'Jonnitto.PrettyEmbedYoutube'
+
+global:
+  mergeConfigFromPackages: false
+  notifications: true
+  browserSync:
+    enable: false
+
+root:
+  base: "./"
+
+tasks:
+  scssLint: false
+  jsLint: false
+  fonts: false
+  images: false
+  static: false
+  svgSprite: false
+  js:
+    file:
+      - Main.js
+      - Backend.js
+    dest: ""
+  css:
+    dest: ""
+  pipeline:
+    - js
+    - css
+    - compress

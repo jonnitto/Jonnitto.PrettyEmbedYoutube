@@ -31,7 +31,8 @@ function initVideo(link) {
 
         element.setAttribute("data-img", imageSrc);
         element.classList.add("play");
-        element.style.paddingTop = parseInt(height) / parseInt(width) * 100 + "%";
+        element.style.paddingTop =
+            parseInt(height) / parseInt(width) * 100 + "%";
         element.innerHTML = `<iframe src="${embed}" width="${width}" height="${height}" ${fullscreen}frameborder="0"></iframe>`;
     }
 }

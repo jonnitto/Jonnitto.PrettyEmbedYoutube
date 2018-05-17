@@ -6,10 +6,13 @@ function NeosEvent(events, callback) {
     });
 }
 
-NeosEvent(['NodeCreated','NodeSelected'], event => {
-    if (event.detail.element.attributes['data-node-_node-type']['value'] == 'Jonnitto.PrettyEmbedYoutube:YouTube') {
+NeosEvent(["NodeCreated", "NodeSelected"], event => {
+    if (
+        event.detail.element.attributes["data-node-_node-type"]["value"] ==
+        "Jonnitto.PrettyEmbedYoutube:YouTube"
+    ) {
         prettyEmbedYoutubeFixPreview();
     }
 });
 
-NeosEvent(['PageLoaded','ContentModuleLoaded'], prettyEmbedYoutubeFixPreview);
+NeosEvent(["PageLoaded", "ContentModuleLoaded"], prettyEmbedYoutubeFixPreview);
