@@ -1,7 +1,11 @@
+[![Development dependency status](https://david-dm.org/jonnitto/Jonnitto.PrettyEmbedYoutube/dev-status.svg)](https://david-dm.org/jonnitto/Jonnitto.PrettyEmbedYoutube?type=dev)
+[![Build status](https://api.travis-ci.com/jonnitto/Jonnitto.PrettyEmbedYoutube.svg)](https://travis-ci.com/jonnitto/Jonnitto.PrettyEmbedYoutube)
 [![Latest Stable Version](https://poser.pugx.org/jonnitto/prettyembedyoutube/v/stable)](https://packagist.org/packages/jonnitto/prettyembedyoutube)
 [![Total Downloads](https://poser.pugx.org/jonnitto/prettyembedyoutube/downloads)](https://packagist.org/packages/jonnitto/prettyembedyoutube)
 [![License](https://poser.pugx.org/jonnitto/prettyembedyoutube/license)](https://packagist.org/packages/jonnitto/prettyembedyoutube)
 [![GitHub forks](https://img.shields.io/github/forks/jonnitto/Jonnitto.PrettyEmbedYoutube.svg?style=social&label=Fork)](https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube/fork)
+[![Support development](https://img.shields.io/badge/Donate-PayPal-yellow.svg)](https://www.paypal.me/Jonnitto/20eur)
+[![My wishlist on amazon](https://img.shields.io/badge/Wishlist-Amazon-yellow.svg)](https://www.amazon.de/hz/wishlist/ls/2WPGORAVYF39B?&sort=default)  
 [![GitHub stars](https://img.shields.io/github/stars/jonnitto/Jonnitto.PrettyEmbedYoutube.svg?style=social&label=Stars)](https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube/stargazers)
 [![GitHub watchers](https://img.shields.io/github/watchers/jonnitto/Jonnitto.PrettyEmbedYoutube.svg?style=social&label=Watch)](https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube/subscription)
 [![GitHub followers](https://img.shields.io/github/followers/jonnitto.svg?style=social&label=Follow)](https://github.com/jonnitto/followers)
@@ -32,11 +36,12 @@ composer require "jonnitto/prettyembedyoutube:^2.1" --no-update
 
 The `--no-update` command prevent the automatic update of the dependencies. After the package was added to your theme `composer.json`, go back to the root of the Neos installation and run `composer update`. Et voilà! Your desired package is now installed correctly.
 
-## Contibutors
+## Contributor
 
 Thanks goes out to the following contibutors:
 
-*   https://github.com/SoulCover
+*   [SoulCover](https://github.com/SoulCover)
+*   [dlubitz](https://github.com/dlubitz)
 
 ## License
 
