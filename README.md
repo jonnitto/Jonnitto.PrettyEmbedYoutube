@@ -40,8 +40,9 @@ The `--no-update` command prevent the automatic update of the dependencies. Afte
 
 Thanks goes out to the following contibutors:
 
-*   [SoulCover](https://github.com/SoulCover)
-*   [dlubitz](https://github.com/dlubitz)
+*   [Raffael Comi](https://github.com/ComiR)
+*   [Denny Lubitz](https://github.com/dlubitz)
+*   [Gerhard Boden](https://github.com/gerhard-boden)
 
 ## License
 
