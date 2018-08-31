@@ -1,4 +1,5 @@
 prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Fusion:Tag) {
+    contentElement = true
     configuration = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube')}
     customPreviewImage = ${q(node).property('customPreviewImage')}
     type = ${q(node).property('type') ? q(node).property('type') : 'video'}
@@ -11,25 +12,38 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Fusion:Tag) {
     showRelated = ${q(node).property('showRelated')}
     maximumWidth = null
     maxWidth = ${this.maximumWidth ? this.maximumWidth : this.configuration.maximumWidth}
-
     videoID = ${q(node).property('videoID')}
     videoID.@process.getIDFromUrl = Jonnitto.PrettyEmbedYoutube:GetIDFromUrl
 
-    @context.props = ${this}
+    @context {
+        contentElement = ${this.contentElement}
+        configuration = ${this.configuration}
+        customPreviewImage = ${this.customPreviewImage}
+        type = ${this.type}
+        lightbox = ${this.lightbox}
+        allowFullScreen = ${this.allowFullScreen}
+        showInfo = ${this.showInfo}
+        showControls = ${this.showControls}
+        loop = ${this.loop}
+        closedCaptions = ${this.closedCaptions}
+        showRelated = ${this.showRelated}
+        maxWidth = ${this.maxWidth}
+        videoID = ${this.videoID}
+    }
 
     @process {
         hasNoVideoID = Jonnitto.PrettyEmbedYoutube:Notification {
             key = 'noVideoID'
-            @if.output = ${props.videoID ? false : true}
+            @if.output = ${videoID ? false : true}
         }
         isPlaylistANDnoImage = Jonnitto.PrettyEmbedYoutube:Notification {
             key = 'isPlaylistANDnoImage'
-            @if.output = ${props.videoID && props.type == 'playlist' && !props.customPreviewImage ? true : false}
+            @if.output = ${videoID && type == 'playlist' && !customPreviewImage ? true : false}
         }
 
         wrapper = Neos.Fusion:Tag {
-            @if.render = ${props.configuration.wrapper}
-            attributes.class = ${props.configuration.wrapper}
+            @if.render = ${configuration.wrapper}
+            attributes.class = ${configuration.wrapper}
             content = ${value}
         }
     }
@@ -39,31 +53,31 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Fusion:Tag) {
     attributes {
         class = Neos.Fusion:RawArray {
             nodeType = 'jonnitto-prettyembedyoutube'
-            lightbox = ${props.lightbox ? props.configuration.lightbox.class : props.configuration.embed.class}
+            lightbox = ${lightbox ? configuration.lightbox.class : configuration.embed.class}
         }
-        data-fs = ${props.allowFullScreen ? 'true' : 'false'}
+        data-fs = ${allowFullScreen ? 'true' : 'false'}
         data-embed = Neos.Fusion:Array {
-            src            = ${props.configuration.embed[props.type]}
-            videoID        = ${props.videoID}
-            var            = ${props.type == 'video' ? '?' : '&'}
+            src            = ${configuration.embed[type]}
+            videoID        = ${videoID}
+            var            = ${type == 'video' ? '?' : '&'}
             autoplay       = 'autoplay=1'
-            showinfo       = ${props.showInfo ? '' : '&showinfo=0'}
-            showControls   = ${props.showControls ? '' : '&controls=0'}
-            loop           = ${props.loop ? '&loop=1' : ''}
-            closedCaptions = ${props.closedCaptions ? '&cc_load_policy=1' : ''}
-            showRelated    = ${props.showRelated ? '&rel=1' : '&rel=0'}
+            showinfo       = ${showInfo ? '' : '&showinfo=0'}
+            showControls   = ${showControls ? '' : '&controls=0'}
+            loop           = ${loop ? '&loop=1' : ''}
+            closedCaptions = ${closedCaptions ? '&cc_load_policy=1' : ''}
+            showRelated    = ${showRelated ? '&rel=1' : '&rel=0'}
         }
-        href = ${props.configuration.lightbox[props.type] + props.videoID}
+        href = ${configuration.lightbox[type] + videoID}
         target = '_blank'
     }
 
     content = Neos.Fusion:Case {
         hasCustomPreviewImage {
-            condition = ${props.customPreviewImage ? true : false}
+            condition = ${customPreviewImage ? true : false}
             renderer = Carbon.Image:Tag {
                 attributes.class = 'embed-youtube-costum-preview'
-                asset = ${props.customPreviewImage}
-                maximumWidth = ${props.maxWidth}
+                asset = ${customPreviewImage}
+                maximumWidth = ${maxWidth}
             }
         }
         default {
@@ -72,7 +86,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Fusion:Tag) {
                 tagName = 'img'
                 attributes {
                     class = 'embed-youtube-youtube-preview'
-                    src = ${'//img.youtube.com/vi/' + props.videoID + '/' + props.configuration.imgResultion + '.jpg'}
+                    src = ${'//img.youtube.com/vi/' + videoID + '/' + configuration.imgResultion + '.jpg'}
                 }
             }
         }
@@ -80,6 +94,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Fusion:Tag) {
 
 
     @process.contentElementWrapping {
+        @if.contentElementWrapping = ${contentElement}
         expression = Neos.Neos:ContentElementWrapping
         @position = 'end 999999999'
     }
