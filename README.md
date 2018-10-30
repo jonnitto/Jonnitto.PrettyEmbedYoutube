@@ -15,10 +15,11 @@
 
 Prettier embeds for your YouTube videos and playlists in [Neos CMS](https://www.neos.io) - with nice options like high-res preview images and advanced customization of embed options. Embed and lightbox functions use [Gator](https://github.com/ccampbell/gator) for event delegation.
 
-| Version  | Neos        |
-| -------- | ----------- |
-| 2.\*     | 2.\*        |
-| > 4.1.\* | 3.\* + 4.\* |
+| Version  | Neos          |
+| -------- | ------------- |
+| 2.\*     | 2.\*          |
+| > 4.1.\* | 3.\* + 4.\*   |
+| 5.\*     | 3.3.\* + 4.\* |
 
 ## Installation
 
@@ -40,9 +41,9 @@ The `--no-update` command prevent the automatic update of the dependencies. Afte
 
 Thanks goes out to the following contibutors:
 
-*   [Raffael Comi](https://github.com/ComiR)
-*   [Denny Lubitz](https://github.com/dlubitz)
-*   [Gerhard Boden](https://github.com/gerhard-boden)
+-   [Raffael Comi](https://github.com/ComiR)
+-   [Denny Lubitz](https://github.com/dlubitz)
+-   [Gerhard Boden](https://github.com/gerhard-boden)
 
 ## License
 
