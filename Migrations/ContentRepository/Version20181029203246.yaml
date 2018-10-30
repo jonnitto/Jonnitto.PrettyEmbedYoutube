@@ -1,0 +1,27 @@
+up:
+  comments: 'Change property "customPreviewImage" to "image"'
+  migration:
+    - filters:
+        - type: NodeType
+          settings:
+            nodeType: 'Jonnitto.PrettyEmbedYoutube:YouTube'
+            withSubTypes: true
+      transformations:
+        - type: RenameProperty
+          settings:
+            from: customPreviewImage
+            to: image
+
+down:
+  comments: 'Change property "image" to "customPreviewImage"'
+  migration:
+    - filters:
+        - type: NodeType
+          settings:
+            nodeType: 'Jonnitto.PrettyEmbedYoutube:YouTube'
+            withSubTypes: true
+      transformations:
+        - type: RenameProperty
+          settings:
+            from: image
+            to: customPreviewImage
