@@ -1,5 +1,8 @@
 import Gator from "gator";
 
+const SELECTOR = "a.jonnitto-prettyembedyoutube--embed";
+const PLAY_CLASS = "jonnitto-prettyembedyoutube--play";
+
 function replaceTag(element, tagName) {
     if (typeof element === "object" && typeof tagName === "string") {
         let originalElement = element;
@@ -30,9 +33,9 @@ function initVideo(link) {
             link.getAttribute("data-fs") == "true" ? "allowfullscreen " : "";
 
         element.setAttribute("data-img", imageSrc);
-        element.classList.add("play");
+        element.classList.add(PLAY_CLASS);
         element.style.paddingTop =
-            parseInt(height) / parseInt(width) * 100 + "%";
+            (parseInt(height) / parseInt(width)) * 100 + "%";
         element.innerHTML = `<iframe src="${embed}" width="${width}" height="${height}" ${fullscreen}frameborder="0"></iframe>`;
     }
 }
@@ -42,33 +45,35 @@ function openVideo(event) {
     initVideo(this);
 }
 
-window.prettyEmbedYoutubeRestore = function(element) {
+function restore(element) {
     let img = element.getAttribute("data-img") || false;
     if (img) {
-        element.classList.remove("play");
+        element.classList.remove(PLAY_CLASS);
         element.removeAttribute("style");
         element.innerHTML = `<img src="${img}" />`;
         replaceTag(element, "a");
     }
-};
+}
 
-window.prettyEmbedYoutubeInit = function(links) {
+function init(links) {
     // We are on a mobile device without autoplay
     if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)
     ) {
         if (typeof links === "undefined") {
-            links = document.querySelectorAll("a.embed-youtube");
+            links = document.querySelectorAll(SELECTOR);
         }
         for (let i = links.length - 1; i >= 0; i--) {
             initVideo(links[i]);
         }
     }
-};
+}
 
 Gator(window).on("load", function() {
-    prettyEmbedYoutubeInit();
+    init();
 });
 
 // Attach the events to the html tag (because of the Google Tag Manager)
-Gator(document.documentElement).on("click", "a.embed-youtube", openVideo);
+Gator(document.documentElement).on("click", SELECTOR, openVideo);
+
+export { init, restore };

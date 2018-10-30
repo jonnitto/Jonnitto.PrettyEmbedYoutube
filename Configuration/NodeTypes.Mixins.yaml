@@ -1,0 +1,161 @@
+'Jonnitto.PrettyEmbedYoutube:Mixin.IncludeAssets':
+  abstract: true
+
+'Jonnitto.PrettyEmbedYoutube:Mixin.Image':
+  abstract: true
+  superTypes:
+    'Carbon.Image:Image': true
+  ui:
+    inspector:
+      groups:
+        image:
+          label: i18n
+  properties:
+    image:
+      ui:
+        inspector:
+          editorOptions:
+            crop:
+              aspectRatio:
+                forceCrop: true
+                enableOriginal: false
+                allowCustom: false
+                defaultOption: sixteenNine
+                options:
+                  square: ~
+                  fourFive: ~
+                  fiveSeven: ~
+                  twoThree: ~
+                  fourThree:
+                    width: 4
+                    height: 3
+                  sixteenNine:
+                    width: 16
+                    height: 9
+
+'Jonnitto.PrettyEmbedYoutube:Mixin.Type':
+  abstract: true
+  properties:
+    type:
+      type: string
+      defaultValue: video
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: youtube
+          position: 10
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              video:
+                label: i18n
+                icon: icon-film
+              playlist:
+                label: i18n
+                icon: icon-list
+
+'Jonnitto.PrettyEmbedYoutube:Mixin.VideoID':
+  abstract: true
+  properties:
+    videoID:
+      type: string
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inlineEditable: false
+        inspector:
+          editor: Neos.Neos/Inspector/Editors/TextAreaEditor
+          group: youtube
+          position: 20
+
+'Jonnitto.PrettyEmbedYoutube:Mixin.Lightbox':
+  abstract: true
+  properties:
+    lightbox:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: i18n
+        inspector:
+          group: youtube
+          position: 30
+
+'Jonnitto.PrettyEmbedYoutube:Mixin.ShowInfo':
+  abstract: true
+  properties:
+    showInfo:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: i18n
+        inspector:
+          group: youtube
+          position: 40
+
+'Jonnitto.PrettyEmbedYoutube:Mixin.ShowControls':
+  abstract: true
+  properties:
+    showControls:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: i18n
+        inspector:
+          group: youtube
+          position: 50
+
+'Jonnitto.PrettyEmbedYoutube:Mixin.Loop':
+  abstract: true
+  properties:
+    loop:
+      type: boolean
+      ui:
+        label: i18n
+        inspector:
+          group: youtube
+          position: 60
+
+'Jonnitto.PrettyEmbedYoutube:Mixin.ClosedCaptions':
+  abstract: true
+  properties:
+    closedCaptions:
+      type: boolean
+      ui:
+        label: i18n
+        inspector:
+          group: youtube
+          position: 70
+
+'Jonnitto.PrettyEmbedYoutube:Mixin.ShowRelated':
+  abstract: true
+  properties:
+    showRelated:
+      type: boolean
+      ui:
+        label: i18n
+        inspector:
+          group: youtube
+          position: 80
+
+'Jonnitto.PrettyEmbedYoutube:Mixin.AllowFullScreen':
+  abstract: true
+  properties:
+    allowFullScreen:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: i18n
+        inspector:
+          group: youtube
+          position: 90
+
+'Jonnitto.PrettyEmbedYoutube:Mixin.Groups':
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        youtube:
+          label: i18n
+          icon: icon-youtube
+          position: 100

@@ -1,0 +1,16 @@
+prototype(Jonnitto.PrettyEmbedYoutube:GetProperty) < prototype(Neos.Fusion:Component) {
+    property = null
+
+    value = ${q(node).property(this.property)}
+
+    renderer = Neos.Fusion:Case {
+        hasMixin {
+            condition = ${Type.isBoolean(props.value) || Type.isString(props.value)}
+            renderer = ${props.value}
+        }
+        default {
+            condition = true
+            renderer = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.defaults.' + props.property)}
+        }
+    }
+}

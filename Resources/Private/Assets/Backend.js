@@ -1,18 +1,37 @@
-import "./Preview";
+import fixPreviews from "./Preview";
 
 function NeosEvent(events, callback) {
-    events.forEach(Event => {
-        document.addEventListener("Neos." + Event, callback, false);
+    events.forEach(event => {
+        document.addEventListener("Neos." + event, callback, false);
     });
 }
 
-NeosEvent(["NodeCreated", "NodeSelected"], event => {
-    if (
-        event.detail.element.attributes["data-node-_node-type"]["value"] ==
-        "Jonnitto.PrettyEmbedYoutube:YouTube"
-    ) {
-        prettyEmbedYoutubeFixPreview();
-    }
+function backendFixPreview(
+    event,
+    nodeType = "Jonnitto.PrettyEmbedYoutube:YouTube"
+) {
+    try {
+        // Old UI
+        if (
+            event.detail.element.attributes["data-node-_node-type"]["value"] ==
+            nodeType
+        ) {
+            fixPreviews();
+        }
+    } catch (error) {}
+
+    try {
+        // New UI
+        const node = event.detail.node;
+        if (node.get("nodeType") === nodeType) {
+            fixPreviews();
+        }
+    } catch (error) {}
+}
+
+NeosEvent(["NodeCreated", "NodeSelected"], backendFixPreview);
+NeosEvent(["PageLoaded", "ContentModuleLoaded"], () => {
+    fixPreviews();
 });
 
-NeosEvent(["PageLoaded", "ContentModuleLoaded"], prettyEmbedYoutubeFixPreview);
+export default backendFixPreview;

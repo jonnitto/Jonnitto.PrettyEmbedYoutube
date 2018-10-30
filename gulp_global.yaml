@@ -10,23 +10,21 @@ global:
     enable: false
 
 root:
-  base: "./"
+  base: './'
 
 tasks:
-  scssLint: false
-  jsLint: false
   fonts: false
   images: false
+  optimizeImages: false
   static: false
   svgSprite: false
   js:
     file:
       - Main.js
       - Backend.js
-    dest: ""
+    dest: ''
   css:
-    dest: ""
+    dest: ''
   pipeline:
     - js
     - css
-    - compress

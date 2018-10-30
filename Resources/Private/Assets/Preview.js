@@ -13,33 +13,35 @@ function fixPreview(img) {
             .replace("sddefault", "hqdefault")
             .replace("maxresdefault", "sddefault");
         img.setAttribute("src", src);
-        setTimeout(function() {
-            img.onload = function() {
+        setTimeout(() => {
+            img.onload = () => {
                 fixPreview(img);
             };
         }, 10);
-        setTimeout(function() {
+        setTimeout(() => {
             fixPreview(img);
         }, 5000);
     }
 }
 
-window.prettyEmbedYoutubeFixPreview = function(imgs) {
+function fixPreviews(images) {
     // We are on not on a mobile device without autoplay
     if (
         !/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)
     ) {
-        if (typeof imgs === "undefined") {
-            imgs = document.querySelectorAll(
-                "img.embed-youtube-youtube-preview"
+        if (typeof images === "undefined") {
+            images = document.querySelectorAll(
+                "img.jonnitto-prettyembedyoutube__youtube-preview"
             );
         }
-        for (let i = imgs.length - 1; i >= 0; i--) {
-            fixPreview(imgs[i]);
+        for (let i = images.length - 1; i >= 0; i--) {
+            fixPreview(images[i]);
         }
     }
-};
+}
 
-Gator(window).on("load", function() {
-    prettyEmbedYoutubeFixPreview();
+Gator(window).on("load", () => {
+    fixPreviews();
 });
+
+export default fixPreviews;

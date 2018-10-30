@@ -3,9 +3,9 @@
     xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" datatype="plaintext" target-language="de">
         <body>
-            <trans-unit id="ui.label" xml:space="preserve">
-                <source>YouTube</source>
-                <target>YouTube</target>
+            <trans-unit id="properties.allowFullScreen" xml:space="preserve">
+                <source>Allow fullscreen mode</source>
+                <target>Erlaube Vollbildmodus</target>
             </trans-unit>
         </body>
     </file>

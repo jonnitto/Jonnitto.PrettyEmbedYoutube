@@ -3,9 +3,9 @@
     xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" datatype="plaintext" target-language="de">
         <body>
-            <trans-unit id="ui.label" xml:space="preserve">
-                <source>YouTube</source>
-                <target>YouTube</target>
+            <trans-unit id="properties.showInfo" xml:space="preserve">
+                <source>Display video information (top bar)</source>
+                <target>Zeige Videoinformation (Balken oben)</target>
             </trans-unit>
         </body>
     </file>

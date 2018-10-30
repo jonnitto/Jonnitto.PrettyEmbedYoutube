@@ -1,0 +1,3 @@
+prototype(Jonnitto.PrettyEmbedYoutube:IncludeAssets) < prototype(Carbon.IncludeAssets:Case) {
+    mixin = 'Jonnitto.PrettyEmbedYoutube:Mixin.IncludeAssets'
+}

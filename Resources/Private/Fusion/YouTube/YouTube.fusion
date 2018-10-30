@@ -1,102 +1,79 @@
-prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Fusion:Tag) {
+prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Neos:ContentComponent) {
     contentElement = true
+
     configuration = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube')}
-    customPreviewImage = ${q(node).property('customPreviewImage')}
-    type = ${q(node).property('type') ? q(node).property('type') : 'video'}
-    lightbox = ${q(node).property('lightbox')}
-    allowFullScreen = ${q(node).property('allowFullScreen')}
-    showinfo = ${q(node).property('showinfo')}
-    showControls = ${q(node).property('showControls')}
-    loop = ${q(node).property('loop')}
-    closedCaptions = ${q(node).property('closedCaptions')}
-    showRelated = ${q(node).property('showRelated')}
-    maximumWidth = null
-    maxWidth = ${this.maximumWidth ? this.maximumWidth : this.configuration.maximumWidth}
+    image = ${q(node).property('image')}
+    maximumWidth = ${this.configuration.maximumWidth}
     videoID = ${q(node).property('videoID')}
     videoID.@process.getIDFromUrl = Jonnitto.PrettyEmbedYoutube:GetIDFromUrl
 
-    @context {
-        contentElement = ${this.contentElement}
-        configuration = ${this.configuration}
-        customPreviewImage = ${this.customPreviewImage}
-        type = ${this.type}
-        lightbox = ${this.lightbox}
-        allowFullScreen = ${this.allowFullScreen}
-        showInfo = ${this.showInfo}
-        showControls = ${this.showControls}
-        loop = ${this.loop}
-        closedCaptions = ${this.closedCaptions}
-        showRelated = ${this.showRelated}
-        maxWidth = ${this.maxWidth}
-        videoID = ${this.videoID}
+    type = Jonnitto.PrettyEmbedYoutube:GetProperty {
+        property = 'type'
+    }
+    lightbox = Jonnitto.PrettyEmbedYoutube:GetProperty {
+        property = 'lightbox'
+    }
+    allowFullScreen = Jonnitto.PrettyEmbedYoutube:GetProperty {
+        property = 'allowFullScreen'
+    }
+    showinfo = Jonnitto.PrettyEmbedYoutube:GetProperty {
+        property = 'showinfo'
+    }
+    showControls = Jonnitto.PrettyEmbedYoutube:GetProperty {
+        property = 'showControls'
+    }
+    loop = Jonnitto.PrettyEmbedYoutube:GetProperty {
+        property = 'loop'
+    }
+    closedCaptions = Jonnitto.PrettyEmbedYoutube:GetProperty {
+        property = 'closedCaptions'
+    }
+    showRelated = Jonnitto.PrettyEmbedYoutube:GetProperty {
+        property = 'showRelated'
     }
 
-    @process {
-        hasNoVideoID = Jonnitto.PrettyEmbedYoutube:Notification {
-            key = 'noVideoID'
-            @if.output = ${videoID ? false : true}
-        }
-        isPlaylistANDnoImage = Jonnitto.PrettyEmbedYoutube:Notification {
-            key = 'isPlaylistANDnoImage'
-            @if.output = ${videoID && type == 'playlist' && !customPreviewImage ? true : false}
-        }
+    // Internal
+    isPlaylistAndNoImage = ${this.videoID && this.type == 'playlist' && !this.image}
+    needNotification = ${!this.videoID || this.isPlaylistAndNoImage}
 
-        wrapper = Neos.Fusion:Tag {
-            @if.render = ${configuration.wrapper}
-            attributes.class = ${configuration.wrapper}
-            content = ${value}
-        }
-    }
-
-    tagName = ${node.context.live ? 'a' : 'div'}
-
-    attributes {
-        class = Neos.Fusion:RawArray {
-            nodeType = 'jonnitto-prettyembedyoutube'
-            lightbox = ${lightbox ? configuration.lightbox.class : configuration.embed.class}
-        }
-        data-fs = ${allowFullScreen ? 'true' : 'false'}
-        data-embed = Neos.Fusion:Array {
-            src            = ${configuration.embed[type]}
-            videoID        = ${videoID}
-            var            = ${type == 'video' ? '?' : '&'}
-            autoplay       = 'autoplay=1'
-            showinfo       = ${showInfo ? '' : '&showinfo=0'}
-            showControls   = ${showControls ? '' : '&controls=0'}
-            loop           = ${loop ? '&loop=1' : ''}
-            closedCaptions = ${closedCaptions ? '&cc_load_policy=1' : ''}
-            showRelated    = ${showRelated ? '&rel=1' : '&rel=0'}
-        }
-        href = ${configuration.lightbox[type] + videoID}
-        target = '_blank'
-    }
-
-    content = Neos.Fusion:Case {
-        hasCustomPreviewImage {
-            condition = ${customPreviewImage ? true : false}
-            renderer = Carbon.Image:Tag {
-                attributes.class = 'embed-youtube-costum-preview'
-                asset = ${customPreviewImage}
-                maximumWidth = ${maxWidth}
+    renderer = Neos.Fusion:Tag {
+        tagName = ${node.context.live ? 'a' : 'div'}
+        attributes {
+            class = Neos.Fusion:RawArray {
+                nodeType = 'jonnitto-prettyembedyoutube'
+                button = ${props.needNotification ? false : 'jonnitto-prettyembedyoutube__button'}
+                lightbox = ${props.lightbox ? props.configuration.lightbox.class : props.configuration.embed.class}
             }
+            data-fs = ${props.allowFullScreen ? 'true' : 'false'}
+            data-embed = Neos.Fusion:Array {
+                src            = ${props.configuration.embed[props.type]}
+                videoID        = ${props.videoID}
+                var            = ${props.type == 'video' ? '?' : '&'}
+                autoplay       = 'autoplay=1'
+                showinfo       = ${props.showInfo ? '' : '&showinfo=0'}
+                showControls   = ${props.showControls ? '' : '&controls=0'}
+                loop           = ${props.loop ? '&loop=1' : ''}
+                closedCaptions = ${props.closedCaptions ? '&cc_load_policy=1' : ''}
+                showRelated    = ${props.showRelated ? '&rel=1' : '&rel=0'}
+            }
+            href = ${props.configuration.lightbox[props.type] + props.videoID}
+            target = '_blank'
         }
-        default {
-            condition = true
-            renderer = Neos.Fusion:Tag {
-                tagName = 'img'
-                attributes {
-                    class = 'embed-youtube-youtube-preview'
-                    src = ${'//img.youtube.com/vi/' + videoID + '/' + configuration.imgResultion + '.jpg'}
-                }
+        content = afx`
+            <Carbon.Image:Tag @key='custom' @if.render={props.image && !props.needNotification} asset={props.image} maximumWidth={props.maximumWidth} additionalClass='jonnitto-prettyembedyoutube__costum-preview' />
+            <img @key='youtube' @if.render={!props.image && !props.needNotification} class='jonnitto-prettyembedyoutube__youtube-preview' src={'https://img.youtube.com/vi/' + props.videoID + '/' + props.configuration.imgResultion + '.jpg'} />
+            <Jonnitto.PrettyEmbedYoutube:Notification @key='noVideoID' @if.render={!props.videoID} key='noVideoID' />
+            <Jonnitto.PrettyEmbedYoutube:Notification @key='isPlaylistAndNoImage' @if.render={props.isPlaylistAndNoImage} key='isPlaylistAndNoImage' />
+        `
+        @process {
+            wrapper = Neos.Fusion:Tag {
+                @if.render = ${props.configuration.wrapper}
+                attributes.class = ${props.configuration.wrapper}
+                content = ${value}
             }
         }
     }
 
-
-    @process.contentElementWrapping {
-        @if.contentElementWrapping = ${contentElement}
-        expression = Neos.Neos:ContentElementWrapping
-        @position = 'end 999999999'
-    }
-    @exceptionHandler = 'Neos\\Neos\\Fusion\\ExceptionHandlers\\NodeWrappingHandler'
+    @context.contentElement = ${this.contentElement}
+    @process.contentElementWrapping.@if.contentElementWrapping = ${contentElement}
 }

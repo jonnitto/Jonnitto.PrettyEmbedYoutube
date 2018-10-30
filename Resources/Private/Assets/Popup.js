@@ -1,7 +1,8 @@
 import Gator from "gator";
 
 const HTML = document.documentElement;
-const BASE = "jonnitto-prettyembed-popup";
+const SELECTOR = "a.jonnitto-prettyembedyoutube--popup";
+const BASE = "jonnitto-prettyembedyoutube__popup";
 const VISIBLE_CLASS = `${BASE}-visible`;
 const MARKUP = `
 <div class="${BASE}-holder">
@@ -55,7 +56,7 @@ function closeOnESC(event) {
 }
 
 // Attach the events to the html tag (because of the Google Tag Manager)
-Gator(HTML).on("click", "a.popup-youtube", openModal);
+Gator(HTML).on("click", SELECTOR, openModal);
 Gator(HTML).on("click", `.${BASE}`, closeModal);
 
 // Close on ESC
