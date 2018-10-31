@@ -1,5 +1,3 @@
-[![Development dependency status](https://david-dm.org/jonnitto/Jonnitto.PrettyEmbedYoutube/dev-status.svg)](https://david-dm.org/jonnitto/Jonnitto.PrettyEmbedYoutube?type=dev)
-[![Build status](https://api.travis-ci.com/jonnitto/Jonnitto.PrettyEmbedYoutube.svg)](https://travis-ci.com/jonnitto/Jonnitto.PrettyEmbedYoutube)
 [![Latest Stable Version](https://poser.pugx.org/jonnitto/prettyembedyoutube/v/stable)](https://packagist.org/packages/jonnitto/prettyembedyoutube)
 [![Total Downloads](https://poser.pugx.org/jonnitto/prettyembedyoutube/downloads)](https://packagist.org/packages/jonnitto/prettyembedyoutube)
 [![License](https://poser.pugx.org/jonnitto/prettyembedyoutube/license)](https://packagist.org/packages/jonnitto/prettyembedyoutube)
@@ -36,6 +34,26 @@ composer require "jonnitto/prettyembedyoutube:^2.1" --no-update
 ```
 
 The `--no-update` command prevent the automatic update of the dependencies. After the package was added to your theme `composer.json`, go back to the root of the Neos installation and run `composer update`. Et voilà! Your desired package is now installed correctly.
+
+
+## FAQ
+
+**What are the differences from this package to the [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr) package?**
+
+|                           | Jonnitto.PrettyEmbedYoutube | Jonnitto.Plyr |
+| ------------------------- | :-------------------------: | :-----------: |
+| YouTube Video             |              ✓              |       ✓       |
+| YouTube Playlist          |              ✓              |       ×       |
+| Vimeo                     |              ×              |       ✓       |
+| Native Audio              |              ×              |       ✓       |
+| Native Video              |              ×              |       ✓       |
+| Preview image for Youtube |              ✓              |       ×       |
+| Picture in picture        |              ×              |       ✓       |
+| Picture in picture        |              ×              |       ✓       |
+| Filesize (JS & CSS)       |           smaller           |    bigger     |
+
+Jonnitto.PrettyembedYoutube also has the benefit of a better frontend performance since the player gets only loaded on request.
+So, no iframe until the user wants to watch a video.
 
 ## Contributor
 
