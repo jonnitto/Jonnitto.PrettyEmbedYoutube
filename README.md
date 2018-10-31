@@ -43,13 +43,13 @@ The `--no-update` command prevent the automatic update of the dependencies. Afte
 |                           | Jonnitto.PrettyEmbedYoutube | Jonnitto.Plyr |
 | ------------------------- | :-------------------------: | :-----------: |
 | YouTube Video             |              ✓              |       ✓       |
-| YouTube Playlist          |              ✓              |       ×       |
-| Vimeo                     |              ×              |       ✓       |
-| Native Audio              |              ×              |       ✓       |
-| Native Video              |              ×              |       ✓       |
-| Preview image for Youtube |              ✓              |       ×       |
-| Picture in picture        |              ×              |       ✓       |
-| Picture in picture        |              ×              |       ✓       |
+| YouTube Playlist          |              ✓              |               |
+| Vimeo                     |                             |       ✓       |
+| Native Audio              |                             |       ✓       |
+| Native Video              |                             |       ✓       |
+| Preview image for Youtube |              ✓              |               |
+| Picture in picture        |                             |       ✓       |
+| Picture in picture        |                             |       ✓       |
 | Filesize (JS & CSS)       |           smaller           |    bigger     |
 
 Jonnitto.PrettyembedYoutube also has the benefit of a better frontend performance since the player gets only loaded on request.
