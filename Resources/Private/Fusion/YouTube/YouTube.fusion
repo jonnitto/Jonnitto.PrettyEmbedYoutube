@@ -60,7 +60,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Neos:ContentComp
             target = '_blank'
         }
         content = afx`
-            <Carbon.Image:Tag @key='custom' @if.render={props.image && !props.needNotification} asset={props.image} maximumWidth={props.maximumWidth} additionalClass='jonnitto-prettyembedyoutube__costum-preview' />
+            <Carbon.Image:Tag @key='custom' @if.render={props.image && !props.needNotification} asset={props.image} maximumWidth={props.maximumWidth} class='jonnitto-prettyembedyoutube__costum-preview' additionalClass={this.class} />
             <img @key='youtube' @if.render={!props.image && !props.needNotification} class='jonnitto-prettyembedyoutube__youtube-preview' src={'https://img.youtube.com/vi/' + props.videoID + '/' + props.configuration.imgResultion + '.jpg'} />
             <Jonnitto.PrettyEmbedYoutube:Notification @key='noVideoID' @if.render={!props.videoID} key='noVideoID' />
             <Jonnitto.PrettyEmbedYoutube:Notification @key='isPlaylistAndNoImage' @if.render={props.isPlaylistAndNoImage} key='isPlaylistAndNoImage' />

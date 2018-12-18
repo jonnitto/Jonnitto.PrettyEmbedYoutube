@@ -35,7 +35,6 @@ composer require "jonnitto/prettyembedyoutube:^2.1" --no-update
 
 The `--no-update` command prevent the automatic update of the dependencies. After the package was added to your theme `composer.json`, go back to the root of the Neos installation and run `composer update`. Et voilà! Your desired package is now installed correctly.
 
-
 ## FAQ
 
 **What are the differences from this package to the [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr) package?**
@@ -60,9 +59,9 @@ So, no iframe until the user wants to watch a video.
 
 Thanks goes out to the following contibutors:
 
--   [Raffael Comi](https://github.com/ComiR)
--   [Denny Lubitz](https://github.com/dlubitz)
--   [Gerhard Boden](https://github.com/gerhard-boden)
+*   [Raffael Comi](https://github.com/ComiR)
+*   [Denny Lubitz](https://github.com/dlubitz)
+*   [Gerhard Boden](https://github.com/gerhard-boden)
 
 ## License
 
