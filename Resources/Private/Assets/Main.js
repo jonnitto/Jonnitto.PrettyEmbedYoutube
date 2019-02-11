@@ -1,3 +1,3 @@
-import "./Embed";
-import "./Popup";
-import "./Preview";
+import './Embed';
+import './Popup';
+import './Preview';

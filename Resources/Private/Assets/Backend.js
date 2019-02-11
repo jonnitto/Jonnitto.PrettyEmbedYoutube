@@ -1,8 +1,8 @@
-import fixPreviews from "./Preview";
+import fixPreviews from './Preview';
 
 function NeosEvent(events, callback) {
     events.forEach(event => {
-        document.addEventListener("Neos." + event, callback, false);
+        document.addEventListener('Neos.' + event, callback, false);
     });
 }
 
@@ -29,8 +29,8 @@ function backendFixPreview(
     } catch (error) {}
 }
 
-NeosEvent(["NodeCreated", "NodeSelected"], backendFixPreview);
-NeosEvent(["PageLoaded", "ContentModuleLoaded"], () => {
+NeosEvent(['NodeCreated', 'NodeSelected'], backendFixPreview);
+NeosEvent(['PageLoaded', 'ContentModuleLoaded'], () => {
     fixPreviews();
 });
 

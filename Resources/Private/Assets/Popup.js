@@ -1,8 +1,8 @@
-import Gator from "gator";
+import Gator from 'gator';
 
 const HTML = document.documentElement;
-const SELECTOR = "a.jonnitto-prettyembedyoutube--popup";
-const BASE = "jonnitto-prettyembedyoutube__popup";
+const SELECTOR = 'a.jonnitto-prettyembedyoutube--popup';
+const BASE = 'jonnitto-prettyembedyoutube__popup';
 const VISIBLE_CLASS = `${BASE}-visible`;
 const MARKUP = `
 <div class="${BASE}-holder">
@@ -10,7 +10,7 @@ const MARKUP = `
 </div>`;
 
 let $popup = false;
-let popup = document.createElement("div");
+let popup = document.createElement('div');
 popup.className = BASE;
 popup.innerHTML = `
 <div class="${BASE}-inner">
@@ -21,24 +21,24 @@ popup.innerHTML = `
 function closeModal() {
     document.body.classList.remove(VISIBLE_CLASS);
     setTimeout(function() {
-        $popup.innerHTML = "";
+        $popup.innerHTML = '';
     }, 300);
 }
 
 function openModal(event) {
     let fullscreen =
-        this.getAttribute("data-fs") == "true" ? " allowfullscreen" : "";
-    let embed = this.getAttribute("data-embed") || false;
+        this.getAttribute('data-fs') == 'true' ? ' allowfullscreen' : '';
+    let embed = this.getAttribute('data-embed') || false;
 
     if (!$popup) {
         document.body.appendChild(popup);
-        $popup = document.getElementById("popup-youtube");
+        $popup = document.getElementById('popup-youtube');
     }
 
     if (embed) {
         event.preventDefault();
-        $popup.innerHTML = MARKUP.replace("%src%", embed).replace(
-            "%fs%",
+        $popup.innerHTML = MARKUP.replace('%src%', embed).replace(
+            '%fs%',
             fullscreen
         );
         setTimeout(function() {
@@ -56,8 +56,8 @@ function closeOnESC(event) {
 }
 
 // Attach the events to the html tag (because of the Google Tag Manager)
-Gator(HTML).on("click", SELECTOR, openModal);
-Gator(HTML).on("click", `.${BASE}`, closeModal);
+Gator(HTML).on('click', SELECTOR, openModal);
+Gator(HTML).on('click', `.${BASE}`, closeModal);
 
 // Close on ESC
-Gator(HTML).on("keyup", closeOnESC);
+Gator(HTML).on('keyup', closeOnESC);
