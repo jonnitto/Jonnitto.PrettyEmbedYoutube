@@ -39,17 +39,17 @@ The `--no-update` command prevent the automatic update of the dependencies. Afte
 
 **What are the differences from this package to the [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr) package?**
 
-|                           | Jonnitto.PrettyEmbedYoutube | Jonnitto.Plyr |
-| ------------------------- | :-------------------------: | :-----------: |
-| YouTube Video             |              ✓              |       ✓       |
-| YouTube Playlist          |              ✓              |               |
-| Vimeo                     |                             |       ✓       |
-| Native Audio              |                             |       ✓       |
-| Native Video              |                             |       ✓       |
-| Preview image for Youtube |              ✓              |               |
-| Picture in picture        |                             |       ✓       |
-| Javascript API            |                             |       ✓       |
-| Filesize (JS & CSS)       |           smaller           |    bigger     |
+|                     | Jonnitto.PrettyEmbedYoutube | Jonnitto.Plyr | Jonnitto.PrettyEmbedVimeo |
+| ------------------- | :-------------------------: | :-----------: | :-----------------------: |
+| YouTube Video       |              ✓              |       ✓       |                           |
+| YouTube Playlist    |              ✓              |               |                           |
+| Vimeo               |                             |       ✓       |             ✓             |
+| Native Audio        |                             |       ✓       |                           |
+| Native Video        |                             |       ✓       |                           |
+| Preview image       |              ✓              |               |             ✓             |
+| Picture in picture  |                             |       ✓       |                           |
+| Javascript API      |                             |       ✓       |                           |
+| Filesize (JS & CSS) |           smaller           |    bigger     |          smaller          |
 
 Jonnitto.PrettyembedYoutube also has the benefit of a better frontend  
 performance since the player gets only loaded on request.  
@@ -59,9 +59,9 @@ So, no iframe until the user wants to watch a video.
 
 Thanks goes out to the following contibutors:
 
-*   [Raffael Comi](https://github.com/ComiR)
-*   [Denny Lubitz](https://github.com/dlubitz)
-*   [Gerhard Boden](https://github.com/gerhard-boden)
+-   [Raffael Comi](https://github.com/ComiR)
+-   [Denny Lubitz](https://github.com/dlubitz)
+-   [Gerhard Boden](https://github.com/gerhard-boden)
 
 ## License
 
