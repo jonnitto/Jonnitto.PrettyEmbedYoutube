@@ -68,7 +68,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Neos:ContentComp
         @process {
             wrapper = Neos.Fusion:Tag {
                 @if.render = ${props.configuration.wrapper}
-                attributes.class = ${props.configuration.wrapper}
+                attributes.class = ${Type.isString(props.configuration.wrapper) ? props.configuration.wrapper : false}
                 content = ${value}
             }
         }
