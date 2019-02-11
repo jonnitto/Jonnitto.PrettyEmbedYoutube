@@ -6,15 +6,13 @@ function NeosEvent(events, callback) {
     });
 }
 
-function backendFixPreview(
-    event,
-    nodeType = "Jonnitto.PrettyEmbedYoutube:YouTube"
-) {
+function backendFixPreview(event) {
+    const NODE_TYPE = 'Jonnitto.PrettyEmbedYoutube:YouTube';
     try {
         // Old UI
         if (
-            event.detail.element.attributes["data-node-_node-type"]["value"] ==
-            nodeType
+            event.detail.element.attributes['data-node-_node-type']['value'] ==
+            NODE_TYPE
         ) {
             fixPreviews();
         }
@@ -23,7 +21,11 @@ function backendFixPreview(
     try {
         // New UI
         const node = event.detail.node;
-        if (node.get("nodeType") === nodeType) {
+        if (
+            (typeof node.get == 'function' &&
+                node.get('nodeType') === NODE_TYPE) ||
+            (typeof node.nodeType == 'string' && node.nodeType === NODE_TYPE)
+        ) {
             fixPreviews();
         }
     } catch (error) {}
