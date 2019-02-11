@@ -3,7 +3,7 @@ $prettyEmbedYoutube-include-popup: true !default;
 
 $prettyEmbedYoutube-overlay-color: #0b0b0b !default;
 $prettyEmbedYoutube-overlay-opacity: 0.8 !default;
-$prettyEmbedYoutube-iframe-padding-top: 40px !default;
+$prettyEmbedYoutube-iframe-padding-top: 0 !default;
 $prettyEmbedYoutube-iframe-background: #000 !default;
 $prettyEmbedYoutube-iframe-max-width: 900px !default;
 $prettyEmbedYoutube-iframe-ratio: 9 / 16 !default;
@@ -102,8 +102,10 @@ $prettyEmbedYoutube-controls-color: #fff !default;
   }
 
   .jonnitto-prettyembedyoutube__popup-inner {
-    padding-top: $prettyEmbedYoutube-iframe-padding-top;
-    padding-bottom: $prettyEmbedYoutube-iframe-padding-top;
+    @if $prettyEmbedYoutube-iframe-padding-top {
+      padding-top: $prettyEmbedYoutube-iframe-padding-top;
+      padding-bottom: $prettyEmbedYoutube-iframe-padding-top;
+    }
     position: relative;
     max-width: $prettyEmbedYoutube-iframe-max-width;
     max-height: 90%;
