@@ -5,7 +5,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Neos:ContentComp
     image = ${q(node).property('image')}
     maximumWidth = ${this.configuration.maximumWidth}
     videoID = ${q(node).property('videoID')}
-    videoID.@process.getIDFromUrl = Jonnitto.PrettyEmbedYoutube:GetIDFromUrl
+    videoID.@process.getIDFromUrl = ${Jonnitto.PrettyEmbedYoutube.parseID(value)}
 
     type = Jonnitto.PrettyEmbedYoutube:GetProperty {
         property = 'type'

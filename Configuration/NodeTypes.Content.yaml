@@ -7,14 +7,14 @@
     'Jonnitto.PrettyEmbedYoutube:Mixin.Type': true
     'Jonnitto.PrettyEmbedYoutube:Mixin.VideoID': true
     'Jonnitto.PrettyEmbedYoutube:Mixin.Lightbox': true
+    'Jonnitto.PrettyEmbedYoutube:Mixin.BackendLabel': true
     # 'Jonnitto.PrettyEmbedYoutube:Mixin.ShowInfo': true
     # 'Jonnitto.PrettyEmbedYoutube:Mixin.ShowControls': true
     # 'Jonnitto.PrettyEmbedYoutube:Mixin.Loop': true
     # 'Jonnitto.PrettyEmbedYoutube:Mixin.ClosedCaptions': true
     # 'Jonnitto.PrettyEmbedYoutube:Mixin.ShowRelated': true
     # 'Jonnitto.PrettyEmbedYoutube:Mixin.AllowFullScreen': true
-  label: "${String.cropAtWord(String.trim(String.stripTags(String.pregReplace(q(node).property('title') || q(node).property('text') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')) + ' ' + String.firstLetterToUpperCase(q(node).property('type')), '/<br\\W*?\\/?>|\\x{00a0}|[[^:print:]]|\\s+/u', ' '))), 100, '...')}"
   ui:
-    label: i18n
+    label: YouTube
     icon: icon-youtube
     position: 900

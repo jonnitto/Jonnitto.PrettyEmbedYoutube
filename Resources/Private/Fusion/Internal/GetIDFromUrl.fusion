@@ -1,4 +1,0 @@
-prototype(Jonnitto.PrettyEmbedYoutube:GetIDFromUrl) < prototype(Neos.Fusion:Value) {
-    match = ${String.pregMatch(value, '/(?<=(?:(?<=v)|(?<=i)|(?<=list))=)[a-zA-Z0-9-]+(?=&)|(?<=(?:(?<=v)|(?<=i)|(?<=list))\/)[^&\n]+|(?<=embed\/)[^"&\n]+|(?<=(?:(?<=v)|(?<=i)|(?<=list))=)[^&\n]+|(?<=youtu.be\/)[^&\n]+/')}
-    value = ${Type.isArray(this.match) ? this.match[0]: value}
-}
