@@ -36,7 +36,7 @@ function initVideo(link) {
         element.classList.add(PLAY_CLASS);
         element.style.paddingTop =
             (parseInt(height) / parseInt(width)) * 100 + '%';
-        element.innerHTML = `<iframe src="${embed}" width="${width}" height="${height}" ${fullscreen}frameborder="0"></iframe>`;
+        element.innerHTML = `<iframe src="${embed}" width="${width}" height="${height}" ${fullscreen}frameborder="0" allow="fullscreen; accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>`;
     }
 }
 

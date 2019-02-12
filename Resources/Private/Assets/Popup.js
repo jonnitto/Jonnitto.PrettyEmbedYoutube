@@ -6,7 +6,7 @@ const BASE = 'jonnitto-prettyembedyoutube__popup';
 const VISIBLE_CLASS = `${BASE}-visible`;
 const MARKUP = `
 <div class="${BASE}-holder">
-    <iframe class="${BASE}-iframe" src="%src%" frameborder="0"%fs%></iframe>
+    <iframe class="${BASE}-iframe" src="%src%" frameborder="0" allow="fullscreen; accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"%fs%></iframe>
 </div>`;
 
 let $popup = false;
