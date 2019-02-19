@@ -37,7 +37,7 @@ The `--no-update` command prevent the automatic update of the dependencies. Afte
 
 ## FAQ
 
-**What are the differences from this package to the [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr) package?**
+**What are the differences from this package to the [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr) or [Jonnitto.PrettyEmbedVimeo](https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo) package?**
 
 |                     | Jonnitto.PrettyEmbedYoutube | Jonnitto.Plyr | Jonnitto.PrettyEmbedVimeo |
 | ------------------- | :-------------------------: | :-----------: | :-----------------------: |
