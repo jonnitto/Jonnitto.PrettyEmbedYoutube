@@ -4,6 +4,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Neos:ContentComp
     configuration = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube')}
     image = ${q(node).property('image')}
     maximumWidth = ${this.configuration.maximumWidth}
+    wrapper = ${this.configuration.wrapper}
     videoID = ${q(node).property('videoID')}
     videoID.@process.getIDFromUrl = ${Jonnitto.PrettyEmbedYoutube.parseID(value)}
 
@@ -67,8 +68,8 @@ prototype(Jonnitto.PrettyEmbedYoutube:YouTube) < prototype(Neos.Neos:ContentComp
         `
         @process {
             wrapper = Neos.Fusion:Tag {
-                @if.render = ${props.configuration.wrapper}
-                attributes.class = ${Type.isString(props.configuration.wrapper) ? props.configuration.wrapper : false}
+                @if.render = ${props.wrapper}
+                attributes.class = ${Type.isString(props.wrapper) ? props.wrapper : null}
                 content = ${value}
             }
         }
