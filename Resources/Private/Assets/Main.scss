@@ -11,6 +11,7 @@ $prettyEmbedYoutube-shadow: 0 0 8px rgba(#000, 0.6) !default;
 $prettyEmbedYoutube-z-index-base: 1140 !default;
 $prettyEmbedYoutube-controls-opacity: 0.65 !default;
 $prettyEmbedYoutube-controls-color: #fff !default;
+$prettyEmbedYoutube-popup-padding: 15px !default;
 
 .jonnitto-prettyembedyoutube {
   position: relative;
@@ -77,6 +78,10 @@ $prettyEmbedYoutube-controls-color: #fff !default;
     overflow-y: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+
+    @if $prettyEmbedYoutube-popup-padding {
+      padding: $prettyEmbedYoutube-popup-padding;
+    }
 
     > * {
       display: inline-block;
