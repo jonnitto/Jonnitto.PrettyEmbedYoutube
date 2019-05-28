@@ -20,9 +20,11 @@ popup.innerHTML = `
 
 function closeModal() {
     document.body.classList.remove(VISIBLE_CLASS);
-    setTimeout(function() {
-        $popup.innerHTML = '';
-    }, 300);
+    if ($popup) {
+        setTimeout(function() {
+            $popup.innerHTML = '';
+        }, 300);
+    }
 }
 
 function openModal(event) {
