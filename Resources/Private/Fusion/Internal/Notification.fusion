@@ -1,6 +1,0 @@
-prototype(Jonnitto.PrettyEmbedYoutube:Notification) < prototype(Carbon.Notification:Backend) {
-    key = null
-    type = 'alert'
-
-    content = ${Translation.translate(this.key, null, [], null, 'Jonnitto.PrettyEmbedYoutube')}
-}
