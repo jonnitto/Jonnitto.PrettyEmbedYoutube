@@ -1,20 +1,3 @@
-Carbon:
-  IncludeAssets:
-    Packages:
-      'Jonnitto.PrettyEmbedYoutube':
-        Package: 'Jonnitto.PrettyEmbedYoutube'
-        ConditionPrototype: 'Jonnitto.PrettyEmbedYoutube:IncludeAssets'
-        Path:
-          File:
-            CSS: 'Public'
-            JS: 'Public'
-        General:
-          Head:
-            - Main.css
-            - Main.js[defer]
-        Backend:
-          Head: Backend.js[defer]
-
 Jonnitto:
   PrettyEmbedYoutube:
     imgResultion: maxresdefault

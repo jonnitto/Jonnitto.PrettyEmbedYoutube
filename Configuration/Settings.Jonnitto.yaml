@@ -1,0 +1,20 @@
+Jonnitto:
+  PrettyEmbedYoutube:
+    url:
+      previewImage: 'https://img.youtube.com/vi/%id%/maxresdefault.jpg'
+      playlist:
+        embed: 'https://www.youtube.com/embed/videoseries?list=%id%'
+        href: 'https://www.youtube.com/playlist?list=%id%'
+      video:
+        embed: 'https://www.youtube.com/embed/%id%'
+        href: 'https://www.youtube.com/watch?v=%id%'
+    defaults:
+      type: video
+      lightbox: false
+      allowFullScreen: true
+      showinfo: false
+      controls: true
+      loop: false
+      closedCaptions: false
+      showRelated: false
+      playsinline: true

@@ -1,0 +1,62 @@
+prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.PrettyEmbedHelper:Content) {
+    package = 'Youtube'
+
+    videoID = ${q(node).property('videoID')}
+    videoID.@process.getIDFromUrl = ${Jonnitto.PrettyEmbedYoutube.parseID(value)}
+    alternativeText = ${Jonnitto.PrettyEmbedYoutube.title(this.videoID)}
+
+    type = Jonnitto.PrettyEmbedHelper:GetProperty  {
+        property = 'type'
+    }
+    allowFullScreen = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'allowFullScreen'
+    }
+    showinfo = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'showinfo'
+    }
+    closedCaptions = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'closedCaptions'
+    }
+    showRelated = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'showRelated'
+    }
+    previewImage = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.url.previewImage')}
+
+    renderer = Neos.Fusion:Component {
+        @apply.props = ${props}
+        poster = Neos.Fusion:Case {
+            hasCustomImage {
+                condition = ${props.image}
+                renderer = Neos.Neos:ImageUri {
+                    asset = ${props.image}
+                    async = true
+                    maximumWidth = ${props.maximumWidth}
+                }
+            }
+            thumbnailFromYoutube {
+                condition = ${props.videoID && props.previewImage && props.type == 'video'}
+                renderer = ${String.replace(props.previewImage, '%id%', props.videoID)}
+            }
+        }
+        renderer = Neos.Fusion:Case {
+            noVideoID {
+                condition = ${!props.videoID}
+                renderer = Jonnitto.PrettyEmbedHelper:Notification {
+                    key = 'noVideoID'
+                    default = 'Please add a Youtube ID or url in the inspector'
+                }
+            }
+            noPoster {
+                condition = ${!props.poster}
+                renderer = Jonnitto.PrettyEmbedHelper:Notification {
+                    key = 'needPreviewImage'
+                    default = 'You need to define a custom preview image.'
+                }
+            }
+            default {
+                condition = true
+                renderer = afx`<Jonnitto.PrettyEmbedYoutube:Component.Youtube {...props} live={node.context.live} />`
+            }
+        }
+    }
+}

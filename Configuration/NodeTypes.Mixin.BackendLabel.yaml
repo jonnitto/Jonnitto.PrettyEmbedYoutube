@@ -1,0 +1,3 @@
+'Jonnitto.PrettyEmbedYoutube:Mixin.BackendLabel':
+  abstract: true
+  label: "${String.cropAtWord(String.trim(String.stripTags(String.pregReplace(q(node).property('title') || q(node).property('text') || (q(node).property('videoID') ? Jonnitto.PrettyEmbedYoutube.title(Jonnitto.PrettyEmbedYoutube.parseID(q(node).property('videoID'))) : '') || ((I18n.translate(node.nodeType.label) || node.nodeType.name) + (node.autoCreated ? ' (' + node.name + ')' : '')) + ' ' + String.firstLetterToUpperCase(q(node).property('type')), '/<br\\W*?\\/?>|\\x{00a0}|[[^:print:]]|\\s+/u', ' '))), 100, '...')}"

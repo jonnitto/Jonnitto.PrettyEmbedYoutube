@@ -1,0 +1,10 @@
+'Jonnitto.PrettyEmbedYoutube:Mixin.ClosedCaptions':
+  abstract: true
+  properties:
+    closedCaptions:
+      type: boolean
+      ui:
+        label: i18n
+        inspector:
+          group: look
+          position: 70

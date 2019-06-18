@@ -1,0 +1,21 @@
+'Jonnitto.PrettyEmbedYoutube:Mixin.Type':
+  abstract: true
+  properties:
+    type:
+      type: string
+      defaultValue: video
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: youtube
+          position: 10
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              video:
+                label: i18n
+                icon: 'fas fa-film'
+              playlist:
+                label: i18n
+                icon: 'fas fa-th-list'

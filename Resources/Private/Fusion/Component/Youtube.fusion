@@ -1,0 +1,66 @@
+prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion:Component) {
+    configuration = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube')}
+
+    live = true
+    videoID = null
+
+    type = ${this.configuration.defaults.type}
+    lightbox = ${this.configuration.defaults.lightbox}
+    allowFullScreen = ${this.configuration.defaults.allowFullScreen}
+    showinfo = ${this.configuration.defaults.showinfo}
+    controls = ${this.configuration.defaults.controls}
+    loop = ${this.configuration.defaults.loop}
+    closedCaptions = ${this.configuration.defaults.closedCaptions}
+    showRelated = ${this.configuration.defaults.showRelated}
+    playsinline = ${this.configuration.defaults.playsinline}
+
+    wrapper = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.wrapper')}
+
+    id = null
+
+    poster = null
+    alternativeText = ${Jonnitto.PrettyEmbedYoutube.title(this.videoID)}
+    origin = null
+
+    // Internal
+    look = ${this.lightbox ? 'lightbox' : 'inline'}
+    url = ${this.configuration.url[this.type]}
+    @if.hasVideoIdAndPoster = ${this.videoID && this.poster}
+
+    renderer = Neos.Fusion:Tag {
+        tagName = ${props.live ? 'a' : 'div'}
+        attributes {
+            id = ${props.id}
+            class = Carbon.Eel:BEM {
+                block = 'jonnitto-prettyembed'
+                modifier = Neos.Fusion:DataStructure {
+                    youtube = true
+                    iframe = true
+                    look = ${props.look}
+                }
+            }
+            href = ${String.replace(props.url.href, '%id%', props.videoID)}
+            target = '_blank'
+            data-fs = ${!!props.allowFullScreen}
+            data-embed = Neos.Fusion:Join {
+                src            = ${String.replace(props.url.embed, '%id%', props.videoID)}
+                connect        = ${String.indexOf(props.url.embed, '?') == -1 ? '?' : '&'}
+                autoplay       = 'autoplay=1'
+                modestbranding = '&modestbranding=1'
+                playsinline    = ${'&playsinline=' + (props.playsinline ? '1' : '0')}
+                showinfo       = ${props.showInfo ? '' : '&showinfo=0'}
+                controls       = ${props.controls ? '' : '&controls=0'}
+                loop           = ${props.loop ? '&loop=1' : ''}
+                closedCaptions = ${props.closedCaptions ? '&cc_load_policy=1' : ''}
+                showRelated    = ${props.showRelated ? '&rel=1' : '&rel=0'}
+                fullscreen     = ${props.allowFullScreen ? '' : '&fs=0'}
+                origin         = ${props.origin ? '&origin=' + props.origin : ''}
+            }
+        }
+        content = afx`<img alt={props.alternativeText} src={props.poster} />`
+
+        @process.wrapper = Jonnitto.PrettyEmbedHelper:Wrapper {
+            wrapper = ${props.wrapper}
+        }
+    }
+}

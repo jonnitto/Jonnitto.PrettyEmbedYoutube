@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" 
     xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" datatype="plaintext">
+    <file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" target-language="en" datatype="plaintext">
         <body>
-            <trans-unit id="isPlaylistAndNoImage" xml:space="preserve">
+            <trans-unit id="needPreviewImage" xml:space="preserve">
                 <source>You need to define a custom preview image.</source>
+                <target>You need to define a custom preview image.</target>
             </trans-unit>
             <trans-unit id="noVideoID" xml:space="preserve">
                 <source>Please add a YouTube ID or url in the inspector</source>
+                <target>Please add a YouTube ID or url in the inspector</target>
             </trans-unit>
         </body>
     </file>

@@ -1,0 +1,24 @@
+'Jonnitto.PrettyEmbedYoutube:Content.Youtube':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Groups': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.IncludeAssets': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Image': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Lightbox': true
+    'Jonnitto.PrettyEmbedYoutube:Mixin.Type': true
+    'Jonnitto.PrettyEmbedYoutube:Mixin.VideoID': true
+    'Jonnitto.PrettyEmbedYoutube:Mixin.BackendLabel': true
+
+    # If you want to give the editor more control, 
+    # you can also add also these mixins:
+
+    # 'Jonnitto.PrettyEmbedHelper:Mixin.AllowFullScreen': true
+    # 'Jonnitto.PrettyEmbedHelper:Mixin.Loop': true
+    # 'Jonnitto.PrettyEmbedHelper:Mixin.Controls': true
+    # 'Jonnitto.PrettyEmbedYoutube:Mixin.ShowInfo': true
+    # 'Jonnitto.PrettyEmbedYoutube:Mixin.ClosedCaptions': true
+    # 'Jonnitto.PrettyEmbedYoutube:Mixin.ShowRelated': true
+  ui:
+    label: YouTube
+    icon: 'fab fa-youtube'
+    position: 920

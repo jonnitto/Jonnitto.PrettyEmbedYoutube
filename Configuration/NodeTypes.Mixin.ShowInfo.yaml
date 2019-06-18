@@ -1,0 +1,11 @@
+'Jonnitto.PrettyEmbedYoutube:Mixin.ShowInfo':
+  abstract: true
+  properties:
+    showInfo:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: i18n
+        inspector:
+          group: look
+          position: 40

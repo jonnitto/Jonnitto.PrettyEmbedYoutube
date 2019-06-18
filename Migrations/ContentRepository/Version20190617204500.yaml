@@ -1,0 +1,23 @@
+up:
+  comments: 'Correct NodeType from YouTube to Content.Youtube'
+  migration:
+    - filters:
+        - type: NodeType
+          settings:
+            nodeType: 'Jonnitto.PrettyEmbedYoutube:YouTube'
+      transformations:
+        - type: ChangeNodeType
+          settings:
+            newType: 'Jonnitto.PrettyEmbedYoutube:Content.Youtube'
+
+down:
+  comments: 'Correct NodeType from Content.Youtube to YouTube'
+  migration:
+    - filters:
+        - type: NodeType
+          settings:
+            nodeType: 'Jonnitto.PrettyEmbedYoutube:Content.Youtube'
+      transformations:
+        - type: ChangeNodeType
+          settings:
+            newType: 'Jonnitto.PrettyEmbedYoutube:YouTube'

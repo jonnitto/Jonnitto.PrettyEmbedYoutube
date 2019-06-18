@@ -1,0 +1,13 @@
+'Jonnitto.PrettyEmbedYoutube:Mixin.VideoID':
+  abstract: true
+  properties:
+    videoID:
+      type: string
+      ui:
+        label: 'YouTube ID'
+        reloadIfChanged: true
+        inlineEditable: false
+        inspector:
+          editor: Neos.Neos/Inspector/Editors/TextAreaEditor
+          group: youtube
+          position: 20
