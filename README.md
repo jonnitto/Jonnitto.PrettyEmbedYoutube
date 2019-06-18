@@ -59,10 +59,6 @@ So, no iframe until the user wants to watch a video.
 
 Thanks goes out to the following contibutors:
 
--   [Raffael Comi](https://github.com/ComiR)
--   [Denny Lubitz](https://github.com/dlubitz)
--   [Gerhard Boden](https://github.com/gerhard-boden)
-
-## License
-
-Licensed under MIT, see [LICENSE](LICENSE)
+- [Raffael Comi](https://github.com/ComiR)
+- [Denny Lubitz](https://github.com/dlubitz)
+- [Gerhard Boden](https://github.com/gerhard-boden)
