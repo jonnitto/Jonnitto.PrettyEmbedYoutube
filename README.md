@@ -18,47 +18,96 @@ Prettier embeds for your YouTube videos and playlists in [Neos CMS](https://www.
 | 2.\*     | 2.\*          |
 | > 4.1.\* | 3.\* + 4.\*   |
 | 5.\*     | 3.3.\* + 4.\* |
+| 6.\*     | ^4.2.\*       |
 
 ## Installation
 
 Most of the time you have to make small adjustments to a package (e.g. configuration in `Settings.yaml`). Because of that, it is important to add the corresponding package to the composer from your theme package. Mostly this is the site packages located under `Packages/Sites/`. To install it correctly go to your theme package (e.g.`Packages/Sites/Foo.Bar`) and run following command:
 
-```
+```bash
 composer require jonnitto/prettyembedyoutube --no-update
-```
-
-To install the package under Neos 2.\* you have to enter
-
-```
-composer require "jonnitto/prettyembedyoutube:^2.1" --no-update
 ```
 
 The `--no-update` command prevent the automatic update of the dependencies. After the package was added to your theme `composer.json`, go back to the root of the Neos installation and run `composer update`. Et voilà! Your desired package is now installed correctly.
 
+## PrettyEmbedCollection
+
+This package is member of the [PrettyEmbedCollection](https://github.com/jonnitto/Jonnitto.PrettyembedCollection) which contains following packages:
+
+- [PrettyEmbedVideo](https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo)
+- [PrettyEmbedVimeo](https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo)
+- [PrettyEmbedYoutube](https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube)
+
+If you install the PrettyEmbedCollection the video players get grouped into a own group in the node inspector, otherwise they will be in the default group.
+
 ## FAQ
 
-**What are the differences from this package to the [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr) or [Jonnitto.PrettyEmbedVimeo](https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo) package?**
+**What are the differences from the PrettyEmbed series to [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr)?**
 
-|                     | Jonnitto.PrettyEmbedYoutube | Jonnitto.Plyr | Jonnitto.PrettyEmbedVimeo |
-| ------------------- | :-------------------------: | :-----------: | :-----------------------: |
-| YouTube Video       |              ✓              |       ✓       |                           |
-| YouTube Playlist    |              ✓              |               |                           |
-| Vimeo               |                             |       ✓       |             ✓             |
-| Native Audio        |                             |       ✓       |                           |
-| Native Video        |                             |       ✓       |                           |
-| Preview image       |              ✓              |               |             ✓             |
-| Picture in picture  |                             |       ✓       |                           |
-| Javascript API      |                             |       ✓       |                           |
-| Filesize (JS & CSS) |           smaller           |    bigger     |          smaller          |
+**What are the differences from the PrettyEmbed series to [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr)?**
 
-Jonnitto.PrettyembedYoutube also has the benefit of a better frontend  
-performance since the player gets only loaded on request.  
-So, no iframe until the user wants to watch a video.
+|                                    | PrettyEmbed series |  Plyr  |
+| ---------------------------------- | :----------------: | :----: |
+| YouTube Video                      |         ✓          |   ✓    |
+| YouTube Playlist                   |         ✓          |        |
+| Vimeo                              |         ✓          |   ✓    |
+| Native Audio                       |                    |   ✓    |
+| Native Video                       |         ✓          |   ✓    |
+| Advanced captions for native video |         ✓          |        |
+| Preview image                      |         ✓          |        |
+| Lightbox included                  |         ✓          |        |
+| Preview image                      |         ✓          |        |
+| Javascript API                     |                    |   ✓    |
+| Filesize (JS & CSS)                |      smaller       | bigger |
 
-## Contributor
+All packages from the PrettyEmbed series have the benefit of a better frontend performance since the player gets only loaded on request. So, no iframe/video get's loaded until the user wants to watch a video.
 
-Thanks goes out to the following contibutors:
+## Customization
 
-- [Raffael Comi](https://github.com/ComiR)
-- [Denny Lubitz](https://github.com/dlubitz)
-- [Gerhard Boden](https://github.com/gerhard-boden)
+### Configuration
+
+If you want to customize the default settings, take a look at the [Settings.Jonnitto.yaml](Configuration/Settings.Jonnitto.yaml#L11) file. If no node property is giving, these default values will be taken. If you, for example, don't want to let the user choose if the video is a playlist or just a video you can deactivate the mixin in your Configuration folder like this:
+
+```yaml
+"Jonnitto.PrettyEmbedYoutube:Content.Youtube":
+  superTypes:
+    "Jonnitto.PrettyEmbedYoutube:Mixin.Type": false
+```
+
+These are the available mixins:
+
+| Mixin name                                         | Description                                                           | Enabled |
+| -------------------------------------------------- | --------------------------------------------------------------------- | :-----: |
+| `Jonnitto.PrettyEmbedHelper:Mixin.Groups`          | Enables the inspector groups                                          |    ✓    |
+| `Jonnitto.PrettyEmbedHelper:Mixin.IncludeAssets`   | Include the frontend resources                                        |    ✓    |
+| `Jonnitto.PrettyEmbedHelper:Mixin.Image`           | Add the preview image property                                        |    ✓    |
+| `Jonnitto.PrettyEmbedHelper:Mixin.Lightbox`        | Open the video in a lightbox, defaults to `false`                     |    ✓    |
+| `Jonnitto.PrettyEmbedYoutube:Mixin.Type`           | Choose between `playlist` and `video`, defaults to `video`            |    ✓    |
+| `Jonnitto.PrettyEmbedYoutube:Mixin.VideoID`        | Let the user enter the video id or youtube url                        |    ✓    |
+| `Jonnitto.PrettyEmbedYoutube:Mixin.BackendLabel`   | Read the title of the video and set this as label in the content tree |    ✓    |
+| `Jonnitto.PrettyEmbedHelper:Mixin.AllowFullScreen` | Allow fullscreen or not, defaults to `true`                           |         |
+| `Jonnitto.PrettyEmbedHelper:Mixin.Loop`            | Loop the video, defaults to `false`                                   |         |
+| `Jonnitto.PrettyEmbedHelper:Mixin.Controls`        | Show the controls, defaults to `true`                                 |         |
+| `Jonnitto.PrettyEmbedYoutube:Mixin.ShowInfo`       | Show the info bar, defaults to `false`                                |         |
+| `Jonnitto.PrettyEmbedYoutube:Mixin.ClosedCaptions` | Show captions, defaults to `false`                                    |         |
+| `Jonnitto.PrettyEmbedYoutube:Mixin.ShowRelated`    | Show related videos at the end, defaults to `false`                   |         |
+
+### Fusion
+
+If you want to use the player as a pure component, you can use the [`Jonnitto.PrettyEmbedYoutube:Component.Youtube`](Resources/Private/Fusion/Component/Youtube.fusion) fusion prototype.
+
+If you want to read the node properties and let the package handle all for you, you should use the [`Jonnitto.PrettyEmbedYoutube:Content.Youtube`](Resources/Private/Fusion/Content/Youtube.fusion) prototype. For easier including in your own node types, you can disable the content element wrapping with `contentElement = false`. This is useful if you want to create for example a text with video node type.
+
+## Update from older versions
+
+To update from version 5 or older, you have to run following command in your cli:  
+`./flow node:migrate --version 20190619204500`
+
+To check the current state of the migrations, you can run  
+`./flow node:migrationstatus`
+
+If you want to update from version 4 or older, you have to run following command:  
+`./flow node:migrate --version 20181029203246`
+
+After all those migrations you have to flush your frontend cache:  
+`./flow cache:flushone --identifier Neos_Fusion_Content`
