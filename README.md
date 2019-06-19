@@ -44,7 +44,6 @@ If you install the PrettyEmbedCollection the video players get grouped into a ow
 
 **What are the differences from the PrettyEmbed series to [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr)?**
 
-**What are the differences from the PrettyEmbed series to [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr)?**
 
 |                                    | PrettyEmbed series |  Plyr  |
 | ---------------------------------- | :----------------: | :----: |
