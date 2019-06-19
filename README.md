@@ -11,7 +11,7 @@
 
 # Jonnitto.PrettyEmbedYoutube
 
-Prettier embeds for your YouTube videos and playlists in [Neos CMS](https://www.neos.io) - with nice options like high-res preview images and advanced customization of embed options. Embed and lightbox functions use [Gator](https://github.com/ccampbell/gator) for event delegation.
+Prettier embeds for your YouTube videos and playlists in [Neos CMS](https://www.neos.io) - with nice options like high-res preview images, lightbox feature and advanced customization of embed options.
 
 | Version  | Neos          |
 | -------- | ------------- |
@@ -43,7 +43,6 @@ If you install the PrettyEmbedCollection the video players get grouped into a ow
 ## FAQ
 
 **What are the differences from the PrettyEmbed series to [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr)?**
-
 
 |                                    | PrettyEmbed series |  Plyr  |
 | ---------------------------------- | :----------------: | :----: |
