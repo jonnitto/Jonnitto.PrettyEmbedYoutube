@@ -1,26 +1,3 @@
-Jonnitto:
-  PrettyEmbedYoutube:
-    imgResultion: maxresdefault
-    maximumWidth: 1280
-    wrapper: false
-    embed:
-      class: jonnitto-prettyembedyoutube--embed
-      video: 'https://www.youtube.com/embed/'
-      playlist: 'https://www.youtube.com/embed/videoseries?list='
-    lightbox:
-      class: jonnitto-prettyembedyoutube--popup
-      video: 'https://www.youtube.com/watch?v='
-      playlist: 'https://www.youtube.com/playlist?list='
-    defaults:
-      type: video
-      lightbox: false
-      allowFullScreen: true
-      showinfo: true
-      showControls: true
-      loop: false
-      closedCaptions: false
-      showRelated: false
-
 Neos:
   Neos:
     userInterface:
