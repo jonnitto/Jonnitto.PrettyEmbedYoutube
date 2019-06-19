@@ -3,6 +3,7 @@
   properties:
     closedCaptions:
       type: boolean
+      defaultValue: false
       ui:
         label: i18n
         inspector:
