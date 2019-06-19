@@ -64,7 +64,7 @@ All packages from the PrettyEmbed series have the benefit of a better frontend p
 
 ### Configuration
 
-If you want to customize the default settings, take a look at the [Settings.Jonnitto.yaml](Configuration/Settings.Jonnitto.yaml#L11) file. If no node property is giving, these default values will be taken. If you, for example, don't want to let the user choose if the video is a playlist or just a video you can deactivate the mixin in your Configuration folder like this:
+If you want to customize the default settings, take a look at the [Settings.Jonnitto.yaml](Configuration/Settings.Jonnitto.yaml#L11) file. If no node property is giving, these default values will be taken. If you, for example, don't want to let the editor choose if the video is a playlist or just a video you can deactivate the mixin in your Configuration folder like this:
 
 ```yaml
 "Jonnitto.PrettyEmbedYoutube:Content.Youtube":
