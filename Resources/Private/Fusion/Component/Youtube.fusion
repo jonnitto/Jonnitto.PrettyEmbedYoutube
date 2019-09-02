@@ -25,8 +25,9 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
     // Internal
     look = ${this.lightbox ? 'lightbox' : 'inline'}
     url = ${this.configuration.url[this.type]}
-    previewImagePattern = ${Array.first(Configuration.setting('Jonnitto.PrettyEmbedYoutube.url.previewImage').split('%id%'))}
+    previewImagePattern = ${Array.first(String.split(Configuration.setting('Jonnitto.PrettyEmbedYoutube.url.previewImage'), '%id%'))}
     previewImageClass = ${String.startsWith(this.poster, this.previewImagePattern) ? 'jonnitto-prettyembed__youtube-preview' : null}
+
     @if.hasVideoIdAndPoster = ${this.videoID && this.poster}
 
     renderer = Neos.Fusion:Tag {
