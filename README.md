@@ -13,12 +13,12 @@
 
 Prettier embeds for your YouTube videos and playlists in [Neos CMS](https://www.neos.io) - with nice options like high-res preview images, lightbox feature and advanced customization of embed options.
 
-| Version  | Neos          |
-| -------- | ------------- |
-| 2.\*     | 2.\*          |
-| > 4.1.\* | 3.\* + 4.\*   |
-| 5.\*     | 3.3.\* + 4.\* |
-| 6.\*     | ^4.2.\*       |
+| Version  | Neos           |
+| -------- | -------------- |
+| 2.\*     | 2.\*           |
+| > 4.1.\* | 3.\* + 4.\*    |
+| 5.\*     | 3.3.\* + 4.\*  |
+| 6.\*     | ^4.2.\* + 5.\* |
 
 ## Installation
 
