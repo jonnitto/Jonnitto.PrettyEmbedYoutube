@@ -49,12 +49,12 @@ If you install the PrettyEmbedCollection the video players get grouped into a ow
 | YouTube Video                      |         ✓          |   ✓    |
 | YouTube Playlist                   |         ✓          |        |
 | Vimeo                              |         ✓          |   ✓    |
-| Native Audio                       |                    |   ✓    |
+| Native Audio                       |         ✓          |   ✓    |
 | Native Video                       |         ✓          |   ✓    |
 | Advanced captions for native video |         ✓          |        |
 | Preview image                      |         ✓          |        |
 | Lightbox included                  |         ✓          |        |
-| Preview image                      |         ✓          |        |
+| Preview image (for videos)         |         ✓          |        |
 | Javascript API                     |                    |   ✓    |
 | Filesize (JS & CSS)                |      smaller       | bigger |
 
