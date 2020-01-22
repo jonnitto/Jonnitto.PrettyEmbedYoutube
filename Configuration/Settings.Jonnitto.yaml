@@ -1,5 +1,6 @@
 Jonnitto:
   PrettyEmbedYoutube:
+    enableJsApi: false
     url:
       previewImage: 'https://img.youtube.com/vi/%id%/maxresdefault.jpg'
       playlist:

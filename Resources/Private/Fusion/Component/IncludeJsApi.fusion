@@ -1,0 +1,3 @@
+prototype(Jonnitto.PrettyEmbedYoutube:IncludeJsApi) < prototype(Jonnitto.PrettyEmbedHelper:IncludeAssets) {
+    @if.set = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.enableJsApi')}
+}

@@ -13,6 +13,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
     closedCaptions = ${this.configuration.defaults.closedCaptions}
     showRelated = ${this.configuration.defaults.showRelated}
     playsinline = ${this.configuration.defaults.playsinline}
+    enableJsApi = ${this.configuration.enableJsApi}
 
     wrapper = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.wrapper')}
 
@@ -50,6 +51,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
                 connect        = ${String.indexOf(props.url.embed, '?') == -1 ? '?' : '&'}
                 autoplay       = 'autoplay=1'
                 modestbranding = '&modestbranding=1'
+                enableJsApi    = ${props.enableJsApi ? '&enablejsapi=1' : ''}
                 playsinline    = ${'&playsinline=' + (props.playsinline ? '1' : '0')}
                 showinfo       = ${props.showInfo ? '' : '&showinfo=0'}
                 controls       = ${props.controls ? '' : '&controls=0'}
