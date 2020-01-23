@@ -8,6 +8,7 @@
     'Jonnitto.PrettyEmbedYoutube:Mixin.Type': true
     'Jonnitto.PrettyEmbedYoutube:Mixin.VideoID': true
     'Jonnitto.PrettyEmbedYoutube:Mixin.BackendLabel': true
+    'Jonnitto.PrettyEmbedYoutube:Mixin.IncludeJsApi': true
 
     # If you want to give the editor more control, 
     # you can also add also these mixins:
