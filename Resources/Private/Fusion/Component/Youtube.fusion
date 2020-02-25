@@ -62,7 +62,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
                 origin         = ${props.origin ? '&origin=' + props.origin : ''}
             }
         }
-        content = afx`<img alt={props.alternativeText} src={props.poster} class={props.previewImageClass} />`
+        content = afx`<img alt={props.alternativeText} src={props.poster} class={props.previewImageClass} loading='lazy' />`
 
         @process.wrapper = Jonnitto.PrettyEmbedHelper:Wrapper {
             wrapper = ${props.wrapper}
