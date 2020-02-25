@@ -44,6 +44,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
                 }
             }
             href = ${String.replace(props.url.href, '%id%', props.videoID)}
+            rel = 'noopener'
             target = '_blank'
             data-fs = ${!!props.allowFullScreen}
             data-embed = Neos.Fusion:Join {
