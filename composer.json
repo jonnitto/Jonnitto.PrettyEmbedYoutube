@@ -24,7 +24,7 @@
         }
     ],
     "require": {
-        "jonnitto/prettyembedhelper": "^1.1.2"
+        "jonnitto/prettyembedhelper": "^1.2"
     },
     "autoload": {
         "psr-4": {

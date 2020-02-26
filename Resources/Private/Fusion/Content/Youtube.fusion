@@ -5,7 +5,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
     videoID.@process.getIDFromUrl = ${Jonnitto.PrettyEmbedYoutube.parseID(value)}
     alternativeText = ${Jonnitto.PrettyEmbedYoutube.title(this.videoID)}
 
-    type = Jonnitto.PrettyEmbedHelper:GetProperty  {
+    type = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'type'
     }
     allowFullScreen = Jonnitto.PrettyEmbedHelper:GetProperty {
@@ -21,6 +21,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
         property = 'showRelated'
     }
     previewImage = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.url.previewImage')}
+    force16to9 = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.force16to9')}
 
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}

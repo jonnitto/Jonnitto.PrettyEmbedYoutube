@@ -14,6 +14,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
     showRelated = ${this.configuration.defaults.showRelated}
     playsinline = ${this.configuration.defaults.playsinline}
     enableJsApi = ${this.configuration.enableJsApi}
+    force16to9 = ${this.configuration.force16to9}
 
     wrapper = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.wrapper')}
 
@@ -41,6 +42,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
                     youtube = true
                     iframe = true
                     look = ${props.look}
+                    16to9 = ${props.force16to9}
                 }
             }
             href = ${String.replace(props.url.href, '%id%', props.videoID)}
