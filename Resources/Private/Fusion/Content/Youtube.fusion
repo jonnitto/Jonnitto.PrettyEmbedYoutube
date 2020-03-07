@@ -3,7 +3,10 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
 
     videoID = ${q(node).property('videoID')}
     videoID.@process.getIDFromUrl = ${Jonnitto.PrettyEmbedYoutube.parseID(value)}
-    alternativeText = ${Jonnitto.PrettyEmbedYoutube.title(this.videoID)}
+    dataFromService = ${Jonnitto.PrettyEmbedYoutube.data(this.videoID)}
+    alternativeText = ${this.dataFromService ? this.dataFromService.title : null}
+    ratio = null
+    ratio.@process.calculatePaddingTop = ${Jonnitto.PrettyEmbedHelper.paddingTop(value, this.dataFromService ? this.dataFromService.width : null, this.dataFromService ? this.dataFromService.height : null)}
 
     type = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'type'
@@ -21,7 +24,6 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
         property = 'showRelated'
     }
     previewImage = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.url.previewImage')}
-    force16to9 = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.force16to9')}
 
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
