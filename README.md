@@ -1,17 +1,8 @@
-[![Latest Stable Version](https://poser.pugx.org/jonnitto/prettyembedyoutube/v/stable)](https://packagist.org/packages/jonnitto/prettyembedyoutube)
-[![Total Downloads](https://poser.pugx.org/jonnitto/prettyembedyoutube/downloads)](https://packagist.org/packages/jonnitto/prettyembedyoutube)
-[![License](https://poser.pugx.org/jonnitto/prettyembedyoutube/license)](https://packagist.org/packages/jonnitto/prettyembedyoutube)
-[![GitHub forks](https://img.shields.io/github/forks/jonnitto/Jonnitto.PrettyEmbedYoutube.svg?style=social&label=Fork)](https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube/fork)
-[![Support development](https://img.shields.io/badge/Donate-PayPal-yellow.svg)](https://www.paypal.me/Jonnitto/20eur)
-[![My wishlist on amazon](https://img.shields.io/badge/Wishlist-Amazon-yellow.svg)](https://www.amazon.de/hz/wishlist/ls/2WPGORAVYF39B?&sort=default)  
-[![GitHub stars](https://img.shields.io/github/stars/jonnitto/Jonnitto.PrettyEmbedYoutube.svg?style=social&label=Stars)](https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube/stargazers)
-[![GitHub watchers](https://img.shields.io/github/watchers/jonnitto/Jonnitto.PrettyEmbedYoutube.svg?style=social&label=Watch)](https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube/subscription)
-[![GitHub followers](https://img.shields.io/github/followers/jonnitto.svg?style=social&label=Follow)](https://github.com/jonnitto/followers)
-[![Follow Jon on Twitter](https://img.shields.io/twitter/follow/jonnitto.svg?style=social&label=Follow)](https://twitter.com/jonnitto)
+[![Latest stable version]][packagist] [![Total downloads]][packagist] [![License]][packagist] [![GitHub forks]][fork] [![Donate Paypal]][paypal] [![Wishlist amazon]][amazon] [![GitHub stars]][stargazers] [![GitHub watchers]][subscription] [![GitHub followers]][followers] [![Follow Jon on Twitter]][twitter]
 
 # Jonnitto.PrettyEmbedYoutube
 
-Prettier embeds for your YouTube videos and playlists in [Neos CMS](https://www.neos.io) - with nice options like high-res preview images, lightbox feature and advanced customization of embed options.
+Prettier embeds for your YouTube videos and playlists in [Neos CMS] - with nice options like high-res preview images, lightbox feature and advanced customization of embed options.
 
 | Version  | Neos           |
 | -------- | -------------- |
@@ -19,6 +10,7 @@ Prettier embeds for your YouTube videos and playlists in [Neos CMS](https://www.
 | > 4.1.\* | 3.\* + 4.\*    |
 | 5.\*     | 3.3.\* + 4.\*  |
 | 6.\*     | ^4.2.\* + 5.\* |
+| 7.\*     | ^4.2.\* + 5.\* |
 
 ## Installation
 
@@ -32,17 +24,17 @@ The `--no-update` command prevent the automatic update of the dependencies. Afte
 
 ## PrettyEmbedCollection
 
-This package is member of the [PrettyEmbedCollection](https://github.com/jonnitto/Jonnitto.PrettyembedCollection) which contains following packages:
+This package is member of the [PrettyEmbedCollection] which contains following packages:
 
-- [PrettyEmbedVideo](https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo)
-- [PrettyEmbedVimeo](https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo)
-- [PrettyEmbedYoutube](https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube)
+-   [PrettyEmbedVideo]
+-   [PrettyEmbedVimeo]
+-   [PrettyEmbedYoutube]
 
 If you install the PrettyEmbedCollection the video players get grouped into a own group in the node inspector, otherwise they will be in the default group.
 
 ## FAQ
 
-**What are the differences from the PrettyEmbed series to [Jonnitto.Plyr](https://github.com/jonnitto/Jonnitto.Plyr)?**
+**What are the differences from the PrettyEmbed series to [Jonnitto.Plyr]?**
 
 |                                    | PrettyEmbed series |  Plyr  |
 | ---------------------------------- | :----------------: | :----: |
@@ -64,12 +56,12 @@ All packages from the PrettyEmbed series have the benefit of a better frontend p
 
 ### Configuration
 
-If you want to customize the default settings, take a look at the [Settings.Jonnitto.yaml](Configuration/Settings.Jonnitto.yaml#L11) file. If no node property is giving, these default values will be taken. If you, for example, don't want to let the editor choose if the video is a playlist or just a video you can deactivate the mixin in your Configuration folder like this:
+If you want to customize the default settings, take a look at the [Settings.Jonnitto.yaml] file. If no node property is giving, these default values will be taken. If you, for example, don't want to let the editor choose if the video is a playlist or just a video you can deactivate the mixin in your Configuration folder like this:
 
 ```yaml
 "Jonnitto.PrettyEmbedYoutube:Content.Youtube":
-  superTypes:
-    "Jonnitto.PrettyEmbedYoutube:Mixin.Type": false
+    superTypes:
+        "Jonnitto.PrettyEmbedYoutube:Mixin.Type": false
 ```
 
 These are the available mixins:
@@ -92,9 +84,9 @@ These are the available mixins:
 
 ### Fusion
 
-If you want to use the player as a pure component, you can use the [`Jonnitto.PrettyEmbedYoutube:Component.Youtube`](Resources/Private/Fusion/Component/Youtube.fusion) fusion prototype.
+If you want to use the player as a pure component, you can use the [`Jonnitto.PrettyEmbedYoutube:Component.Youtube`] fusion prototype.
 
-If you want to read the node properties and let the package handle all for you, you should use the [`Jonnitto.PrettyEmbedYoutube:Content.Youtube`](Resources/Private/Fusion/Content/Youtube.fusion) prototype. For easier including in your own node types, you can disable the content element wrapping with `contentElement = false`. This is useful if you want to create for example a text with video node type.
+If you want to read the node properties and let the package handle all for you, you should use the [`Jonnitto.PrettyEmbedYoutube:Content.Youtube`] prototype. For easier including in your own node types, you can disable the content element wrapping with `contentElement = false`. This is useful if you want to create for example a text with video node type.
 
 ## Update from older versions
 
@@ -109,3 +101,32 @@ If you want to update from version 4 or older, you have to run following command
 
 After all those migrations you have to flush your frontend cache:  
 `./flow cache:flushone --identifier Neos_Fusion_Content`
+
+[packagist]: https://packagist.org/packages/jonnitto/prettyembedyoutube
+[latest stable version]: https://poser.pugx.org/jonnitto/prettyembedyoutube/v/stable
+[total downloads]: https://poser.pugx.org/jonnitto/prettyembedyoutube/downloads
+[license]: https://poser.pugx.org/jonnitto/prettyembedyoutube/license
+[github forks]: https://img.shields.io/github/forks/jonnitto/Jonnitto.PrettyEmbedYoutube.svg?style=social&label=Fork
+[donate paypal]: https://img.shields.io/badge/Donate-PayPal-yellow.svg
+[wishlist amazon]: https://img.shields.io/badge/Wishlist-Amazon-yellow.svg
+[amazon]: https://www.amazon.de/hz/wishlist/ls/2WPGORAVYF39B?&sort=default
+[paypal]: https://www.paypal.me/Jonnitto/20eur
+[github stars]: https://img.shields.io/github/stars/jonnitto/Jonnitto.PrettyEmbedYoutube.svg?style=social&label=Stars
+[github watchers]: https://img.shields.io/github/watchers/jonnitto/Jonnitto.PrettyEmbedYoutube.svg?style=social&label=Watch
+[github followers]: https://img.shields.io/github/followers/jonnitto.svg?style=social&label=Follow
+[follow jon on twitter]: https://img.shields.io/twitter/follow/jonnitto.svg?style=social&label=Follow
+[twitter]: https://twitter.com/jonnitto
+[fork]: https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube/fork
+[stargazers]: https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube/stargazers
+[subscription]: https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube/subscription
+[followers]: https://github.com/jonnitto/followers
+[license]: LICENSE
+[neos cms]: https://www.neos.io
+[prettyembedcollection]: https://github.com/jonnitto/Jonnitto.PrettyembedCollection
+[prettyembedvideo]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo
+[prettyembedvimeo]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo
+[prettyembedyoutube]: https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube
+[jonnitto.plyr]: https://github.com/jonnitto/Jonnitto.Plyr
+[settings.jonnitto.yaml]: Configuration/Settings.Jonnitto.yaml
+[`jonnitto.prettyembedyoutube:component.youtube`]: Resources/Private/Fusion/Component/Youtube.fusion
+[`jonnitto.prettyembedyoutube:content.youtube`]: Resources/Private/Fusion/Content/Youtube.fusion
