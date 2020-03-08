@@ -5,14 +5,14 @@
     'Jonnitto.PrettyEmbedHelper:Mixin.IncludeAssets': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Image': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Lightbox': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.PreserveAspectRatio': true
     'Jonnitto.PrettyEmbedYoutube:Mixin.Type': true
     'Jonnitto.PrettyEmbedYoutube:Mixin.VideoID': true
     'Jonnitto.PrettyEmbedYoutube:Mixin.BackendLabel': true
     'Jonnitto.PrettyEmbedYoutube:Mixin.IncludeJsApi': true
 
-    # If you want to give the editor more control, 
+    # If you want to give the editor more control,
     # you can also add also these mixins:
-
     # 'Jonnitto.PrettyEmbedHelper:Mixin.AllowFullScreen': true
     # 'Jonnitto.PrettyEmbedHelper:Mixin.Loop': true
     # 'Jonnitto.PrettyEmbedHelper:Mixin.Controls': true

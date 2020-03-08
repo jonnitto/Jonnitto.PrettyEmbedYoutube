@@ -6,6 +6,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
 
     type = ${this.configuration.defaults.type}
     lightbox = ${this.configuration.defaults.lightbox}
+    preserveAspectRatio = ${this.configuration.defaults.preserveAspectRatio}
     allowFullScreen = ${this.configuration.defaults.allowFullScreen}
     showinfo = ${this.configuration.defaults.showinfo}
     controls = ${this.configuration.defaults.controls}
@@ -47,14 +48,14 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
                 modifier = Neos.Fusion:DataStructure {
                     youtube = true
                     iframe = true
-                    ratio = ${!!props.ratio}
+                    ratio = ${props.lightbox && props.preserveAspectRatio ? null : !!props.ratio}
                     look = ${props.look}
                 }
             }
             href = ${String.replace(props.url.href, '%id%', props.videoID)}
             rel = 'noopener'
             target = '_blank'
-            style = ${props.ratio ? 'padding-top:' + props.ratio : null}
+            style = ${props.lightbox && props.preserveAspectRatio ? null : (props.ratio ? 'padding-top:' + props.ratio : null)}
             data-ratio = ${props.ratio || null}
             data-fs = ${!!props.allowFullScreen}
             data-embed = Neos.Fusion:Join {

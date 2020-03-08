@@ -10,8 +10,12 @@ Jonnitto:
         embed: 'https://www.youtube.com/embed/%id%'
         href: 'https://www.youtube.com/watch?v=%id%'
     defaults:
+      # This can be 'video' or 'playlist'. Per default this is set via the node properties
       type: video
+      # Should the video be opened on a lightbox? Per default this is set via the node properties
       lightbox: false
+      # When the lightbox is set, should the preview image preserve his aspect ratio?  default this is set via the node properties
+      preserveAspectRatio: true
       allowFullScreen: true
       showinfo: false
       controls: true
