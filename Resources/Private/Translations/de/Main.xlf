@@ -3,7 +3,7 @@
     xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" datatype="plaintext" target-language="de">
         <body>
-            <trans-unit id="isPlaylistAndNoImage" xml:space="preserve">
+            <trans-unit id="needPreviewImage" xml:space="preserve">
                 <source>You need to define a custom preview image.</source>
                 <target>Es muss ein Vorschaubild angegeben werden.</target>
             </trans-unit>
