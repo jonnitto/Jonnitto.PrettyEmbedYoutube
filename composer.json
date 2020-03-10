@@ -31,13 +31,6 @@
             "Jonnitto\\PrettyEmbedYoutube\\": "Classes"
         }
     },
-    "archive": {
-        "exclude": [
-            ".gitattributes",
-            ".github",
-            "CODE_OF_CONDUCT.md"
-        ]
-    },
     "extra": {
         "marketplace-account": "me@jonnitto.ch",
         "installer-name": "Jonnitto.PrettyEmbedYoutube",
