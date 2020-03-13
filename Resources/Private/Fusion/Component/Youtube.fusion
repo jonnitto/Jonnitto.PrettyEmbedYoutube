@@ -3,6 +3,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
 
     live = true
     videoID = null
+    videoID.@process.trim = ${Type.isString(value) ? String.trim(value) : value}
 
     type = ${this.configuration.defaults.type}
     lightbox = ${this.configuration.defaults.lightbox}
@@ -18,26 +19,31 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
     
     # Pass a ratio like this: ${16 / 9}
     ratio = null
-    ratio.@process.calculatePaddingTop = ${Jonnitto.PrettyEmbedHelper.paddingTop(value, this.dataFromService ? this.dataFromService.width : null, this.dataFromService ? this.dataFromService.height : null)}
+    ratio.@process.calculatePaddingTop = ${Jonnitto.PrettyEmbedHelper.paddingTop(value)}
+
+    // If true, this get only a value if ratio is not set
+    force16to9 = false
+    force16to9.@process.calculatePaddingTop = ${!this.ratio && value ? Jonnitto.PrettyEmbedHelper.paddingTop(16 / 9) : false}
 
     wrapper = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.wrapper')}
 
     id = null
 
     poster = null
-    alternativeText = ${this.dataFromService ? this.dataFromService.title : null}
+    alternativeText = null
     origin = null
 
     playButton = Jonnitto.PrettyEmbedHelper:Button.Play
 
     // Internal
-    dataFromService = ${Jonnitto.PrettyEmbedYoutube.data(this.videoID)}
     look = ${this.lightbox ? 'lightbox' : 'inline'}
     url = ${this.configuration.url[this.type]}
-    previewImagePattern = ${Array.first(String.split(Configuration.setting('Jonnitto.PrettyEmbedYoutube.url.previewImage'), '%id%'))}
-    previewImageClass = ${String.startsWith(this.poster, this.previewImagePattern) ? 'jonnitto-prettyembed__youtube-preview' : null}
+    guessedPoster = ${this.type == 'video' ? 'https://i.ytimg.com/vi/' + this.videoID + '/maxresdefault.jpg' : null}
+    previewImageClass = ${this.poster ? null : 'jonnitto-prettyembed__youtube-preview'}
+    hasRatioAndNoLightboxWithPreserveAspectRatio = ${this.lightbox && this.preserveAspectRatio ? false : !!this.ratio}
+    forceRatio = ${this.ratio || this.force16to9}
 
-    @if.hasVideoIdAndPoster = ${this.videoID && this.poster}
+    @if.hasVideoID = ${this.videoID && (this.poster || this.guessedPoster)}
 
     renderer = Neos.Fusion:Tag {
         tagName = ${props.live ? 'a' : 'div'}
@@ -48,15 +54,15 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
                 modifier = Neos.Fusion:DataStructure {
                     youtube = true
                     iframe = true
-                    ratio = ${props.lightbox && props.preserveAspectRatio ? null : !!props.ratio}
+                    ratio = ${!!props.force16to9 || !!props.hasRatioAndNoLightboxWithPreserveAspectRatio}
                     look = ${props.look}
                 }
             }
             href = ${String.replace(props.url.href, '%id%', props.videoID)}
             rel = 'noopener'
             target = '_blank'
-            style = ${props.lightbox && props.preserveAspectRatio ? null : (props.ratio ? 'padding-top:' + props.ratio : null)}
-            data-ratio = ${props.ratio || null}
+            style = ${props.force16to9 || props.hasRatioAndNoLightboxWithPreserveAspectRatio ? 'padding-top:' + props.forceRatio : null}
+            data-ratio = ${props.forceRatio || null}
             data-fs = ${!!props.allowFullScreen}
             data-embed = Neos.Fusion:Join {
                 src            = ${String.replace(props.url.embed, '%id%', props.videoID)}
@@ -76,7 +82,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
         }
         content = afx`
             {props.playButton}
-            <img alt={props.alternativeText} src={props.poster} class={props.previewImageClass} loading='lazy' />
+            <img alt={props.alternativeText} src={props.poster || props.guessedPoster} class={props.previewImageClass} loading='lazy' />
         `
 
         @process.wrapper = Jonnitto.PrettyEmbedHelper:Wrapper {

@@ -8,11 +8,3 @@ Neos:
     fusion:
       autoInclude:
         Jonnitto.PrettyEmbedYoutube: true
-  Fusion:
-    defaultContext:
-      Jonnitto.PrettyEmbedYoutube: 'Jonnitto\PrettyEmbedYoutube\Eel\YoutubeHelper'
-  ContentRepository:
-    labelGenerator:
-      eel:
-        defaultContext:
-          Jonnitto.PrettyEmbedYoutube: 'Jonnitto\PrettyEmbedYoutube\Eel\YoutubeHelper'

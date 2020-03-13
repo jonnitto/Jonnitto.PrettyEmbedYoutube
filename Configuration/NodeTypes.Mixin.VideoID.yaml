@@ -1,12 +1,18 @@
 'Jonnitto.PrettyEmbedYoutube:Mixin.VideoID':
   abstract: true
+  superTypes:
+    'Jonnitto.PrettyEmbedHelper:Mixin.Force16to9': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Metadata.ID': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Metadata.Title': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Metadata.Ratio': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Metadata.Image': true
   properties:
     videoID:
       type: string
       ui:
         label: 'YouTube ID'
-        reloadIfChanged: true
-        inlineEditable: false
+        reloadPageIfChanged: true
+        showInCreationDialog: true
         inspector:
           editor: Neos.Neos/Inspector/Editors/TextAreaEditor
           group: youtube

@@ -2,7 +2,6 @@ Jonnitto:
   PrettyEmbedYoutube:
     enableJsApi: false
     url:
-      previewImage: 'https://img.youtube.com/vi/%id%/maxresdefault.jpg'
       playlist:
         embed: 'https://www.youtube.com/embed/videoseries?list=%id%'
         href: 'https://www.youtube.com/playlist?list=%id%'
@@ -14,8 +13,10 @@ Jonnitto:
       type: video
       # Should the video be opened on a lightbox? Per default this is set via the node properties
       lightbox: false
-      # When the lightbox is set, should the preview image preserve his aspect ratio?  default this is set via the node properties
+      # When the lightbox is set, should the preview image preserve his aspect ratio? Per default this is set via the node properties
       preserveAspectRatio: true
+      # If no aspect ratio can be calcualted from the oembed service, you have the possibility to force the aspect ratio 16:9. Per default this is set via the node properties
+      force16to9: true
       allowFullScreen: true
       showinfo: false
       controls: true

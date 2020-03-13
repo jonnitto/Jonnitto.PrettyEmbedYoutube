@@ -1,13 +1,17 @@
 prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.PrettyEmbedHelper:Content) {
     package = 'Youtube'
 
+    metadataID = ${q(node).property('metadataID')}
     videoID = ${q(node).property('videoID')}
-    videoID.@process.getIDFromUrl = ${Jonnitto.PrettyEmbedYoutube.parseID(value)}
-    dataFromService = ${Jonnitto.PrettyEmbedYoutube.data(this.videoID)}
-    alternativeText = ${this.dataFromService ? this.dataFromService.title : null}
-    ratio = null
-    ratio.@process.calculatePaddingTop = ${Jonnitto.PrettyEmbedHelper.paddingTop(value, this.dataFromService ? this.dataFromService.width : null, this.dataFromService ? this.dataFromService.height : null)}
+    videoID.@process.getIDFromUrl = ${this.metadataID ? this.metadataID : Jonnitto.PrettyEmbedHelper.youtubeID(value)}
 
+    alternativeText = ${q(node).property('metadataTitle')}
+    imageFromYoutube = ${q(node).property('metadataImage')}
+    ratio = ${q(node).property('metadataRatio')}
+
+    force16to9 = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'force16to9'
+    }
     type = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'type'
     }
@@ -23,7 +27,6 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
     showRelated = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'showRelated'
     }
-    previewImage = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.url.previewImage')}
 
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
@@ -37,8 +40,8 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
                 }
             }
             thumbnailFromYoutube {
-                condition = ${props.videoID && props.previewImage && props.type == 'video'}
-                renderer = ${String.replace(props.previewImage, '%id%', props.videoID)}
+                condition = ${props.videoID}
+                renderer = ${props.imageFromYoutube}
             }
         }
         renderer = Neos.Fusion:Case {
@@ -50,7 +53,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
                 }
             }
             noPoster {
-                condition = ${!props.poster}
+                condition = ${!props.poster && props.type == 'playlist'}
                 renderer = Jonnitto.PrettyEmbedHelper:Notification {
                     key = 'needPreviewImage'
                     default = 'You need to define a custom preview image.'

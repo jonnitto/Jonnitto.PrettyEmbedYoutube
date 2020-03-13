@@ -6,9 +6,9 @@
     'Jonnitto.PrettyEmbedHelper:Mixin.Image': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Lightbox': true
     'Jonnitto.PrettyEmbedHelper:Mixin.PreserveAspectRatio': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.BackendLabel': true
     'Jonnitto.PrettyEmbedYoutube:Mixin.Type': true
     'Jonnitto.PrettyEmbedYoutube:Mixin.VideoID': true
-    'Jonnitto.PrettyEmbedYoutube:Mixin.BackendLabel': true
     'Jonnitto.PrettyEmbedYoutube:Mixin.IncludeJsApi': true
 
     # If you want to give the editor more control,
