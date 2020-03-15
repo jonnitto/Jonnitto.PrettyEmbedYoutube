@@ -4,6 +4,8 @@
 
 Prettier embeds for your YouTube videos and playlists in [Neos CMS] - with helpful options like high-res preview images, lightbox feature, and advanced customization of embed options.
 
+![Screenshot]
+
 | Version  | Neos           |
 | -------- | -------------- |
 | 2.\*     | 2.\*           |
@@ -245,3 +247,4 @@ After all those migrations you have to flush your frontend cache:
 [carbon.includeassets]: https://github.com/CarbonPackages/Carbon.IncludeAssets
 [carbon settings from helper]: https://github.com/jonnitto/Jonnitto.PrettyEmbedHelper/blob/master/Configuration/Settings.Carbon.yaml
 [`main.scss`]: https://github.com/jonnitto/Jonnitto.PrettyEmbedHelper/blob/master/Resources/Private/Assets/Main.scss
+[screenshot]: https://user-images.githubusercontent.com/4510166/76709350-6fb3c480-66fe-11ea-853f-630499f626a2.png
