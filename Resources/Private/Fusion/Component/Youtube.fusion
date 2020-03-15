@@ -38,7 +38,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
     // Internal
     look = ${this.lightbox ? 'lightbox' : 'inline'}
     url = ${this.configuration.url[this.type]}
-    guessedPoster = ${this.type == 'video' ? 'https://i.ytimg.com/vi/' + this.videoID + '/maxresdefault.jpg' : null}
+    guessedPoster = ${this.type == 'video' ? '//i.ytimg.com/vi/' + this.videoID + '/maxresdefault.jpg' : null}
     previewImageClass = ${this.poster ? null : 'jonnitto-prettyembed__youtube-preview'}
     hasRatioAndNoLightboxWithPreserveAspectRatio = ${this.lightbox && this.preserveAspectRatio ? false : !!this.ratio}
     forceRatio = ${this.ratio || this.force16to9}
