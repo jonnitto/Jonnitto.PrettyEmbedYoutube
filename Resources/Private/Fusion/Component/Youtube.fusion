@@ -16,7 +16,9 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
     showRelated = ${this.configuration.defaults.showRelated}
     playsinline = ${this.configuration.defaults.playsinline}
     enableJsApi = ${this.configuration.enableJsApi}
-    
+    enableGdprMessage = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.enableGdprMessage')}
+    gdprMessage = Jonnitto.PrettyEmbedHelper:GdprMessage
+
     # Pass a ratio like this: ${16 / 9}
     ratio = null
     ratio.@process.calculatePaddingTop = ${Jonnitto.PrettyEmbedHelper.paddingTop(value)}
@@ -62,6 +64,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
             rel = 'noopener'
             target = '_blank'
             style = ${props.force16to9 || props.hasRatioAndNoLightboxWithPreserveAspectRatio ? 'padding-top:' + props.forceRatio : null}
+            data-gdpr = ${props.enableGdprMessage && props.gdprMessage ? props.gdprMessage : null}
             data-ratio = ${props.forceRatio || null}
             data-fs = ${!!props.allowFullScreen}
             data-embed = Neos.Fusion:Join {

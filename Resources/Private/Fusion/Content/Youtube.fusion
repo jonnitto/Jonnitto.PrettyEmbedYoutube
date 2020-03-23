@@ -28,6 +28,9 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
         property = 'showRelated'
     }
 
+    enableGdprMessage = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.enableGdprMessage')}
+    gdprMessage = Jonnitto.PrettyEmbedHelper:GdprMessage
+
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
         poster = Neos.Fusion:Case {
