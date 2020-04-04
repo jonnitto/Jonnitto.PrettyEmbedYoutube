@@ -8,6 +8,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
     alternativeText = ${q(node).property('metadataTitle')}
     imageFromYoutube = ${q(node).property('metadataImage')}
     ratio = ${q(node).property('metadataRatio')}
+    maximumWidth = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.maximumWidth')}
 
     force16to9 = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'force16to9'
