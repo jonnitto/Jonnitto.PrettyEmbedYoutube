@@ -32,6 +32,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
     id = null
 
     poster = null
+    poster2x = null
     alternativeText = null
     origin = null
 
@@ -85,7 +86,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
         }
         content = afx`
             {props.playButton}
-            <img alt={props.alternativeText} src={props.poster || props.guessedPoster} class={props.previewImageClass} loading='lazy' />
+            <img alt={props.alternativeText} src={props.poster || props.guessedPoster} srcset={props.poster && props.poster2x ? props.poster + ' 1x,' + props.poster2x + ' 2x' : null} class={props.previewImageClass} loading='lazy' />
         `
 
         @process.wrapper = Jonnitto.PrettyEmbedHelper:Wrapper {
