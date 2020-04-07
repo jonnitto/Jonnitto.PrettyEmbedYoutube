@@ -7,6 +7,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
 
     alternativeText = ${q(node).property('metadataTitle')}
     imageFromYoutube = ${q(node).property('metadataImage')}
+    thumbnailFromResources = ${q(node).property('metadataThumbnail')}
     ratio = ${q(node).property('metadataRatio')}
     maximumWidth = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.maximumWidth')}
     async = true
@@ -37,9 +38,9 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
         @apply.props = ${props}
         poster = Neos.Fusion:Case {
             hasPersisantResource {
-                condition = ${props.image}
+                condition = ${props.image || props.thumbnailFromResources}
                 renderer = Neos.Neos:ImageUri {
-                    asset = ${props.image}
+                    asset = ${props.image || props.thumbnailFromResources}
                     async = ${props.async}
                     maximumWidth = ${props.maximumWidth}
                 }
@@ -54,7 +55,7 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
                 hasAsset = ${this.asset}
                 hasEnoughPixel = ${this.asset.width >= props.maximumWidth * 2}
             }
-            asset = ${props.image}
+            asset = ${props.image || props.thumbnailFromResources}
             async = ${props.async}
             maximumWidth = ${props.maximumWidth * 2}
         }

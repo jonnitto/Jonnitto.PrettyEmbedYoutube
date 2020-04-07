@@ -6,6 +6,7 @@
     'Jonnitto.PrettyEmbedHelper:Mixin.Metadata.Title': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Metadata.Ratio': true
     'Jonnitto.PrettyEmbedHelper:Mixin.Metadata.Image': true
+    'Jonnitto.PrettyEmbedHelper:Mixin.Metadata.Thumbnail': true
   properties:
     videoID:
       type: string
