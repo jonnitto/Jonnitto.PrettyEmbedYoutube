@@ -163,7 +163,7 @@ If you want to customize the default settings, take a look at the [Settings.Jonn
 ```yaml
 'Jonnitto.PrettyEmbedYoutube:Content.Youtube':
   superTypes:
-    'Jonnitto.PrettyEmbedHelper:Mixin.Type': false
+    'Jonnitto.PrettyEmbedYoutube:Mixin.Type': false
 ```
 
 These are the available mixins:
