@@ -16,7 +16,6 @@
     # 'Jonnitto.PrettyEmbedHelper:Mixin.AllowFullScreen': true
     # 'Jonnitto.PrettyEmbedHelper:Mixin.Loop': true
     # 'Jonnitto.PrettyEmbedHelper:Mixin.Controls': true
-    # 'Jonnitto.PrettyEmbedYoutube:Mixin.ShowInfo': true
     # 'Jonnitto.PrettyEmbedYoutube:Mixin.ClosedCaptions': true
     # 'Jonnitto.PrettyEmbedYoutube:Mixin.ShowRelated': true
   ui:

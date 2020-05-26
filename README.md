@@ -182,7 +182,6 @@ These are the available mixins:
 | `Helper:Mixin.AllowFullScreen`              | Allow fullscreen or not                                                     |    `true`     |                     |
 | `Helper:Mixin.Loop`                         | Loop the video                                                              |    `false`    |                     |
 | `Helper:Mixin.Controls`                     | Show the controls                                                           |    `true`     |                     |
-| `Youtube:Mixin.ShowInfo`                    | Show the info bar                                                           |    `false`    |                     |
 | `Youtube:Mixin.ClosedCaptions`              | Show captions                                                               |    `false`    |                     |
 | `Youtube:Mixin.ShowRelated`                 | Show related videos at the end                                              |    `false`    |                     |
 

@@ -9,7 +9,6 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
     lightbox = ${this.configuration.defaults.lightbox}
     preserveAspectRatio = ${this.configuration.defaults.preserveAspectRatio}
     allowFullScreen = ${this.configuration.defaults.allowFullScreen}
-    showinfo = ${this.configuration.defaults.showinfo}
     controls = ${this.configuration.defaults.controls}
     loop = ${this.configuration.defaults.loop}
     closedCaptions = ${this.configuration.defaults.closedCaptions}
@@ -75,7 +74,6 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
                 modestbranding = '&modestbranding=1'
                 enableJsApi    = ${props.enableJsApi ? '&enablejsapi=1' : ''}
                 playsinline    = ${'&playsinline=' + (props.playsinline ? '1' : '0')}
-                showinfo       = ${props.showInfo ? '' : '&showinfo=0'}
                 controls       = ${props.controls ? '' : '&controls=0'}
                 loop           = ${props.loop ? '&loop=1' : ''}
                 closedCaptions = ${props.closedCaptions ? '&cc_load_policy=1' : ''}
