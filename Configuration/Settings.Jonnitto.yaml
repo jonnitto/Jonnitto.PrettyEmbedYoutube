@@ -11,16 +11,30 @@ Jonnitto:
     defaults:
       # This can be 'video' or 'playlist'. Per default this is set via the node properties
       type: video
+
       # Should the video be opened on a lightbox? Per default this is set via the node properties
       lightbox: false
+
       # When the lightbox is set, should the preview image preserve his aspect ratio? Per default this is set via the node properties
       preserveAspectRatio: true
+
       # If no aspect ratio can be calcualted from the oembed service, you have the possibility to force the aspect ratio 16:9. Per default this is set via the node properties
       force16to9: true
+
+      # Allow full screen
       allowFullScreen: true
-      showinfo: false
+
+      # This parameter indicates whether the video player controls are displayed
       controls: true
+
+      # Whether to restart the video automatically after reaching the end.
       loop: false
+
+      # Setting the parameter's value to true causes closed captions to be shown by default, even if the user has turned captions off.
       closedCaptions: false
+
+      # It is not possible to disable related videos, but if it is set to false, the player will show related videos that are from the same channel as the video that was just played.
       showRelated: false
+
+      # Whether the video plays inline on supported mobile devices. Note that if set to false it does not imply that the video will always be played in fullscreen.
       playsinline: true
