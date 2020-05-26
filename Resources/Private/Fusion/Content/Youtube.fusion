@@ -12,21 +12,55 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
     maximumWidth = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.maximumWidth')}
     async = true
 
-    force16to9 = Jonnitto.PrettyEmbedHelper:GetProperty {
-        property = 'force16to9'
-    }
+    # This can be 'video' or 'playlist'.
     type = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'type'
     }
+
+    # Should the video be opened on a lightbox?
+    lightbox = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'lightbox'
+    }
+
+    # When the lightbox is set, should the preview image preserve his aspect ratio?
+    preserveAspectRatio = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'preserveAspectRatio'
+    }
+
+    # If no aspect ratio can be calcualted from the oembed service, you have the possibility to force the aspect ratio 16:9
+    force16to9 = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'force16to9'
+    }
+
+    # Whether to restart the video automatically after reaching the end.
+    loop = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'loop'
+    }
+
+    # Whether the video plays inline on supported mobile devices.
+    # Note that if set to false it does not imply that the video will always be played in fullscreen.
+    playsinline = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'playsinline'
+    }
+
+    # Allow full screen
     allowFullScreen = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'allowFullScreen'
     }
-    showinfo = Jonnitto.PrettyEmbedHelper:GetProperty {
-        property = 'showinfo'
+
+    # This parameter indicates whether the video player controls are displayed
+    controls = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'controls'
     }
+
+    # Setting the parameter's value to true causes closed captions to be shown by default,
+    # even if the user has turned captions off.
     closedCaptions = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'closedCaptions'
     }
+
+    # It is not possible to disable related videos, but if it is set to false, the player will
+    # show related videos that are from the same channel as the video that was just played.
     showRelated = Jonnitto.PrettyEmbedHelper:GetProperty {
         property = 'showRelated'
     }
