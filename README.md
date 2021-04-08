@@ -91,6 +91,10 @@ Some settings will be set globally from the [PrettyEmbedHelper] package. These a
 ```yaml
 Jonnitto:
   PrettyEmbedHelper:
+    # If you want to save the duration of YouTube videos and playlists into the
+    # property metadataDuration you have to add a API key from YouTube Data API v3
+    # You can create this key on https://console.cloud.google.com/
+    youtubeApiKey: null
     # For Vimeo and Youtube you can enable here the option the show a confirm dialog
     # that external content get loaded and the user may be tracked
     enableGdprMessage: false
