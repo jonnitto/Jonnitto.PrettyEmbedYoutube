@@ -18,13 +18,13 @@
     "authors": [
         {
             "name": "Jon Uhlmann",
-            "email": "me@jonnitto.ch",
-            "homepage": "https://twitter.com/jonnitto",
+            "email": "hello@uhlmann.pro",
+            "homepage": "https://www.uhlmann.pro",
             "role": "Developer"
         }
     ],
     "require": {
-        "jonnitto/prettyembedhelper": "^2.8 || dev-master"
+        "jonnitto/prettyembedhelper": "^2.8 || ^3.0 || dev-master"
     },
     "autoload": {
         "psr-4": {
@@ -32,7 +32,6 @@
         }
     },
     "extra": {
-        "marketplace-account": "me@jonnitto.ch",
         "installer-name": "Jonnitto.PrettyEmbedYoutube",
         "neos": {
             "package-key": "Jonnitto.PrettyEmbedYoutube"
