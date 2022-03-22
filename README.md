@@ -2,6 +2,9 @@
 
 # Jonnitto.PrettyEmbedYoutube
 
+> There is a successor of this package: [PrettyEmbedVideoPlatforms]
+> It includes automatic detection of Vimeo or YouTube videos. To update, [follow these instructions].
+
 Prettier embeds for your YouTube videos and playlists in [Neos CMS] - with helpful options like high-res preview images, lightbox feature, and advanced customization of embed options.
 
 ![Screenshot]
@@ -23,16 +26,6 @@ composer require jonnitto/prettyembedyoutube --no-update
 ```
 
 The `--no-update` command prevent the automatic update of the dependencies. After the package was added to your theme `composer.json`, go back to the root of the Neos installation and run `composer update`. Et voilà! Your desired package is now installed correctly.
-
-## PrettyEmbedCollection
-
-This package is member of the [PrettyEmbedCollection] which contains following packages:
-
-- [PrettyEmbedVideo]
-- [PrettyEmbedVimeo]
-- [PrettyEmbedYoutube]
-
-If you install the PrettyEmbedCollection the video players get grouped into an own group in the node-inspector; otherwise, they will be in the default group.
 
 ## FAQ
 
@@ -91,19 +84,28 @@ Some settings will be set globally from the [PrettyEmbedHelper] package. These a
 ```yaml
 Jonnitto:
   PrettyEmbedHelper:
+    # If you want to use your own assets, set this to false (Backend.js and Backend.css will be always be included in the backend)
+    includeAssets:
+      css: true
+      js: true
+
     # If you want to save the duration of YouTube videos and playlists into the
     # property metadataDuration you have to add a API key from YouTube Data API v3
     # You can create this key on https://console.cloud.google.com/
     youtubeApiKey: null
+
     # For Vimeo and Youtube you can enable here the option the show a confirm dialog
     # that external content get loaded and the user may be tracked
     enableGdprMessage: false
+
     # This is the maximum width of a custom preview image
     maximumWidth: 1920
+
     # If this is set to a string, the element gets wrapped with a div and the class with the giving string.
     # If set to true, the element gets wrapped with a div without any class.
     # If set to false, the element get not wrapped at all
     wrapper: 'jonnitto-prettyembed-wrapper'
+
     # The buttons which get injected (file content) to the player.
     button:
       play: 'resource://Jonnitto.PrettyEmbedHelper/Public/Assets/PlayButton.svg'
@@ -112,17 +114,24 @@ Jonnitto:
 
 #### Disable inclusion of the CSS and/or JS files
 
-The Javascript and CSS files get loaded via [Carbon.IncludeAssets]: [carbon settings from helper]
+The Javascript and CSS files get loaded via [Sitegeist.Slipstream]:
 
-If you want to load your CSS, you can disable only the [`Main.scss`] like that:
+If you want to load your own CSS, you can disable it like that:
 
 ```yaml
-Carbon:
-  IncludeAssets:
-    Packages:
-      'Jonnitto.PrettyEmbedHelper':
-        General:
-          Head: []
+Jonnitto:
+  PrettyEmbedHelper:
+    includeAssets:
+      css: false
+```
+
+If you want to load your own Javascript, you can disable it like that:
+
+```yaml
+Jonnitto:
+  PrettyEmbedHelper:
+    includeAssets:
+      js: false
 ```
 
 If you use SCCS in your build pipeline, you can adjust the look and feel of [`Main.scss`] with following variables:
@@ -175,14 +184,12 @@ These are the available mixins:
 | Mixin name (Prefix: `Jonnitto.PrettyEmbed`) | Description                                                                 | Default value | Enabled per default |
 | ------------------------------------------- | --------------------------------------------------------------------------- | :-----------: | :-----------------: |
 | `Helper:Mixin.Groups`                       | Enables the inspector groups                                                |               |          ✓          |
-| `Helper:Mixin.IncludeAssets`                | Include the frontend resources                                              |               |          ✓          |
 | `Helper:Mixin.Image`                        | Add the preview image property                                              |               |          ✓          |
 | `Helper:Mixin.Lightbox`                     | Open the video in a lightbox                                                |    `false`    |          ✓          |
 | `Helper:Mixin.PreserveAspectRatio`          | If the lightbox is active, the preview image can preserve his aspect ratio. |    `true`     |          ✓          |
 | `Helper:Mixin.BackendLabel`                 | Read the title of the video and set this as label in the content tree       |               |          ✓          |
 | `Youtube:Mixin.Type`                        | Choose between `playlist` and `video`                                       |    `video`    |          ✓          |
 | `Youtube:Mixin.VideoID`                     | Let the user enter the video id or youtube url                              |               |          ✓          |
-| `Youtube:Mixin.IncludeJsApi`                | Small helper for embeding the JS API.                                       |               |          ✓          |
 | `Helper:Mixin.AllowFullScreen`              | Allow fullscreen or not                                                     |    `true`     |                     |
 | `Helper:Mixin.Loop`                         | Loop the video                                                              |    `false`    |                     |
 | `Helper:Mixin.Controls`                     | Show the controls                                                           |    `true`     |                     |
@@ -240,17 +247,14 @@ After all those migrations you have to flush your frontend cache:
 [subscription]: https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube/subscription
 [followers]: https://github.com/jonnitto/followers
 [license]: LICENSE
-[neos cms]: https://www.neos.io
-[prettyembedcollection]: https://github.com/jonnitto/Jonnitto.PrettyembedCollection
-[prettyembedvideo]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo
-[prettyembedvimeo]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo
-[prettyembedyoutube]: https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube
+[neos cms]: https://www.neos.ioe
 [prettyembedhelper]: https://github.com/jonnitto/Jonnitto.PrettyEmbedHelper
 [jonnitto.plyr]: https://github.com/jonnitto/Jonnitto.Plyr
 [settings.jonnitto.yaml]: Configuration/Settings.Jonnitto.yaml
 [`jonnitto.prettyembedyoutube:component.youtube`]: Resources/Private/Fusion/Component/Youtube.fusion
 [`jonnitto.prettyembedyoutube:content.youtube`]: Resources/Private/Fusion/Content/Youtube.fusion
-[carbon.includeassets]: https://github.com/CarbonPackages/Carbon.IncludeAssets
-[carbon settings from helper]: https://github.com/jonnitto/Jonnitto.PrettyEmbedHelper/blob/master/Configuration/Settings.Carbon.yaml
 [`main.scss`]: https://github.com/jonnitto/Jonnitto.PrettyEmbedHelper/blob/master/Resources/Private/Assets/Main.scss
 [screenshot]: https://user-images.githubusercontent.com/4510166/76709350-6fb3c480-66fe-11ea-853f-630499f626a2.png
+[prettyembedvideoplatforms]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVideoPlatforms
+[follow these instructions]: https://github.com/jonnitto/Jonnitto.PrettyEmbedVideoPlatforms#merge-prettyembedyoutube-and-prettyembedvimeo
+[sitegeist.slipstream]: https://github.com/sitegeist/Sitegeist.Slipstream

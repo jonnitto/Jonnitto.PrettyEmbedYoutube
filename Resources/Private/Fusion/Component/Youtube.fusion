@@ -87,8 +87,14 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
             <img alt={props.alternativeText} src={props.poster || props.guessedPoster} srcset={props.poster && props.poster2x ? props.poster + ' 1x,' + props.poster2x + ' 2x' : null} class={props.previewImageClass} loading='lazy' />
         `
 
-        @process.wrapper = Jonnitto.PrettyEmbedHelper:Wrapper {
-            wrapper = ${props.wrapper}
+        @process {
+            assets = afx`
+                <Jonnitto.PrettyEmbedHelper:Assets youtubeAPI={props.enableJsApi} />
+                {value}
+            `
+            wrapper = Jonnitto.PrettyEmbedHelper:Wrapper {
+                wrapper = ${props.wrapper}
+            }
         }
     }
 }

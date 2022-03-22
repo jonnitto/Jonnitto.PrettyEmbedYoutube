@@ -1,5 +1,0 @@
-prototype(Jonnitto.PrettyEmbedYoutube:IncludeJsApi) < prototype(Carbon.IncludeAssets:Case) {
-    mixin = 'Jonnitto.PrettyEmbedYoutube:Mixin.IncludeJsApi'
-    alwaysInclude = false
-    @if.set = ${Configuration.setting('Jonnitto.PrettyEmbedYoutube.enableJsApi')}
-}

@@ -1,8 +1,0 @@
-Carbon:
-  IncludeAssets:
-    Packages:
-      'Jonnitto.PrettyEmbedYoutube:JsApi':
-        Package: 'Jonnitto.PrettyEmbedHelper'
-        ConditionPrototype: 'Jonnitto.PrettyEmbedYoutube:IncludeJsApi'
-        Live:
-          Head: https://www.youtube.com/iframe_api[defer](js)
