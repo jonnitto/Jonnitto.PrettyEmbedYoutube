@@ -15,8 +15,8 @@ Prettier embeds for your YouTube videos and playlists in [Neos CMS] - with helpf
 | > 4.1.\* | 3.\* + 4.\*    |            |
 | 5.\*     | 3.3.\* + 4.\*  |            |
 | 6.\*     | ^4.2.\* + 5.\* |            |
-| 7.\*     | ^4.2.\* + 5.\* |      ✓     |
-| 8.\*     | > 5.\3         |      ✓     |
+| 7.\*     | ^4.2.\* + >= 5 |      ✓     |
+| 8.\*     | >= 5.3         |      ✓     |
 
 ## Installation
 
