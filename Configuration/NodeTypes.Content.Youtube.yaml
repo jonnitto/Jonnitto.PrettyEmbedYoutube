@@ -17,6 +17,8 @@
     # 'Jonnitto.PrettyEmbedYoutube:Mixin.ClosedCaptions': true
     # 'Jonnitto.PrettyEmbedYoutube:Mixin.ShowRelated': true
   ui:
-    label: YouTube
+    label: i18n
     icon: 'fab fa-youtube'
     position: 920
+    help:
+      message: i18n

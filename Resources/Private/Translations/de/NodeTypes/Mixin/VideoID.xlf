@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"
+       xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" datatype="plaintext" target-language="de">
+        <body>
+            <trans-unit id="properties.videoID.textFieldEditor.placeholder" xml:space="preserve">
+                <source>Die ID eines Videos findest du am Ende der URL. Du kannst auch den ganzen Link einfügen.</source>
+                <target>You can find the ID of a video at the end of the URL. You can also paste the full URL.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
