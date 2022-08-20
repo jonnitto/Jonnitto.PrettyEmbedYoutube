@@ -8,8 +8,8 @@
                 <target>You need to define a custom preview image.</target>
             </trans-unit>
             <trans-unit id="noVideoID" xml:space="preserve">
-                <source>Please add a YouTube ID or url in the inspector</source>
-                <target>Please add a YouTube ID or url in the inspector</target>
+                <source>Please add a YouTube ID or URL in the inspector</source>
+                <target>Please add a YouTube ID or URL in the inspector</target>
             </trans-unit>
             <trans-unit id="lang" xml:space="preserve">
                 <source>en</source>

@@ -3,7 +3,11 @@
        xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" datatype="plaintext" target-language="en">
         <body>
-            <trans-unit id="properties.videoID.textFieldEditor.placeholder" xml:space="preserve">
+            <trans-unit id="properties.videoID" xml:space="preserve">
+                <source>YouTube ID / URL</source>
+                <target>YouTube ID / URL</target>
+            </trans-unit>
+            <trans-unit id="properties.videoID.ui.help.message" xml:space="preserve">
                 <source>You can find the ID of a video at the end of the URL. You can also paste the full URL.</source>
                 <target>You can find the ID of a video at the end of the URL. You can also paste the full URL.</target>
             </trans-unit>
