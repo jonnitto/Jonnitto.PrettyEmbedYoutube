@@ -39,8 +39,8 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
 
     # Whether the video plays inline on supported mobile devices.
     # Note that if set to false it does not imply that the video will always be played in fullscreen.
-    playsInline = Jonnitto.PrettyEmbedHelper:GetProperty {
-        property = 'playsInline'
+    playsinline = Jonnitto.PrettyEmbedHelper:GetProperty {
+        property = 'playsinline'
     }
 
     # Allow full screen

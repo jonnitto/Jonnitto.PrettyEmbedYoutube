@@ -37,4 +37,4 @@ Jonnitto:
       showRelated: false
 
       # Whether the video plays inline on supported mobile devices. Note that if set to false it does not imply that the video will always be played in fullscreen.
-      playsInline: true
+      playsinline: true
