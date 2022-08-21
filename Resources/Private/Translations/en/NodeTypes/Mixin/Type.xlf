@@ -4,8 +4,8 @@
     <file original="" product-name="Jonnitto.PrettyEmbedYoutube" source-language="en" target-language="en" datatype="plaintext">
         <body>
             <trans-unit id="properties.type" xml:space="preserve">
-                <source>Type of ID</source>
-                <target>Type of ID</target>
+                <source>Type of ID / URL</source>
+                <target>Type of ID / URL</target>
             </trans-unit>
             <trans-unit id="properties.type.selectBoxEditor.values.video" xml:space="preserve">
                 <source>Video</source>

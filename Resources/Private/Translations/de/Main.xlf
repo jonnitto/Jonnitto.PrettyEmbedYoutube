@@ -8,8 +8,8 @@
                 <target>Es muss ein Vorschaubild angegeben werden.</target>
             </trans-unit>
             <trans-unit id="noVideoID" xml:space="preserve">
-                <source>Please add a YouTube ID or url in the inspector</source>
-                <target>Bitte YouTube ID oder URL im Inspektor hinzufügen</target>
+                <source>Please add a YouTube ID or URL in the inspector</source>
+                <target>Bitte eine YouTube ID oder URL im Inspektor hinzufügen</target>
             </trans-unit>
             <trans-unit id="lang" xml:space="preserve">
                 <source>en</source>
