@@ -3,26 +3,24 @@ changelog:
     labels:
       - ignore-for-release
     authors:
-      - greenkeeperio-bot
-      - snyk-bot
       - dependabot
   categories:
-    - title: :boom: Breaking Changes
+    - title: ':boom: Breaking Changes'
       labels:
         - Semver-Major
         - breaking
-    - title: :sparkles: Features
+    - title: ':sparkles: Features'
       labels:
         - Semver-Minor
         - feature
-    - title: :technologist: Enhancements
+    - title: ':technologist: Enhancements'
       labels:
         - Semver-Minor
         - enhancement
-    - title: :bug: Bugfixes
+    - title: ':bug: Bugfixes'
       labels:
         - Semver-Minor
         - bug
-    - title: :hammer: Other Changes
+    - title: ':hammer: Other Changes'
       labels:
         - "*"
