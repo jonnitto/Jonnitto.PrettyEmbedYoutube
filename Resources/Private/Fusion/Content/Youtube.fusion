@@ -67,6 +67,8 @@ prototype(Jonnitto.PrettyEmbedYoutube:Content.Youtube) < prototype(Jonnitto.Pret
 
     enableGdprMessage = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.enableGdprMessage')}
     gdprMessage = Jonnitto.PrettyEmbedHelper:GdprMessage
+    gdprMessageAccept = Jonnitto.PrettyEmbedHelper:GdprMessageAccept
+    gdprMessageNewWindow = Jonnitto.PrettyEmbedHelper:GdprMessageNewWindow
 
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}

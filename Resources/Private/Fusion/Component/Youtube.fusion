@@ -17,6 +17,8 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
     enableJsApi = ${this.configuration.enableJsApi}
     enableGdprMessage = ${Configuration.setting('Jonnitto.PrettyEmbedHelper.enableGdprMessage')}
     gdprMessage = Jonnitto.PrettyEmbedHelper:GdprMessage
+    gdprMessageAccept = Jonnitto.PrettyEmbedHelper:GdprMessageAccept
+    gdprMessageNewWindow = Jonnitto.PrettyEmbedHelper:GdprMessageNewWindow
 
     # Pass a ratio like this: ${16 / 9}
     ratio = ${null}
@@ -65,6 +67,8 @@ prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) < prototype(Neos.Fusion
             target = '_blank'
             style = ${props.force16to9 || props.hasRatioAndNoLightboxWithPreserveAspectRatio ? 'padding-top:' + props.forceRatio : null}
             data-gdpr = ${props.enableGdprMessage && props.gdprMessage ? props.gdprMessage : null}
+            data-gdpr-accept = ${props.enableGdprMessage && props.gdprMessageAccept ? props.gdprMessageAccept : null}
+            data-gdpr-new-window = ${props.enableGdprMessage && props.gdprMessageNewWindow ? props.gdprMessageNewWindow : null}
             data-ratio = ${props.forceRatio || null}
             data-fs = ${!!props.allowFullScreen}
             data-embed = Neos.Fusion:Join {
